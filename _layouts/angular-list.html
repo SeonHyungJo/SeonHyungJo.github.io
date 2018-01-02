@@ -23,9 +23,6 @@ layout: compress
                 </div>
                 <div class="post-list">
                     {% for post in site.posts %}
-                      {% for tag in site.tags %}
-                      {{tag}}
-                      {% endfor%}
                         {% if post.project == null && site.tags == angular%}
                           <ul>
                               <li class="wow fadeInLeft" data-wow-duration="1.5s">
@@ -35,6 +32,24 @@ layout: compress
                               </li>
                           </ul>
                         {% endif %}
+                    {% endfor %}
+
+                    {% for item in (0..site.tags.size) %}
+                      {% unless forloop.last %}
+                        {% capture this_word %}
+                          {{ tags_list[item] | strip_newlines }}
+                        {% endcapture %}
+                      	<article>
+                      	<h2 id="{{ this_word }}" class="tag-heading">{{ this_word }}</h2>
+                      		<ul>
+                          {% for post in site.tags[this_word] %}
+                            {% if post.title != null %}
+                              <li class="entry-title"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+                            {% endif %}
+                          {% endfor %}
+                      		</ul>
+                      	</article><!-- /.hentry -->
+                      {% endunless %}
                     {% endfor %}
                 </div>
             </div>
