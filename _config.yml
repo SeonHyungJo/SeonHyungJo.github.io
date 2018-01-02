@@ -8,7 +8,7 @@ logo:               'https://avatars2.githubusercontent.com/u/24274424?s=460&v=4
 background:         'assets/img/placeholder-big.jpg'
 tiled_bg:           false   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             ko_kr
-url:                https://seonhyungjo.github.io/
+url:                https://seonhyungjo.github.io
 
 # Jekyll
 permalink:          /:title/
