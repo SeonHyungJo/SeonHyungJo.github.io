@@ -19,7 +19,7 @@ comments: true
 나만 모르면 안되니까 기록하면서 하자 까먹겠다...
  - **모든 기준은 제 스프링 시큐리티 파일을 기본으로 합니다.**
 
-##목록
+## 목록
   1.  기본 시큐리티 설정
   2.  DB연동해서 사용자 인증하기(회원가입 포함)
   3.  비밀번호 암호화해서 사용하기
@@ -64,8 +64,10 @@ comments: true
     </dependency>
     <!-- Spring Security -->
   ```
+
 ### web.xml 설정_필터 등록
  - 기존에 있는 contextConfigLocation에 시큐리티 관련 context를 추가 해주려고 한다.
+
  ```
  <context-param>
 
@@ -78,7 +80,9 @@ comments: true
   </param-value>
   </context-param>
   ```
+
   - 기존의 경로를 사용해서 파일을 추가해주는 방향으로 갔습니다.
+
   ```
   <context-param>
 
@@ -90,10 +94,12 @@ comments: true
    </param-value>
    </context-param>
    ```
+
    - classpath*: => 프로젝트를 클릭한 상태에서 **alt+enter** 를 누르고 검색창에서 **Deployment Assebly** 를 검색하면 설정된 경로가 보입니다.
 
 #### 필터추가
  - 같은 파일에서 필터를 추가해준다.
+
  ```
   <!-- Spring Security -->
 	<filter>
@@ -106,6 +112,7 @@ comments: true
 	   <url-pattern>/*</url-pattern>
 	</filter-mapping>
   ```
+
   - 다음과 같이 추가를 해주면 애플리케이견의 모든 요청을 스프링 시큐리티가 감싸서 처리할 수 있게 된다.
   - 이 필터와 관련된 설명이 잘되어있는 곳이 있어 링크로 설정해 두겠습니다.
   - [스프링시큐리티_2필터](http://www.nextree.co.kr/p1886/)
@@ -524,6 +531,7 @@ UserDaoService {
   - 기본적으로 웹에서 크롬에서 지원을 함으로....
 
 ### 일단 적용(context-security.xml 추가)
+
   - `<http>` 태그 안에 추가 합니다.
 ```
 <logout invalidate-session="true" delete-cookies="JSESSIONID,SPRING_SECURITY_REMEMBER_ME_COOKIE" logout-url="/logout" logout-success-url="/login.do" />
@@ -532,9 +540,11 @@ UserDaoService {
 ```
 
 ### 로그인 페이지 자동로그임 버튼 추가
+
 ```
 <input type="text" class="form-control" id="inputId" placeholder="ID" name="username">
 ```
+
 # 끝
 
 ## Https 적용
@@ -556,6 +566,7 @@ UserDaoService {
   - 실제 인증서를 만들고 사용하려면 돈이 들고 시간이 든다.
 
 ##### 1. 먼저 cmd를 켜고 java/bin으로 이동한다.
+
 ##### 2. keystore를 만들어준다.
 ```
   keytool -genkey -alias {{키 ID}} -keyalg RSA -keystore {{/Users/Administrator/Desktop/sseon.keystore}}
@@ -565,6 +576,7 @@ UserDaoService {
   - {{/Users/Administrator/Desktop/sseon.keystore}}는 저장위치로 개인 설정해도된다.
 
 ##### 3. 각각의 질문에 작성을 해준다.
+
 ```
   Roger$ keytool -genkey -alias MyKeyAlias -keyalg RSA -keystore /Users/Roger/tmp/roger.keystore
   <!-- 비밀번호 설정 -->
@@ -597,8 +609,11 @@ UserDaoService {
   Enter key password for
   (RETURN if same as keystore password):
 ```
+
 ##### 4. 키가 생성된 것을 확인한다.
+
 ##### 5. 서버 설정을 한다.
+
   - 나는 아파치니까(server.xml를 수정한다.)
 
 ```
@@ -606,8 +621,11 @@ UserDaoService {
 
 <Connector SSLEnabled="true" keystoreFile="/Users/Administrator/Desktop/sseon.keystore" keystorePass="{{비밀번호}}" port="8443" scheme="https" secure="true" sslProtocol="TLS"/>
 ```
+
   - `{/Users/Administrator/Desktop/sseon.keystore}`는 조금전 저장한 위치와 파일명을 적는다.
   - 비밀번호를 추가한다.
+
 ##### 6. 다시 서버를 올려서 확인한다.
   - 주소창 왼쪽에 안전하지 않음이라고 하며, https로 접속되는 걸 확인할 수 있다. 제대로 된 것이다.
+
 # 끝
