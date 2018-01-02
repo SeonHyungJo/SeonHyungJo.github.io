@@ -20,9 +20,9 @@ comments: false
 [Sseon Git](https://seonhyungjo.github.io/) 들어와봐요.
 
 ## 시작합니다.
-내가 공부하는걸 그대로 올립니다. 그냥 즉흥입니다. 내가 하고픈거, 해야하는거, 부족한거 막 합니다. 
+내가 공부하는걸 그대로 올립니다. 그냥 즉흥입니다. 내가 하고픈거, 해야하는거, 부족한거 막 합니다.
 
 
 ## 테마
-정말 고맙습니다. 이런 이쁜 테마를...
+정말 고맙습니다. 이런 이쁜 테마를...<br>
 [Install Moon](https://github.com/TaylanTatli/Moon){: .btn}
