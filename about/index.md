@@ -6,32 +6,23 @@ date: 2016-03-21
 comments: false
 ---
 
-<center><a href="https://seonhyungjo.github.io/"><b>Moon</b></a> is a minimal, one column jekyll theme.</center>
+<center><a href="https://seonhyungjo.github.io/"><b>sseon</b></a> is new person, I want to get a Job</center>
 
 ## Features
-* Minimal, you can focus on your content
-* Responsive
-* Disqus integration
-* Syntax highlighting
-* Optional post image
-* Social icons
-* Page for sharing projects
-* Optional background image
-* Simple navigation menu
-* MathJax support
+* 지금은 학생(18년 2월 졸업)
+* JavaScript, Java, Spring에 관심
+* Angular에도 관심을 가지고 진행중
+* 정자에서 그냥 저냥 프로젝트 진행중
+* 책임감 출중
+* 가끔은 자존감이 낮음
+* 다른 사람의 말은 잘 새겨듣는
 
-## Preview
+[Sseon Git](https://seonhyungjo.github.io/) 들어와봐요.
 
-{% capture images %}
-    https://cloud.githubusercontent.com/assets/754514/14509720/61c61058-01d6-11e6-93ab-0918515ecd56.png
-    https://cloud.githubusercontent.com/assets/754514/14509716/61ac6c8e-01d6-11e6-879f-8308883de790.png
-{% endcapture %}
-{% include gallery images=images caption="Screenshots of Moon Theme" cols=2 %}
+## 시작합니다.
+내가 공부하는걸 그대로 올립니다. 그냥 즉흥입니다. 내가 하고픈거, 해야하는거, 부족한거 막 합니다. 
 
-See a [live version of Moon](http://taylantatli.github.io/Moon) hosted on GitHub.
 
-## Getting Started
-
-To learn how to install and use this theme check out the [Setup Guide](http://taylantatli.me/Moon/moon-theme/) for more information.
-
+## 테마
+정말 고맙습니다. 이런 이쁜 테마를...
 [Install Moon](https://github.com/TaylanTatli/Moon){: .btn}
