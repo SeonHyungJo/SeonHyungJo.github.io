@@ -23,6 +23,9 @@ layout: compress
                 </div>
                 <div class="post-list">
                     {% for post in site.posts %}
+                      {% for tag in site.tags %}
+                      {{tag}}
+                      {% endfor%}
                         {% if post.project == null && site.tags == angular%}
                           <ul>
                               <li class="wow fadeInLeft" data-wow-duration="1.5s">
