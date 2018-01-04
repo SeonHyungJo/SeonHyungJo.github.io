@@ -50,6 +50,7 @@ h3.title a {
 		text-decoration: none;
 		background: $white;
 		color: $color_shark;
+		border-bottom: 2px black;
 		a {
 			@include font-rem(20);
 			text-decoration: none;
