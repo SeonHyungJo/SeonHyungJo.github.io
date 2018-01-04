@@ -22,7 +22,7 @@ comments: true
   - 태그는 왜케 많은거야....
 
 ## 태그추가
-먼저 사용하려면 jsp파일 상단에 taglib를 추가해주어야한다.
+먼저 사용하려면 jsp파일 상단에 taglib를 추가해주어야한다.<br>
 `<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>`
 
 
@@ -81,6 +81,7 @@ comments: true
 ## input 태그
   - `path`를 지정해줍니다.(이게 user라고 설정한 VO의 내부의 변수와 매핑이 됩니다.)
   - 그래서 위의 VO를 그대로 사용했다면 input창 안에 `sseon`이른 글자가 나옵니다.
+
 ```
   //심플하게 이런식입니다.
   userId : <form:input path="userId" />
@@ -94,12 +95,16 @@ comments: true
   //개인적으로 동의함 같은 경우가 하나라고 생각함
   <form:checkbox path="hobby" value="" label="동의함"/>
 ```
+
   - `label`에 종류를 적어준다.
   - `value`에는 우리가 흔히 사용하듯이 한다.
   - `path`에는 우리가 사용하는 `name`과 같다
+
 ---
+
   - 다수의 경우
   - 여러개는 한번에 뿌려줄 수 있다.
+
 ```
   //controller에 추가해주면 됨
   Map<String, String> interest =new HashMap<String, String>();
@@ -122,10 +127,13 @@ comments: true
     this.hobby = hobby;
   }
 ```
+
   - 다수의 경우에는 `Map`으로 받아서 바로 jsp파일로 보내버린다.
+
 ```
   <form:checkboxes path="hobby" items="${interest}" />
 ```
+
   - 한 개씩하는 경우와 비교를 하자면 `checkboxes`이다
   - 또한 `items="${interest}"`이다. 안에 interest는 항상 바뀔 수 있다.
 
@@ -168,13 +176,16 @@ comments: true
 ```
 
 ---
+
 절반온듯....
 
 ## select 태그
   - 이건 체크박스와 같은 방식으로 진행
+
 ```
   <form:select path="address" items="${address}" />
 ```
+
 ```
   //컨트롤러 추가
   Map<String, String> address =new HashMap<String, String>();
@@ -198,6 +209,7 @@ comments: true
 ```
 
 ### select + options
+
 ```
   <form:select path="address">
     <form:options items="${address}" />
@@ -223,11 +235,10 @@ comments: true
 ```
 
 ## hidden 태그
+
 ```
   <form:hidden path="userId" />
 ```
-
-
 
 ## 번외편(Lombok 적용하기)
   - 롬복이란....
@@ -253,6 +264,7 @@ comments: true
   //저의 경우
   C:\Users\{{사용자 이름}}\.m2\repository\org\projectlombok\lombok\1.16.8
 ```
+
   - 위의 경로로 들어간다.
   - jar파일을 클릭 해서 `specify location`을 클릭한다.
   - 해당 이클립스가 설치되어있는 곳을 들어가서 `eclipse.exe`를 클릭하여 등록한다.
@@ -273,6 +285,7 @@ lombok의 경우 여러 어노테이션이 있지만 `@Data`를 적용하게 되
   private String address;
   private String comment;
 ```
+
 너무나도 심플...
 
 ## Validation
@@ -280,6 +293,7 @@ lombok의 경우 여러 어노테이션이 있지만 `@Data`를 적용하게 되
 빠르게 진행합니다.
 
 ### VO 만들기
+
 ```
   public class Person {
 
@@ -301,7 +315,9 @@ lombok의 경우 여러 어노테이션이 있지만 `@Data`를 적용하게 되
   	}
   }
 ```
+
 ### Validation 만들기
+
 ```
   public class PersonValidator implements Validator{
 
@@ -324,6 +340,7 @@ lombok의 경우 여러 어노테이션이 있지만 `@Data`를 적용하게 되
     }
   }
 ```
+
   - `implements Validator`을 사용합니다.
   - 주로 사용하게 될 코드는 `ValidationUtils.rejectIfEmptyOrWhitespace`와 `rejectValue`입니다.
   - 이제는 오류에 대한 문구를 적어줍니다.
@@ -332,11 +349,13 @@ lombok의 경우 여러 어노테이션이 있지만 `@Data`를 적용하게 되
   - message-common_ko.properties 파일에 들어갑니다.
   - 아래와 같이 자신이 원하는 문구를 적어줍니다.
   - 단 message가 맵핑이 되어있어야 사용할 수 있겠죠?
+
 ```
   negativevalue = 입력해주세요
   too.darn.old = 너무늙음
   empty = 값이 없습니다.
 ```
+
 ```
   //messageSource bean추가
   <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
