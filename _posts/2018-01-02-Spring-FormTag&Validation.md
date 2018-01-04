@@ -140,6 +140,7 @@ comments: true
 ## radiobutton 태그
   - 이건 위에 체크박스와 비슷합니다.
   - `path`만 같다면 됩니다.
+  
 ```
   <form:radiobutton path="sex" value="M" label="남자" />
   <form:radiobutton path="sex" value="F" label="여자"/>
