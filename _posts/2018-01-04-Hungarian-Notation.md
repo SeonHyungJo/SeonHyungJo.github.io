@@ -39,6 +39,7 @@ comments: true
 |Global|g_|g_szDirectory|
 |Windows message|Msg|msgCut|
 
+---
 
 ## Windows Resources
 
