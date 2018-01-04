@@ -14,9 +14,12 @@ tag:
 
 comments: true
 ---
+
 # 스프링 시큐리티(Spring_Security) 간단 설정(내기준)
+
 이제는 그냥 기본이 되어버린 스프링시큐리티...
 나만 모르면 안되니까 기록하면서 하자 까먹겠다...
+
  - **모든 기준은 제 스프링 시큐리티 파일을 기본으로 합니다.**
 
 ## 목록
@@ -43,6 +46,7 @@ comments: true
  - 먼저 스프링시큐리티 적용을 해주기 위해서 라이브러리를 추가한다.
  - 즉 Maven으로 의존성 관리를 하기 위해 라이브러리를 주입한다.
  - 적어주면 자동으로 라이브러리를 설치하지만 안된다면, update Maven을 해주면 된다.
+
   ```
     <!-- Spring Security -->
     <dependency>
@@ -239,6 +243,7 @@ comments: true
 ---
 
 #### 2. 로그아웃 버튼
+
  - 로그아웃 역시 토큰을 같이 던져주어야 한다.
 
  ```
@@ -261,17 +266,18 @@ comments: true
 	</script>
  ```
 
- ## 끝..(추후 디비 연동, 암호화 예정)
+## 끝..(추후 디비 연동, 암호화 예정)
  ---
- ## DB연동으로 사용자 인증(했다....)17-12-15
- 왜 이렇게 디비를 연동을 했다는 사람들의 내용을 보면서 하는데 안되고 이해가 안된다. 그래서 내가 직접 밥로 뛰면서 6시간 투자해서 디비연동하고 암호화까지 겨우겨우 완료했다. 잊어버리지 말자.
- ### mysql에 연동하기 순서
+## DB연동으로 사용자 인증(했다....)17-12-15
+왜 이렇게 디비를 연동을 했다는 사람들의 내용을 보면서 하는데 안되고 이해가 안된다. 그래서 내가 직접 밥로 뛰면서 6시간 투자해서 디비연동하고 암호화까지 겨우겨우 완료했다. 잊어버리지 말자.
+
+### mysql에 연동하기 순서
   - pom.xml 설정하기(의존성 주입)
   - context-datasource.xml 설정하기(DB테이블 연결)
   - DB 테이블 만들기(기본 테이블 모양과 데이터 넣기)
   - context-security.xml 설정하기(시큐리티 로그인 진행시 DB에서 가져와서 권한 부여)
 
- #### 1. pom.xml\_mysql 추가하기
+#### 1. pom.xml\_mysql 추가하기
   - 이것도 내 위주 입니다.
   - 남을 보여주려는게 아니라 제 공부입니다.
 
@@ -305,7 +311,7 @@ comments: true
 
   - 제 기준으로 3개 추가 완료
 
- #### 2. context-datasource.xml 설정하기
+#### 2. context-datasource.xml 설정하기
  - 저는 로컬에 workbench가 깔려있다는 조건으로 실행하고 있습니다.
 
  ```
@@ -317,7 +323,7 @@ comments: true
   </bean>
 
   ```
- #### 3. DB 테이블 만들기
+#### 3. DB 테이블 만들기
   - 테이블은 SQL문으로 만들었습니다.
   - SQL문은 []()를 참고해서 가져와서 사용하였습니다.
 
@@ -337,7 +343,7 @@ comments: true
   - 어짜피 아래에서 회원가입도 구현예정입니다.
 
 
- #### 4. context-security.xml 설정하기
+#### 4. context-security.xml 설정하기
   - provider교체
 
   ```
@@ -371,7 +377,7 @@ comments: true
 
 ---
 
- ## 암호화하기(완료 17_12_15)\_반복해야함
+## 암호화하기(완료 17_12_15)\_반복해야함
   - 회원가입 jsp만들기
   - controller 생성
   - 암호화 파일 생성(ShaPasswordEncoder)
@@ -394,6 +400,7 @@ comments: true
 ### 1.context-security.xml 설정하기
   - 로그인시 암호화를 해서 비교를 위해 의존성 주입을 해줍니다.
   - 먼저 사용할 암호화 bean을 주입해줍니다.
+
 ```
   <beans:bean id="passwordEncoder" class="org.springframework.security.authentication.encoding.ShaPasswordEncoder">
     <beans:constructor-arg name="strength" value="256"></beans:constructor-arg>
@@ -401,6 +408,7 @@ comments: true
 ```
 
 - password를 암호화 provider에 추가해줍니다.
+
 ```
   <!--  provider  -->
   <authentication-manager>
@@ -533,6 +541,7 @@ UserDaoService {
 ### 일단 적용(context-security.xml 추가)
 
   - `<http>` 태그 안에 추가 합니다.
+
 ```
 <logout invalidate-session="true" delete-cookies="JSESSIONID,SPRING_SECURITY_REMEMBER_ME_COOKIE" logout-url="/logout" logout-success-url="/login.do" />
 
@@ -557,6 +566,7 @@ UserDaoService {
   - 기존의 intercept-url을 수정한다.
   - 처음 접속시 채널을 정해주는 것이다.
   - 아래를 보게 되면 채널로 https가 추가되었다.
+
 ```
   <intercept-url pattern="/**" access="hasRole('ROLE_USER')"  requires-channel="https" />  
 ```
@@ -568,6 +578,7 @@ UserDaoService {
 ##### 1. 먼저 cmd를 켜고 java/bin으로 이동한다.
 
 ##### 2. keystore를 만들어준다.
+
 ```
   keytool -genkey -alias {{키 ID}} -keyalg RSA -keystore {{/Users/Administrator/Desktop/sseon.keystore}}
 ```
