@@ -5,7 +5,6 @@ date:   2018-01-02
 excerpt: "앵귤러를 익히기 - 데이터 바인딩이란? "
 tag:
 - angular
-- install
 - nodejs
 - npm
 - typescript
@@ -19,12 +18,10 @@ Data_Binding
 앵귤러로 선언적 프로그래밍을 하는 근간은 데이터 바인딩이다.<br>
 **데이터 바인딩은** 컴포넌트와 뷰사이에 연결 고리를 맺는 구체적인 방법이다.
 
-  1. 단방향 바인딩
-
-    1. 삽입식
-    2. 프로퍼티 바인딩
-    3. 이벤트 바인딩
-
+  1. 단방향 바인딩<br>
+    1. 삽입식<br>
+    2. 프로퍼티 바인딩<br>
+    3. 이벤트 바인딩<br>
   2. 양방향 바인딩
 
 ---
@@ -36,14 +33,14 @@ Data_Binding
  - 사용예제
 
 ```
-  {{  contents  }}
-  {{  seomText()  }}
+  \{\{  contents  }}
+  \{\{  seomText()  }}
 
   //삽입식에 맞지 않다
-  {{  contents + '?who=angular'  }}
+  \{\{  contents + '?who=angular'  }}
 
   //잘 사용안함
-  {{  1 + contents  }}
+  \{\{  1 + contents  }}
 ```
 
 

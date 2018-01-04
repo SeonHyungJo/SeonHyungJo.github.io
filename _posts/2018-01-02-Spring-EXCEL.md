@@ -110,7 +110,7 @@ public class ExcelCotroller{
 ```
   - 다시 눌러보니 제가 입력한 이름으로 파일이 다운로드 됩니다.
 
-#### 워크북생성(엑셀틀 생성)
+#### 워크북 생성(엑셀틀 생성)
 
   ```
     HSSFWorkbook objWorkBook = new HSSFWorkbook();
@@ -211,6 +211,8 @@ public class ExcelCotroller{
   - 제목을 설정하며 확장자 이름을 설정해 준수
   - 다운로드를 할 수 있도록 지원하고 있다.
 
+---
+
 ## 엑셀 다운로드 하기(xlsx)
 엑셀 버전은 xls, xlsx으로 2가지가 있다. 이에 따라 다르게 컨트롤러를 만들어야한다. 정말 변경하는 것은 쉽다.
 
@@ -220,6 +222,7 @@ public class ExcelCotroller{
 ### 엑셀 다운로드 하기 코드 수정(xls)
   - 통 소스입니다.
   - DB에서 가져온 데이터는 사진으로 확인하겠습니다.
+
 ```
     @RequestMapping(value = "/ExcelPoi.do")
     public void ExcelPoi(@RequestParam String fileName, HttpServletResponse response, Model model) throws Exception {
@@ -307,7 +310,7 @@ public class ExcelCotroller{
     response.getOutputStream().flush();
     response.getOutputStream().close();
   }
-  ```
+```
 
 ### 엑셀 다운로드 하기 코드 수정(xlsx)
 
@@ -399,11 +402,17 @@ public class ExcelCotroller{
 ```
 
 ## 엑셀 다운받기 결과
-### jsp 출력창<br> ![1](https://github.com/SeonHyungJo/My_Study/blob/master/Spring/img/excel1.JPG?raw=true)
-### 2개의 확장자로 다운받기<br> ![2](https://github.com/SeonHyungJo/My_Study/blob/master/Spring/img/excel2.JPG?raw=true)
-### xls확장자 결과<br> ![3](https://github.com/SeonHyungJo/My_Study/blob/master/Spring/img/excel3.JPG?raw=true)
-### xlsx확장자 결과<br> ![4](https://github.com/SeonHyungJo/My_Study/blob/master/Spring/img/excel4.JPG?raw=true)
 
+### jsp 출력창<br>
+![1](https://github.com/SeonHyungJo/My_Study/blob/master/Spring/img/excel1.JPG?raw=true)
+### 2개의 확장자로 다운받기<br>
+![2](https://github.com/SeonHyungJo/My_Study/blob/master/Spring/img/excel2.JPG?raw=true)
+### xls확장자 결과<br>
+![3](https://github.com/SeonHyungJo/My_Study/blob/master/Spring/img/excel3.JPG?raw=true)
+### xlsx확장자 결과<br>
+![4](https://github.com/SeonHyungJo/My_Study/blob/master/Spring/img/excel4.JPG?raw=true)
+
+---
 
 ## 엑셀 업로드(17-12-28)
 연말 기념 엑셀 업로드 진행
