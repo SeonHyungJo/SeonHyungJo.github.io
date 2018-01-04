@@ -14,8 +14,10 @@ tag:
 - desktop
 comments: true
 ---
+
 **Spring_Mobile**
 ===
+
 웹을 만들다보면 모바일기기를 구분해야 할 경우가 생긴다. 이것을 쉽게 도와주는 것이 바로 **Spring_Mobile** 이다.<br>
 Spring.io의 스프링 프로젝트를 보면 스프링 모바일이라는 프로젝트가 있다. 스프링 모바일은 Spring MVC에서 **모바일 기기를 식별** 하기 위한 extension이다.
 
@@ -26,6 +28,7 @@ Spring.io의 스프링 프로젝트를 보면 스프링 모바일이라는 프�
 
 ## 1. Pom.xml 라이브러리 추가하기
   - Device구분을 위한 라이브러리 추가
+
 ```
   <!-- 스프링 모바일 추가 -->
   <dependency>
@@ -59,6 +62,7 @@ Spring.io의 스프링 프로젝트를 보면 스프링 모바일이라는 프�
 
 
 ## 4. Controller 추가 하기
+
 ```
 @RequestMapping(value = "main.do")
 public String initMain(HttpServletRequest request) throws Exception {
