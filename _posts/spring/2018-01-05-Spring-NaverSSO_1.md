@@ -21,7 +21,7 @@ comments: true
 
 
 
-# 먼저 해야 할일
+## 먼저 해야 할일
 네이버 역시 구글의 프로젝트 처럼 API애플리케이션을 만들어야 합니다. 저는 네이버로그인을 할 것임으로 [애플리케이션 등록](https://developers.naver.com/apps/#/register) 사이트에 들어가서 이름을 정하고 아래의 선택은 `네아로(네이버 아이디로 로그인)`를 선택하면된다.<br>
 
   - 네아로를선택하게 되면 자신의 사이트에 필요한 내용을 선택을 합니다.
@@ -83,18 +83,27 @@ comments: true
     private final static String CLIENT_SECRET = "자신의 CLIENT_SECRET";
     private final static String REDIRECT_URI = "자신이 작성한 로그인 성공시 url";
 
+    public String generateState()
+	{
+	    SecureRandom random = new SecureRandom();
+	    return new BigInteger(130, random).toString(32);
+	}
+
     /* 네아로 인증  URL 생성  Method */
     public String getAuthorizationUrl(HttpSession session) {
 
-      /* Scribe에서 제공하는 인증 URL 생성 기능을 이용하여 네아로 인증 URL 생성 */
-      OAuth20Service oauthService = new ServiceBuilder()
-          .apiKey(CLIENT_ID)
-          .apiSecret(CLIENT_SECRET)
-          .callback(REDIRECT_URI)
-          .state("RANDOM_STRING")
-          .build(NaverLoginApi.instance());
+    String state = generateState();
+    session.setAttribute("state", state);
 
-      return oauthService.getAuthorizationUrl();
+    /* Scribe에서 제공하는 인증 URL 생성 기능을 이용하여 네아로 인증 URL 생성 */
+    OAuth20Service oauthService = new ServiceBuilder()
+    		.apiKey(CLIENT_ID)
+    		.apiSecret(CLIENT_SECRET)
+    		.callback(REDIRECT_URI)
+    		.state(state)
+    		.build(NaverLoginApi.instance());
+
+    return oauthService.getAuthorizationUrl();
     }
   }           
 ```
@@ -131,6 +140,26 @@ comments: true
 ```
   <a href="${naver_url}"><img height="30" src="http://static.nid.naver.com/oauth/small_g_in.PNG"/></a>
 ```  
+
+---
+추가편
+===
+
+## 콜백페이지 생성(컨트롤러 추가)
+까먹고 콜백페이지 연결을 안했습니다.
+
+```
+  // 네이버 Callback호출 메소드
+  @RequestMapping(value = "naverLoginCallback.do")
+  public String naverCallback() throws IOException {
+
+    System.out.println("naver login success");
+
+  return "main/main.tiles";
+  }
+```
+
+저의 경우 성공을 하면 메인 페이지로 이동하도록 했습니다.
 
 # 끝
 로그인은 이걸로 끝이 났습니다. 너무나도... 간단하게 끝이 납니다. 하지만 저는 헤매면서 했습니다. 내용이 좀 길어질거 같아 네이버 로그인 2편에서 개발자 페이지에서 선택한 프로필정보를 가져와서 뿌려보겠습니다.
