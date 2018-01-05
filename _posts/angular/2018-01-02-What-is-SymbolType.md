@@ -5,7 +5,6 @@ date:   2018-01-02
 excerpt: "새로운 타입 심볼타입이란?"
 tag:
 - angular
-- install
 - nodejs
 - npm
 - typescript
