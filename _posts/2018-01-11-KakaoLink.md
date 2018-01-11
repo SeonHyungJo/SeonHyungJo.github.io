@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "스프링 - 카카오톡 로그인 구현"
+title:  "카카오링크 Api 사용하기"
 date:   2018-01-11
-excerpt: "제가 해보고 싶었던 소셜 로그인 4번째 카카오톡 로그인입니다. "
+excerpt: "카카오링크 카드형으로 카카오톡으로 공유하기"
 tag:
 - javascript
 - jsp
