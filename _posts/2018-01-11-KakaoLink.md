@@ -99,7 +99,6 @@ comments: true
 |content|-|Object (required)|-|메인 콘텐츠|
 |content|title|String (required)|-|콘텐츠 타이틀|
 |content|imageUrl|String (required)|-|이미지 경로, [앱 설정]에 등록된 도메인만 허용|
-|content|link|Object (required)|-|이미지 클릭시 이동 URL|
 ||
 |link|webUrl|String|-|(constraint: webUrl, mobileWebUrl, androidExecParams, iosExecParams 중 하나는 필수)<br>카카오톡 PC버전에서 이용, [앱 설정]에 등록된 도메인만 허용|
 |link|mobileWebUrl |String|-|카카오톡 Mobile버전에서 이용, [앱 설정]에 등록된 도메인만 허용|
