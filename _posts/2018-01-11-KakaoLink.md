@@ -2,7 +2,7 @@
 layout: post
 title:  "카카오링크 Api 사용하기 - DefaultButton"
 date:   2018-01-11
-excerpt: "카카오링크 카드형으로 카카오톡으로 공유하기"
+excerpt: "카카오링크 카드형으로 카카오톡으로 공유하기 / 리스트 타입추가(01-12)"
 tag:
 - javascript
 - jsp
@@ -131,6 +131,8 @@ comments: true
 |messageObj|warning_msg|Object|-|링크 메시지를 검증한 결과|
 |messageObj|argument_msg|Object|-|argument를 검증한 결과|
 
+---
+---
 ---
 
 ## Kakao.Link.createDefaultButton(List Type)
