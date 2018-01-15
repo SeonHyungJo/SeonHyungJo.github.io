@@ -79,6 +79,7 @@ Log4j는 위에서 간단히 이야기 한 문제점을들 손쉽게 해결할 �
 ---
 
 ### 간단한 예제
+
   - src/main/java/sseon 패키지 내에 common 패키지를 생성
   - 그 밑에 logger 패키지를 생성 logger 패키지 밑에 **LoggerInterceptor.java를 생성** 한다.
   - 전처리기와 후처리기가 바로 그것인데, 위에서 client -> controller 로 요청할 때, 그 요청을 처리할 메서드 하나(전처리기)와 controller -> client 로 응답할 때
@@ -105,6 +106,116 @@ Log4j는 위에서 간단히 이야기 한 문제점을들 손쉽게 해결할 �
   }
 ```
 
+### action-servlet.xml 추가
+
+이 부분 때문에 많이 고생했네요 거의 1시간 걸린듯....
+
+```
+  <mvc:interceptors>
+    <mvc:interceptor>
+        <mvc:mapping path="/**"/>
+        <bean id="loggerInterceptor" class="sseon.sample.app.common.logger.LoggerInterceptor"></bean>
+    </mvc:interceptor>
+  </mvc:interceptors>
+```
+
+  - 그냥 전체 코드입니다.
+
+```
+  <?xml version="1.0" encoding="UTF-8"?>
+  <beans xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.springframework.org/schema/beans"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+
+  <!-- Enables the Spring MVC @Controller programming model -->
+  <!-- <annotation-driven /> -->
+
+  <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean id="loggerInterceptor" class="sseon.sample.app.common.logger.LoggerInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+  <!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+  <!-- <resources mapping="/resources/**" location="/resources/" /> -->
+
+  <context:component-scan base-package="sseon.sample.app" />
+
+  <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
+
+    <bean class="org.springframework.web.servlet.view.BeanNameViewResolver" p:order="0" />
+    <bean id="jsonView" class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" />   
+
+    <bean
+        class="org.springframework.web.servlet.view.UrlBasedViewResolver" p:order="1"
+        p:viewClass="org.springframework.web.servlet.view.JstlView"
+        p:prefix="/WEB-INF/jsp/" p:suffix=".jsp">
+    </bean>
+  </beans>
+```
+
+  - 안되는 이유하나 더 해결입니다.(pom.xml 추가)
+
+```
+  <!-- JSONObject -->
+  <dependency>
+  	<groupId>org.codehaus.jackson</groupId>
+  	<artifactId>jackson-mapper-asl</artifactId>
+  	<version>1.9.13</version>
+  </dependency>
+  <!-- JSONObject -->
+```
+
+### index.jsp 수정
+
+이제는 index.jsp에서 메인 화면으로 이동하도록 컨트롤러로 forward시켜줍니다.
+
+```
+  <jsp:forward page="/main.do"/>
+```
+
+### 컨트롤러 생성
+
+마지막으로 메인 컨트롤러를 만들었습니다.
+
+```
+  @Controller
+  public class MainController {
+
+  Logger log = Logger.getLogger(this.getClass());
+
+    @RequestMapping(value="/main.do")
+    public ModelAndView mainController(Map<String,Object> commandMap) throws Exception{
+
+      ModelAndView mv = new ModelAndView("");
+        log.debug("인터셉터 테스트");
+
+        return mv;
+    }
+  }
+```
+
+  - 결국 실행됩니다.
+  - 대신 이렇게 하면 화면이 안나오는게 당연합니다. `main.do`컨트롤러에서 어느 jsp로 갈 것인지 이름을 안적어줘서입니다. 이럴때 아까 설정해놓은 인터셉터를 보게되면 나옵니다. 어디서 페이지가 나오지 않았는지...
+  - 그런데!! 왜 인터셉터가 2번 실행될까요?? 컨트롤러는 1번 거치는데....
+
+
+#### 결과화면
+
+```
+DEBUG: sseon.sample.app.common.logger.LoggerInterceptor - ======================================          START         ======================================
+DEBUG: sseon.sample.app.common.logger.LoggerInterceptor -  Request URI 	:  /app/main.do
+DEBUG: sseon.sample.app.main.MainController - 인터셉터 테스트
+DEBUG: sseon.sample.app.common.logger.LoggerInterceptor - ======================================           END          ======================================
+
+```
 
 # 참고
  - [흔한 개발자의  개발 노트](http://addio3305.tistory.com/43?category=772645)
