@@ -217,5 +217,11 @@ DEBUG: sseon.sample.app.common.logger.LoggerInterceptor - ======================
 
 ```
 
+# 끝(4편은 천천히 할렵니다....)
+
+### 위에 단계를 하고 나니까 아래의 그림이 이해가 됬습니다.
+
+![순서도](http://cfile28.uf.tistory.com/image/24636835551216741514B9)
+
 # 참고
  - [흔한 개발자의  개발 노트](http://addio3305.tistory.com/43?category=772645)
