@@ -24,6 +24,26 @@ comments: true
   - 불편해서 import는 뺐습니다.
   - package도 뺐습니다.
 
+
+---
+
+### pom.xml 추가(수정 18-02-05)
+
+```
+  <!-- Excel Read/Write 를 위한 Dependency 추가 -->
+  <dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi</artifactId>
+    <version>3.11</version>
+  </dependency>
+  <dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>3.11</version>
+  </dependency>
+```
+
+---
 ```
 @Controller
 public class ExcelCotroller{
@@ -95,8 +115,9 @@ public class ExcelCotroller{
  - 내가 공부하면서 제일 짜증난건 자세히 jsp파일까지 올려주지 않은 것이다. 그래서 전 올립니다.
 
  ```
-  //Controller 파라미터 추가
-  @RequestParam String fileName
+  //ExcelController 파라미터 추가
+  //@RequestParam 어노테이션을 적용해서 넘어오는 파라미터를 바로 연결시켜준다. 대신 이름이 같아야한다.(아무 값을 넣지 않아도 출력이 되도록 설정)
+  @RequestParam(defaultValue = "test") String fileName
 
   response.setHeader("Content-Disposition", "ATTachment; Filename="+URLEncoder.encode("테스트","UTF-8")+".xls");
   //위의 코드를 아래로 변경
@@ -210,6 +231,14 @@ public class ExcelCotroller{
   ```
   - 제목을 설정하며 확장자 이름을 설정해 준수
   - 다운로드를 할 수 있도록 지원하고 있다.
+
+
+#### 추가(18-02-05)
+  - 셀 병합
+
+```
+  objSheet.addMergedRegion(new Region(1,(short)1,1,(short)2));
+```
 
 ---
 
