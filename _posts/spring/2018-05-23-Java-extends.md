@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Java 상속에 관하여"
-date:   2018-01-18
+date:   2018-05-23
 excerpt: "Java 상속에 관하여 간단하게 정리하기"
 tag:
 - spring
