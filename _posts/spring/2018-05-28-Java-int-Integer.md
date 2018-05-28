@@ -53,7 +53,7 @@ Java는 데이터를 클래스와 객체 외에 기초 타입을 가집니다.
 
 ---
 
-![사진](https://github.com/SeonHyungJo/SeonHyungJo.github.io/blob/master/assets/img/int_Integer.png?raw=true)
+![사진](https://github.com/SeonHyungJo/SeonHyungJo.github.io/blob/java/assets/img/int_Integer.png?raw=true)
 
 ## 예제 소스(이걸 보면 Integer는 참조형이라는걸 알수 있다.)
 
