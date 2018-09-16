@@ -26,7 +26,7 @@ sass:
   style:            compressed
 
 # Comments
-disqus_shortname:   sseonblog
+disqus_shortname:   Sseon_Blog
 
 # Social
 # if you don't have any of social below, comment the line.
@@ -37,7 +37,7 @@ disqus_shortname:   sseonblog
   #ad-client:
   #ad-slot:
 #bing-verify:
-email:
+email:              seonhyung.jo@gmail.com
 #twitter:            username
 facebook:           profile.php?id=100015515351267
 github-url:         SeonHyungJo

@@ -1,27 +1,19 @@
-**Sseon Blog(Moon theme)**
-===
+# **Sseon Blog(Moon theme)**
 
-**[Moon](https://taylantatli.github.io/Moon)** is a minimal, one column jekyll theme.
+## Contents
 
-## Features
-* Minimal, you can focus on your content
-* Responsive
-* Disqus integration
-* Syntax highlighting
-* Optional post image
-* Social icons
-* Page for sharing projects
-* Optional background image
-* Simple navigation menu
-* MathJax support
+<진행중>
 
-## Preview
+## 파일구조
 
-![screenshot of Moon](https://cloud.githubusercontent.com/assets/754514/14509720/61c61058-01d6-11e6-93ab-0918515ecd56.png)    
-![screenshot of Moon](https://cloud.githubusercontent.com/assets/754514/14509716/61ac6c8e-01d6-11e6-879f-8308883de790.png)
-
-See a [live version of Moon](https://taylantatli.github.io/Moon) hosted on GitHub.
-
-## Getting Started
-
-To learn how to install and use this theme check out the [Setup Guide](https://taylantatli.github.io/Moon/moon-theme/) for more information.
+- _data : 아직 미확인
+- _includes : 화면을 구성하는데 쓰이는 레이아웃 기능이 있음
+- _layouts : 화면을 구성하는 레이아웃들
+- _posts : 실질적인 블로그 포스트글들
+- _sass : 블로그를 구성하는 sass 파일들
+- about : 나에 대한 간단한 정보들
+- assets : 모두가 알듯이 폰트나, 이미지가 올라가 있는 곳
+- posts : 라우팅 주소를 설정하는 곳 같음 
+- projects : 라우팅 주소를 설정하는 곳 같음 
+- tags : post내에서 선언한 태그들은 전부 뿌려서 보여주는 페이지
+- etc
