@@ -6,9 +6,9 @@
 
 ## 파일구조
 
-- _data : 아직 미확인
-- _includes : 화면을 구성하는데 쓰이는 레이아웃 기능이 있음
-- _layouts : 화면을 구성하는 레이아웃들
+- _data : Navigation Router 설정 진행
+- _includes : 화면을 구성하는데 쓰이는 부분 레이아웃 묶음
+- _layouts : 레이아웃 묶음
 - _posts : 실질적인 블로그 포스트글들
 - _sass : 블로그를 구성하는 sass 파일들
 - about : 나에 대한 간단한 정보들
