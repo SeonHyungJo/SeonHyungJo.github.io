@@ -1,6 +1,6 @@
 # Site
-title:              Sseon Blog
-bio:                '신입 개발자가 되려고 하는 비전공자'
+title:              sseon-blog
+bio:                '자바스크립트 개발자가 되려고 하는 비전공자'
 description:        "본격 기술 블로그(aka 내 공부 블로그)"
 reading_time:       true
 words_per_minute:   200
