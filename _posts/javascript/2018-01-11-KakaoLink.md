@@ -5,23 +5,25 @@ date:   2018-01-11
 excerpt: "카카오링크 카드형으로 카카오톡으로 공유하기 / 리스트 타입추가(01-12)"
 tag:
 - javascript
-- jsp
-- js
-- web
 - kakaotalk
-- link
 comments: true
 ---
 
-**Spring_KakaoLink**
-===
-웹을 사용하다 보면 친구들에게 공유하고 싶은 페이지가 존재하게 된다. 그럴때는 브라우저의 공유하기를 이용하는 것보다는 카카오톡에서 Api로 지원을 하는 카드형 공유하기를 이용하면 좀 더 이쁘게 공유하기를 할 수 있게 된다. 여러가지가 존재 하기에 하나씩 보기로 맘먹었다. **모든 테스트는 모바일에서 진행을 하여야 합니다. && 카톡이 깔려있어야 합니다.**
+# **Spring_KakaoLink**
+
+웹을 사용하다 보면 친구들에게 공유하고 싶은 페이지가 존재하게 된다. 그럴때는 브라우저의 공유하기를 이용하는 것보다는 카카오톡에서 Api로 지원을 하는 카드형 공유하기를 이용하면 좀 더 이쁘게 공유하기를 할 수 있게 된다.
+</br>
+여러가지가 존재 하기에 하나씩 보기로 맘먹었다. **모든 테스트는 모바일에서 진행을 하여야 합니다. && 카톡이 깔려있어야 합니다.**
+
+</br>
+</br>
 
 ## Kakao.Link.createDefaultButton(기본적인 버튼)
 
 ### 전체소스
 
 ```
+
 <a id="kakao-link-btn">
   <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" />
 </a>
@@ -81,17 +83,23 @@ comments: true
 	});
 	//]]>
 </script>
+
 ```
+
+</br>
+</br>
 
 ### 결과 사진
 
 ![링크결과](https://github.com/SeonHyungJo/SeonHyungJo.github.io/blob/master/assets/img/kakaoLink/KakaoTalk_Link_feed.jpg?raw=true)
 
----
+</br>
+</br>
 
 ## Kakao.Link 레퍼런스(FeedType)
 
----
+</br>
+</br>
 
 |Arguments|Arguments|Object|Default|설명|
 |:-:|:-:|:-:|:-:|-|
@@ -101,7 +109,7 @@ comments: true
 |content|title|String (required)|-|콘텐츠 타이틀|
 |content|imageUrl|String (required)|-|이미지 경로, [앱 설정]에 등록된 도메인만 허용|
 ||
-|link|webUrl|String|-|(constraint: webUrl, mobileWebUrl, androidExecParams, iosExecParams 중 하나는 필수)<br>카카오톡 PC버전에서 이용, [앱 설정]에 등록된 도메인만 허용|
+|link|webUrl|String|-|(constraint: webUrl, mobileWebUrl, androidExecParams, iosExecParams 중 하나는 필수)</br>카카오톡 PC버전에서 이용, [앱 설정]에 등록된 도메인만 허용|
 |link|mobileWebUrl |String|-|카카오톡 Mobile버전에서 이용, [앱 설정]에 등록된 도메인만 허용|
 |link|androidExecParams|String|-|카카오톡 Android버전에서 이용, 해당 값이 없을 경우 mobileWebUrl로 적용|
 |link|iosExecParams |String|-|카카오톡 IOS버전에서 이용, 해당 값이 없을 경우 mobileWebUrl로 적용|
@@ -131,24 +139,26 @@ comments: true
 |messageObj|warning_msg|Object|-|링크 메시지를 검증한 결과|
 |messageObj|argument_msg|Object|-|argument를 검증한 결과|
 
----
----
----
+</br>
+</br>
 
 ## Kakao.Link.createDefaultButton(List Type)
 
 ### 리스트 템플릿 보내기
-  1. 헤더 영역
-  2. 아이템 리스트 영역: **최대 3개 표시** (3개를 넘어가니까 고장이 난다.)
-  3. 제목/설명 영역: 최대 3줄 표시 (제목 2줄, 설명 1줄 표시)
-  4. 이미지 영역: 400px * 400px (권장사항)
-  5. 버튼 영역: 최대 2개 표시, 버튼명 8자 이하 권장
 
----
+1. 헤더 영역
+2. 아이템 리스트 영역: **최대 3개 표시** (3개를 넘어가니까 고장이 난다.)
+3. 제목/설명 영역: 최대 3줄 표시 (제목 2줄, 설명 1줄 표시)
+4. 이미지 영역: 400px * 400px (권장사항)
+5. 버튼 영역: 최대 2개 표시, 버튼명 8자 이하 권장
+
+</br>
+</br>
 
 ### 전체소스
 
 ```
+
   <div class="widget-content">
     <a id="kakao-link-btn2">
       <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" />
@@ -210,18 +220,20 @@ comments: true
     ]
   });
   </script>
+
 ```
 
----
+</br>
+</br>
 
 ### 결과화면
+
 ![리스트 타입 결과 화면](https://github.com/SeonHyungJo/SeonHyungJo.github.io/blob/master/assets/img/kakaoLink/KakaoTalk_Link_list.jpg?raw=true)
 
----
+</br>
+</br>
 
 ## Kakao.Link 레퍼런스(FeedType)
-
----
 
 |Arguments|Arguments|Object|Default|설명|
 |:-:|:-:|:-:|:-:|-|
@@ -229,7 +241,7 @@ comments: true
 |objectType|-| String (required)|feed|feed타입이니까 feed라고 적어주면 됩니다.|
 |headerTitle|-| String (required)|-|전체 리스트에 헤더 타이틀|
 |headerLink|-| Object (required)|-|헤더에 대한 링크|
-|headerLink|webUrl|String|-|(constraint: webUrl, mobileWebUrl, androidExecParams, iosExecParams 중 하나는 필수)<br>카카오톡 PC버전에서 이용, [앱 설정]에 등록된 도메인만 허용|
+|headerLink|webUrl|String|-|(constraint: webUrl, mobileWebUrl, androidExecParams, iosExecParams 중 하나는 필수)</br>카카오톡 PC버전에서 이용, [앱 설정]에 등록된 도메인만 허용|
 |headerLink|mobileWebUrl |String|-|카카오톡 Mobile버전에서 이용, [앱 설정]에 등록된 도메인만 허용|
 |headerLink|androidExecParams|String|-|카카오톡 Android버전에서 이용, 해당 값이 없을 경우 mobileWebUrl로 적용|
 |headerLink|iosExecParams |String|-|카카오톡 IOS버전에서 이용, 해당 값이 없을 경우 mobileWebUrl로 적용|
@@ -237,7 +249,7 @@ comments: true
 |content|title|String (required)|-|콘텐츠 타이틀|
 |content|imageUrl|String (required)|-|이미지 경로, [앱 설정]에 등록된 도메인만 허용|
 ||
-|link|webUrl|String|-|(constraint: webUrl, mobileWebUrl, androidExecParams, iosExecParams 중 하나는 필수)<br>카카오톡 PC버전에서 이용, [앱 설정]에 등록된 도메인만 허용|
+|link|webUrl|String|-|(constraint: webUrl, mobileWebUrl, androidExecParams, iosExecParams 중 하나는 필수)</br>카카오톡 PC버전에서 이용, [앱 설정]에 등록된 도메인만 허용|
 |link|mobileWebUrl |String|-|카카오톡 Mobile버전에서 이용, [앱 설정]에 등록된 도메인만 허용|
 |link|androidExecParams|String|-|카카오톡 Android버전에서 이용, 해당 값이 없을 경우 mobileWebUrl로 적용|
 |link|iosExecParams |String|-|카카오톡 IOS버전에서 이용, 해당 값이 없을 경우 mobileWebUrl로 적용|
@@ -248,7 +260,7 @@ comments: true
 |buttons||Array[Object]|-|버튼, 링크 설정 가능, buttonTitle과 buttons 함께 있을 경우 buttons가 적용됨|
 |buttons|title|String (required)|-|버튼 타이틀|
 |buttons|link|Object (required)|-|버튼의 링크들|
-|link|webUrl|String|-|constraint: webUrl, mobileWebUrl, androidExecParams, iosExecParams 중 하나는 필수)<br>카카오톡 PC버전에서 이용, [앱 설정]에 등록된 도메인만 허용
+|link|webUrl|String|-|constraint: webUrl, mobileWebUrl, androidExecParams, iosExecParams 중 하나는 필수)</br>카카오톡 PC버전에서 이용, [앱 설정]에 등록된 도메인만 허용
 |link|mobileWebUrl|String|-|카카오톡 Mobile버전에서 이용, [앱 설정]에 등록된 도메인만 허용|
 |link|androidExecParams|String|-|카카오톡 Android버전에서 이용, 해당 값이 없을 경우 mobileWebUrl로 적용|
 |link|iosExecParams|String|-|카카오톡 IOS버전에서 이용, 해당 값이 없을 경우 mobileWebUrl로 적용|
@@ -260,13 +272,14 @@ comments: true
 |messageObj|warning_msg|Object|-|링크 메시지를 검증한 결과|
 |messageObj|argument_msg|Object|-|argument를 검증한 결과|
 
----
+</br>
+</br>
 
 타입만 다르고 콘텐츠의 갯수가 다르다는 거지 특별한건 없었다.(결과적으로 헤더 타이틀, 헤더 링크, 콘텐트갯수 이렇게가 다르다.)
 
----
-
-# 쉬는시간
+</br>
+</br>
 
 # 참고 사이트
- - [카카오톡 개발자 사이트](https://developers.kakao.com/docs/js-reference#kakao_link_createdefaultbutton)
+
+- [카카오톡 개발자 사이트](https://developers.kakao.com/docs/js-reference#kakao_link_createdefaultbutton)
