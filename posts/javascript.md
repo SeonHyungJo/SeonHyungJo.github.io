@@ -1,5 +1,5 @@
 ---
-layout: post-list
+layout: post/post-list
 title: JavaScript List
 excerpt: "A List of JavaScript"
 comments: false
