@@ -25,8 +25,8 @@ comments: true
 - 좁은 의미로 지시자는 뷰를 가지지 않지만 DOM의 표현과 동작을 풍성하게 만드는 요소로 활용됩니다.
 - 지시자는 **구조지시자** 와  **속성지시자** 가 있습니다.
 
-</br>
-</br>
+<br>
+<br>
 
 ## 구조 지시자
 
@@ -36,8 +36,8 @@ DOM 요소를 추가하거나 삭제하는 등 DOM 트리를 동적으로 조작
 - 예시 : ngForOf, ngIf, ngSwitch...
 - [지시자 보러가기](https://angular.io/api?type=directive)
 
-</br>
-</br>
+<br>
+<br>
 
 ## 속성 지시자
 

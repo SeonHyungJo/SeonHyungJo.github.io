@@ -13,16 +13,16 @@ comments: true
 
 ---
 
-**Spring_Project_Setting_4**
-===
+# **Spring_Project_Setting_4**
 
 이번에는 실무에서 많이 사용하고 있는 마이바티스 설정이다. 기본적으로 전자정부프레임워크에서는 지원을 하고 있으니 나도 해야되지 않겠나?
 
----
+<br>
+<br>
 
 ## 1. pom.xml(마이바티스 라이브러리 추가)
 
-```
+```xml
   <!-- Mybatis -->
   <dependency>
     <groupId>org.mybatis</groupId>
@@ -50,9 +50,9 @@ comments: true
   <!-- Mybatis -->
 ```
 
-  - 저는 MySQL사용하겠습니다.
+- 저는 MySQL사용하겠습니다.
 
-```
+```xml
   <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
@@ -60,27 +60,28 @@ comments: true
   </dependency>
 ```
 
----
+<br>
+<br>
 
 ## 2. MyBatis와 DB(데이터베이스) 연결 설정
 
-  - src/java/resource 폴더 밑에 config > spring 폴더를 만들다.
-  - spring 폴더 안에 context-datasource.xml 파일을 만든다.
+- src/java/resource 폴더 밑에 config > spring 폴더를 만들다.
+- spring 폴더 안에 context-datasource.xml 파일을 만든다.
 
 ### web.xml 설정으로 파일 읽기
 
-```
+```xml
   <context-param>
       <param-name>contextConfigLocation</param-name>
       <param-value>classpath*:config/spring/context-*.xml</param-value>
   </context-param>
 ```
 
----
+<br>
 
 ### MyBatis 연결 설정
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -96,13 +97,14 @@ comments: true
   </beans>
 ```
 
-  - 여기서 주소는 로컬일 경우 127.0.0.1 또는 localhost 입니다.
+- 여기서 주소는 로컬일 경우 127.0.0.1 또는 localhost 입니다.
 
----
+<br>
+<br>
 
 ### context-mapper.xml 생성
 
-```
+```xml
   <?xml version="1.0" encoding="UTF-8"?>
   <beans xmlns="http://www.springframework.org/schema/beans"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -121,13 +123,15 @@ comments: true
   </beans>
 ```
 
-  - property의 name과 ref가 dataSource로 정의되어있다. 이 두가지는 같은것을 의미하지 않는다. name은 위에서 등록한 sqlSession 빈(bean)에서 사용할 이름이 dataSource이고, ref의 dataSource는 우리가 context-datasource.xml에서 정의한 빈(bean)을 참조하는 것을 의미한다.
-  - mapperLocations는 앞으로 우리가 작성할 SQL문이 위치할 장소이다. 여기서 classpath:/mapper/\*\*/\*\_SQL.xml 이라는 정의를 살펴보자.
-  - sqlSessionTemplate은 마이바티스 스프링 연동모듈의 핵심이다. SQLSessionTemplate은 SqlSession을 구현하고, 코드에서 SqlSessoin을 대체하는 역할을 한다.
+- property의 name과 ref가 dataSource로 정의되어있다. 이 두가지는 같은것을 의미하지 않는다. name은 위에서 등록한 sqlSession 빈(bean)에서 사용할 이름이 dataSource이고, ref의 dataSource는 우리가 context-datasource.xml에서 정의한 빈(bean)을 참조하는 것을 의미한다.
+- mapperLocations는 앞으로 우리가 작성할 SQL문이 위치할 장소이다. 여기서 classpath:/mapper/\*\*/\*\_SQL.xml 이라는 정의를 살펴보자.
+- sqlSessionTemplate은 마이바티스 스프링 연동모듈의 핵심이다. SQLSessionTemplate은 SqlSession을 구현하고, 코드에서 SqlSessoin을 대체하는 역할을 한다.
+
+<br>
 
 ## 3. DAO(Data Access Object) 작성
 
-```
+```java
   public class AbstractDAO {
       protected Log log = LogFactory.getLog(AbstractDAO.class);
 
@@ -179,8 +183,11 @@ comments: true
   }
 ```
 
-  - SqlSessionTemplate을 선언하고 여기에 Autowired 어노테이션(Annotation)을 통해서 xml에 선언했던 의존관계를 자동으로 주입하도록 하였다.
+- SqlSessionTemplate을 선언하고 여기에 Autowired 어노테이션(Annotation)을 통해서 xml에 선언했던 의존관계를 자동으로 주입하도록 하였다.
 
+<br>
+<br>
 
-# 참고
- - [흔한 개발자의  개발 노트](http://addio3305.tistory.com/43?category=772645)
+## 참고
+
+- [흔한 개발자의  개발 노트](http://addio3305.tistory.com/43?category=772645)

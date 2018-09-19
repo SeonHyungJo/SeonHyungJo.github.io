@@ -14,21 +14,30 @@ tag:
 comments: true
 ---
 
-**Spring_Google_SSO**
-===
+# **Spring_Google_SSO**
+
 이것도 나에게 맞는 자료를 찾느라 너무나도 힘들었다. 그래도 겨우겨우 찾아서 나한테 맞추는 것에 성공을 하였고, 이후에는 페이스북, 네이버, 카카오톡까지 해보려고 한다.
 
-# 먼저 해야 할일
-  1. [구글 API](https://console.developers.google.com/)사이트에 들어가서 프로젝트를 생성합니다.
-  2. 사용자 인증정보에 들어가서 OAuth 동의 화면에 가서 제품 이름을 만들어서 저장을 합니다.
-  3. 사용자 인증 정보를 다시 가게되면 아이디와 보안비밀이 생성됩니다.
-  4. 하단 승인된 자바스크립트 원본에 자신의 사이트 주소 (ex. http://localhost)를 적어줍니다.
-  5. 승인된 리디렉션 URI에는 승인된 후 이동할 url를 적어줍니다.
+<br>
+<br>
 
-# pom.xml 추가하기
+## 먼저 해야 할일
+
+1. [구글 API](https://console.developers.google.com/)사이트에 들어가서 프로젝트를 생성합니다.
+2. 사용자 인증정보에 들어가서 OAuth 동의 화면에 가서 제품 이름을 만들어서 저장을 합니다.
+3. 사용자 인증 정보를 다시 가게되면 아이디와 보안비밀이 생성됩니다.
+4. 하단 승인된 자바스크립트 원본에 자신의 사이트 주소 (ex. http://localhost) 를 적어줍니다.
+5. 승인된 리디렉션 URI에는 승인된 후 이동할 url를 적어줍니다.
+
+<br>
+<br>
+
+## pom.xml 추가하기
+
 소셜 로그인 라이브러리 추가(구글편)
+<br>
 
-```
+```xml
   <!-- 구글 소셜 로그인 구현 -->
   <dependency>
     <groupId>org.springframework.social</groupId>
@@ -38,10 +47,15 @@ comments: true
   <!-- 구글 소셜 로그인 구현 -->
 ```
 
-# dispatcher-servlet 수정
-여기서 아이디와 보안비밀번호를 적어줍니다.
+<br>
+<br>
 
-```
+## dispatcher-servlet 수정
+
+여기서 아이디와 보안비밀번호를 적어줍니다.
+<br>
+
+```xml
   <!-- google Class Bean설정 추가 -->
   <!-- 클라이언트ID와 보안비밀 세팅 -->
   <bean id="googleConnectionFactory"
@@ -58,15 +72,19 @@ comments: true
   <!-- google Class Bean설정 추가 -->
 ```
 
-  - 하단 `redirectUri`에는 자신이 구글 프로젝트에 적었던 **승인된 후 주소와 똑같이** 적어줍니다.
-  - 안그러면 에러 뜹니다.
+<br>
 
+- 하단 `redirectUri`에는 자신이 구글 프로젝트에 적었던 **승인된 후 주소와 똑같이** 적어줍니다.
+- 안그러면 에러 뜹니다.
 
+<br>
+<br>
 
-# controller 구현
-  - 로그인 페이지를 불러오는 컨트롤러를
+## controller 구현
 
-```
+- 로그인 페이지를 불러오는 컨트롤러를
+
+```java
   @Autowired
   private GoogleConnectionFactory googleConnectionFactory;
 
@@ -90,9 +108,13 @@ comments: true
   }
 ```
 
-  - 로그인이 성공하면 불러오는 컨트롤러
+<br>
 
-```
+- 로그인이 성공하면 불러오는 컨트롤러
+
+<br>
+
+```java
   // 구글 Callback호출 메소드
   @RequestMapping(value = "oauth2callback.do", method = { RequestMethod.GET, RequestMethod.POST })
   public String googleCallback(Model model, @RequestParam String code) throws IOException {
@@ -104,11 +126,15 @@ comments: true
   }
 ```
 
+<br>
+<br>
 
-# 로그인 버튼 구현
+## 로그인 버튼 구현
+
 간단하게 로그인 버튼을 구현합니다.
+<br>
 
-```
+```jsp
   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
@@ -119,8 +145,13 @@ comments: true
   </div>
 ```
 
-# 끝
+<br>
 
+## 끝
+
+<br>
+<br>
 
 ## 참고 자료
+
 [Spring MVC기반 소셜 로그인 구현(2)](http://blog.naver.com/PostView.nhn?blogId=sam_sist&logNo=220969414214&parentCategoryNo=&categoryNo=30&viewDate=&isShowPopularPosts=false&from=postView)

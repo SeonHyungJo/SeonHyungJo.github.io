@@ -13,20 +13,22 @@ comments: true
 
 ---
 
-**Spring_Project_Setting_5**
-===
+# **Spring_Project_Setting_5**
 
 이제 마이바티스까지 연결을 했으니 사용을 해야 하지 않나? 이제는 데이터를 가지고 가져와서 뿌려줘 보겠다. 다시 한 번말씀드리지만 저는 MySQL사용했습니다.
 
----
+<br>
 
 저는 좀 빠르게 많은 데이터를 가지고 진행해 보기 위해 데이터를 랜덤 값으로 만들어주는 사이트를 이용했습니다. [랜덤 데이터 생성](https://www.generatedata.com/)
+
+<br>
+<br>
 
 ## 테이블 생성
 
 위에서 말한 사이트에서 입력만 잘해주면 테이블도 만들어주는 쿼리를 만듭니다. 대신 난장판이라 수정은 해주셔야합니다.
 
-```
+```sql
   CREATE TABLE `tb_board` (
   `IDX` mediumint unsigned NOT NULL auto_increment,
   `PARENT_IDX` mediumint default NULL,
@@ -39,13 +41,14 @@ comments: true
   ) AUTO_INCREMENT=1;
 ```
 
----
+<br>
+<br>
 
 ## 랜덤 데이터 생성
 
 저는 간단하게 100개만 생성했습니다.
 
-```
+```sql
   INSERT INTO `tb_board` (`IDX`,`PARENT_IDX`,`TITLE`,`CONTENTS`,`HIT_CNT`,`DEL_GB`,`CREA_DTM`) VALUES (1,7,"Tanek","Marcia",8,"N","12/11/2018"),(2,7,"Preston","Whilemina",1,"N","01/31/2018"),(3,2,"Fitzgerald","Imani",7,"N","05/28/2018"),(4,9,"Abel","Ocean",7,"N","03/27/2017"),(5,8,"Ryder","Evangeline",2,"N","03/22/2018"),(6,7,"Solomon","Lani",9,"N","01/08/2019"),(7,1,"Oscar","Tanisha",2,"N","02/07/2017"),(8,1,"Quamar","Xantha",7,"N","12/12/2018"),(9,2,"Kane","Janna",8,"N","03/29/2017"),(10,7,"Mannix","Melodie",1,"N","07/30/2017");
   INSERT INTO `tb_board` (`IDX`,`PARENT_IDX`,`TITLE`,`CONTENTS`,`HIT_CNT`,`DEL_GB`,`CREA_DTM`) VALUES (11,9,"Uriel","Hannah",9,"N","02/17/2017"),(12,8,"Dorian","Kiayada",7,"N","12/03/2018"),(13,9,"Abdul","Karyn",5,"N","08/26/2018"),(14,1,"Rafael","Rhoda",3,"N","04/30/2017"),(15,5,"Vance","Angelica",2,"N","07/21/2017"),(16,9,"Lucian","Tallulah",5,"N","05/18/2017"),(17,4,"Armando","Chiquita",3,"N","11/05/2017"),(18,8,"Cyrus","Brynne",8,"N","06/23/2018"),(19,4,"Colt","Chiquita",4,"N","01/08/2018"),(20,9,"Melvin","Leslie",4,"N","02/01/2018");
   INSERT INTO `tb_board` (`IDX`,`PARENT_IDX`,`TITLE`,`CONTENTS`,`HIT_CNT`,`DEL_GB`,`CREA_DTM`) VALUES (21,8,"Lyle","Gay",3,"N","05/29/2017"),(22,3,"Zane","Gemma",3,"N","02/09/2017"),(23,8,"Griffin","Hadley",1,"N","01/27/2018"),(24,3,"Ulysses","Medge",9,"N","02/06/2017"),(25,4,"Fulton","Guinevere",3,"N","07/26/2017"),(26,4,"Edward","Pandora",5,"N","08/18/2018"),(27,8,"Phillip","Jessamine",7,"N","09/24/2017"),(28,3,"Benedict","Doris",10,"N","09/24/2018"),(29,3,"Steven","Aileen",7,"N","08/22/2018"),(30,5,"Carter","Tana",7,"N","08/31/2018");
@@ -58,12 +61,15 @@ comments: true
   INSERT INTO `tb_board` (`IDX`,`PARENT_IDX`,`TITLE`,`CONTENTS`,`HIT_CNT`,`DEL_GB`,`CREA_DTM`) VALUES (91,2,"Avram","Bryar",4,"N","05/13/2017"),(92,7,"Graham","Bertha",5,"N","07/20/2018"),(93,3,"Ralph","Melyssa",8,"N","06/03/2017"),(94,3,"Aladdin","Ainsley",2,"N","12/09/2017"),(95,5,"Stewart","Camilla",6,"N","04/03/2018"),(96,2,"Yasir","Freya",4,"N","03/26/2017"),(97,4,"Justin","Fallon",5,"N","02/10/2018"),(98,6,"Allistair","Lisandra",4,"N","11/03/2018"),(99,7,"Merritt","Vielka",9,"N","02/07/2017"),(100,2,"Tyler","Wynne",9,"N","08/15/2017");
 ```
 
+<br>
+<br>
+
 ## MVC패턴을 위한 파일들 생성
 
-  - mvc을 진행하기 위해 controller, service, serviceImpl, DAO파일을 생성합니다.
-  - 저는 컨트롤러에서 메인으로 연결해서 사용했습니다.
+- mvc을 진행하기 위해 controller, service, serviceImpl, DAO파일을 생성합니다.
+- 저는 컨트롤러에서 메인으로 연결해서 사용했습니다.
 
-```
+```java
   @Controller
   public class MainController {
 
@@ -86,11 +92,13 @@ comments: true
   }
 ```
 
----
+<br>
 
-  - 서비스는 인터페이스입니다.
+- 서비스는 인터페이스입니다.
 
-```
+<br>
+
+```java
   public interface MainService {
 
   	List<Map<String, Object>> selectBoardList(Map<String, Object> commandMap) throws Exception;
@@ -98,10 +106,13 @@ comments: true
   }
 ```
 
----
+<br>
 
-  - 서비스임플은 말그래도 서비스를 임플해서 사용합니다.
-```
+- 서비스임플은 말그래도 서비스를 임플해서 사용합니다.
+
+<br>
+
+```java
   @Service("mainService")
   public class MainServiceImpl implements MainService{
 
@@ -136,14 +147,15 @@ comments: true
   }
 ```
 
----
+<br>
+<br>
 
 ## SQL문 작성
 
-  - 이제 sql.xml까지 연결을 했으니 SQL문을 작성해봅시다.
-  - `resource > mapper > Main_SQL.xml`을 만들었습니다.
+- 이제 sql.xml까지 연결을 했으니 SQL문을 작성해봅시다.
+- `resource > mapper > Main_SQL.xml`을 만들었습니다.
 
-```
+```xml
   <?xml version="1.0" encoding="UTF-8"?>
   <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
@@ -170,14 +182,15 @@ comments: true
   </mapper>
 ```
 
----
+<br>
+<br>
 
 ## jsp화면 초기화
 
-  - 마지막으로 가져온 데이터를 뿌려줄 jsp파일 입니다.
-  - jstl을 사용하여 뿌렸습니다.
+- 마지막으로 가져온 데이터를 뿌려줄 jsp파일 입니다.
+- jstl을 사용하여 뿌렸습니다.
 
-```
+```jsp
   <%@ page language="java" contentType="text/html; charset=UTF-8"
   	pageEncoding="UTF-8"%>
   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -231,9 +244,10 @@ comments: true
   </html>
 ```
 
----
+<br>
 
-# 끝
+## 끝
 
-# 참고
- - [흔한 개발자의  개발 노트](http://addio3305.tistory.com/43?category=772645)
+## 참고
+
+- [흔한 개발자의  개발 노트](http://addio3305.tistory.com/43?category=772645)

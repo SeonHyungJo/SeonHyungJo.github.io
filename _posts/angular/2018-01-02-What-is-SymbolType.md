@@ -11,21 +11,21 @@ comments: true
 # **Symbol Type**
 
 타입스크립트의 타입중에서 ES6에 새로 추가된 타입으로 누구든 궁금해하고 저도 궁금해서 정리해서 익힐려고 합니다.
-</br>
+<br>
 
 심볼 타입 시작...
 
 ## Symbol Type이란
 
 심볼(symbol)은 **고유하고 수정 불가능한 데이터 타입** 이며 주로 객체 속성(object property)들의 식별자로 사용된다. 
-</br>
+<br>
 심볼 객체(symbol object) 는 심볼 기본형 변수(primitive data type) 의 암묵적(implicit) **객체 래퍼(wrapper)** 이다.
-</br>
+<br>
 
 > 래퍼객체에 대해서는 추후 추가 예정
 
-</br>
-</br>
+<br>
+<br>
 
 ### 1. 문법
 
@@ -35,8 +35,8 @@ comments: true
 
 ```
 
-</br>
-</br>
+<br>
+<br>
 
 ### 2. 선언
 
@@ -48,7 +48,7 @@ comments: true
   var a = new Symbol(); // TypeError
 
 ```
-</br>
+<br>
 
 - 그러나 기존의 이미 존재하고 있는 기본형 래퍼객체는 **레거시요인으로** 인해 아직 생성가능하다.
 
@@ -61,8 +61,8 @@ comments: true
 
 ```
 
-</br>
-</br>
+<br>
+<br>
 
 ### Symbol끼리 비교를 하면
 
