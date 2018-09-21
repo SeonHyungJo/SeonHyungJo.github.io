@@ -65,10 +65,11 @@ youtube-channel:   UCCs6KHf_Zo_iI2jfg_eqeDg?view_as=subscriber
 # Gems
 gems:
   - jekyll-mentions
+  - jekyll-paginate
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-gist
-  - jemoji
+  - gemoji
 
 jekyll-mentions:
     base_url: https://github.com
