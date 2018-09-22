@@ -24,6 +24,7 @@ mathjax:            true
 sass:
   sass_dir:         _sass
   style:            compressed
+paginate: 10
 
 # Comments
 disqus_shortname:   Sseon_Blog
@@ -73,9 +74,6 @@ gems:
 
 jekyll-mentions:
   base_url: https://github.com
-
-paginate: 10
-paginate_path: "posts/:num"
 
 # Exclude list
 exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile]
