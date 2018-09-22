@@ -26,6 +26,7 @@ layout: compress
                     </a>
                 </div>
                 <div class="post-list">
+                    {{ paginator.posts }}
                     {% for post in paginator.posts %}
                     {% if post.project == null %}
                     <ul>
