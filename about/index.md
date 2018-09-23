@@ -32,7 +32,7 @@ comments: false
 
 현재 진행중인 개인 블로그 :point_right: [Github_SeonHyungJo](https://seonhyungjo.github.io/)
 
-</br>
+<br>
 
 ## 시작합니다
 
@@ -43,12 +43,12 @@ comments: false
 * 2018년 02월 수석 졸업
 * 2018년 04월 Inswave Systems 입사
 
-</br>
+<br>
 
 ## 테마
 
 정말 여러 곳을 보면서 이쁜 테마를 찾아 다녔습니다. 이런 테마를 만들어 주셔서 감사합니다.
 
-</br>
+<br>
 
 [Go to Moon](https://github.com/TaylanTatli/Moon){: .btn}

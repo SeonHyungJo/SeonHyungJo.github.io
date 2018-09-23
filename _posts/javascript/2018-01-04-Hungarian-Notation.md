@@ -14,12 +14,12 @@ comments: true
 # **헝가리안 표기법**
 
 헝가리안 표기법이란 변수 선언시 접두어를 붙여 **변수의 의미를 명확하게** 하기 위한 규칙이다.
-</br>
+<br>
 
 마이크로소프트의 프로그래머 **Charles Sim onyi** 가 코딩할 때 습관적으로 즐겨쓰던 접두사 변수 명명 방식이 빌게이트에 눈에 띄어 표준화가 되었다고 한다. 또한 헝가리안 표기법이라 불린이유는 Charles Sim onyi가 헝가리에서 이민 온 사람이었기 때문이다.
 
-</br>
-</br>
+<br>
+<br>
 
 ## 헝가리안 표기법
 
@@ -45,8 +45,8 @@ comments: true
 |Global|g_|g_szDirectory|
 |Windows message|Msg|msgCut|
 
-</br>
-</br>
+<br>
+<br>
 
 ## Windows Resources
 

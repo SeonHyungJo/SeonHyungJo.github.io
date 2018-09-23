@@ -24,11 +24,11 @@ ES6는 **템플릿 리터럴(template Literals)이라고 불리는 새로운 문
 
 ```
 
-</br>
+<br>
 
 - 일반적인 문자열에서 줄바꿈은 허용되지 않으며 공백(white-space)를 표현하기 위해서는 백슬래시(\)로 시작하는 이스케이프 시퀀스(Escape Sequence)를 사용하여야 한다. ES6 템플릿 리터럴은 일반적인 문자열과 달리 여러 줄에 걸쳐 문자열을 작성할 수 있으며 템플릿 리터럴 내의 모든 white-space는 있는 그대로 적용된다.
 
-</br>
+<br>
 
 ```
 
@@ -42,11 +42,11 @@ ES6는 **템플릿 리터럴(template Literals)이라고 불리는 새로운 문
   console.log(template);
 ```
 
-</br>
+<br>
 
 - `${expression}`을 템플릿 대입문(template substitution)이라 한다. 템플릿 대입문에는 문자열뿐만 아니라 JavaScript 표현식을 사용할 수 있다.
 
-</br>
+<br>
 
 ```
 
