@@ -1,7 +1,7 @@
 # Site
-title:              sseon-blog
+title:              Dev_Sseon
 bio:                '자바스크립트 개발자가 되려고 하는 비전공자'
-description:        "본격 기술 블로그(aka 내 공부 블로그)"
+description:        "Spring으로 시작해서 Javascript에 정착하기까지 정리를 해놓은 나만의 블로그."
 reading_time:       true
 words_per_minute:   200
 logo:               'https://avatars2.githubusercontent.com/u/24274424?s=460&v=4'
