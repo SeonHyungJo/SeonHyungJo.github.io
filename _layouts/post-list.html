@@ -26,7 +26,7 @@ layout: compress
                     </a>
                 </div>
                 <div class="post-list">
-                    {% for post in paginator.posts %}
+                    {% for post in site.posts %}
                     {% if post.project == null %}
                     <ul>
                         <li class="wow fadeInLeft" data-wow-duration="1.5s">
@@ -39,7 +39,7 @@ layout: compress
                     {% endfor %}
 
                     <!-- Pagination links -->
-                    <div class="pagination">
+                    <!-- <div class="pagination">
                         {% if paginator.previous_page %}
                         <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
                         {% else %}
@@ -51,7 +51,7 @@ layout: compress
                         {% else %}
                         <span class="next ">Next</span>
                         {% endif %}
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
