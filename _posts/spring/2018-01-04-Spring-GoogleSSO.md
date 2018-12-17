@@ -134,7 +134,7 @@ comments: true
 간단하게 로그인 버튼을 구현합니다.
 <br>
 
-```jsp
+```
   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
