@@ -1,28 +1,64 @@
 ---
-path: "/aboutme"
+path: "/post/aboutme"
 author: "sseon"
-date: "2017-07-18"
-title: "Sample Postdddd"
-tags: ["latin", "sample"]
+date: "2018-12-31"
+title: "About Me"
+tags: ["AboutMe", "Resume"]
 category: "aboutme"
 ---
 
-I speak Latin because I am a fancy man.
+<center>
+    <a href="https://seonhyungjo.github.io/"><b>Sseon</b></a>너는 정말로 크게 될거야.
+</center>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id orci viverra, lacinia mauris vitae, lacinia tortor. Mauris pretium pellentesque consequat. Pellentesque venenatis, mi sit amet fringilla vehicula, lacus ante suscipit urna, vitae ornare tellus ex at nunc. Aenean fringilla eros quis nisi aliquet tempus. Fusce euismod orci lectus, luctus ultricies lacus pulvinar et. Etiam ut nibh eu libero lacinia varius ut ac dui. Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec faucibus, augue at varius ultricies, nisi magna semper odio, sit amet fringilla massa mauris a ipsum. Nulla urna felis, pellentesque sed tincidunt et, luctus et ligula. Ut quis sollicitudin tellus. Sed at vehicula enim, a rutrum nunc. In hac habitasse platea dictumst. Pellentesque lacus ligula, vulputate ac tempor a, auctor at odio.
+## Features
 
-Fusce ac est porttitor, fringilla turpis a, euismod erat. Aenean egestas nulla nec nisi condimentum, eget feugiat massa varius. Quisque sollicitudin augue sed nulla dapibus aliquam. In quis lectus tincidunt, dapibus est sit amet, laoreet quam. Vivamus eget enim tincidunt turpis gravida suscipit. Duis ac neque nec metus laoreet vehicula dignissim ut lorem. In eget dolor nulla. Donec augue elit, lobortis at elit sit amet, euismod tristique ex. Vivamus eleifend tempus enim eget mollis.
+* 경기대학교 경영정보학과 2018년 02월 **수석 졸업**
+* 2016년 10월 스타트업 엘라팡 입사 ~ 2018년 03월 퇴사
+* 2018년 04월 Inswave Systems 입사 ~ 진행중
+* 2016년 판교에 위치한 창업지원센터에서 업무진행.
+* 2017년 06월 성남 창업지원센터에서 웹 프로젝트 진행
+    * OnnBook(Web)_Spring, Javascript
+    * Im Home(Web)_React, Express, PostgreSQL
+    * Silk-Block(Web)_고도몰 솔루션, Jquery
+    * 공간사업(Desktop App)
+* 누구보다 프론트엔드에 대해서 알고 싶어하는 개발자
+* JavaScript, Java 언어에 대해 관심이 있음
+* 2017년 학생일때 Angular에 관심을 가지고 공부를 진행함
+* 2018년 앵귤러에 대한 관심은 React에 관심으로 이어짐
+* React를 가지고 Im Home 프로젝트 Front-end 진행
+* 위에 보이듯이 지금은 React에 관심을 많이 가지고 있다. 기본적으로 Javascript면 다 관심이 있음
+* 현) 구로디지털단지에서 직장을 다니는중
+* 현) SWT, JavaScript, Vue, React 사용중
 
-Phasellus sem nunc, iaculis ut dui in, ultricies egestas enim. Nulla venenatis nisi at nisl commodo, sit amet dictum lacus egestas. Nulla ullamcorper vel arcu eget tempus. Proin vitae metus eget ligula lobortis posuere. Sed non viverra erat, quis dapibus velit. Praesent rhoncus ante vel fringilla rhoncus. Morbi id odio pharetra, condimentum velit sed, laoreet diam. Vivamus placerat tempus commodo. Phasellus vel nisl fringilla augue semper dictum et et ante. Nulla luctus, nulla ut lobortis rhoncus, arcu lectus lacinia nibh, faucibus ultrices elit arcu nec odio. Integer volutpat congue congue. Nam eleifend urna in diam cursus pharetra. Sed fermentum quis sem cursus tempus. Fusce at finibus tortor, eu pulvinar erat.
+현재 진행중인 개인 블로그 :point_right: [Github_SeonHyungJo](https://seonhyungjo.github.io/)
 
-Praesent sed eleifend augue. Morbi eu diam egestas, mattis urna eu, pulvinar arcu. Quisque fermentum odio in magna congue aliquam. Quisque rhoncus nunc id tempus elementum. Cras sed convallis eros, ac euismod magna. Ut tristique nulla neque, quis consequat libero volutpat id. Donec libero dolor, ornare eget ornare sit amet, sollicitudin nec ante. Praesent et finibus dui. Nam vehicula neque facilisis urna ornare dapibus.
+<br>
 
-Fusce consequat nisi id nibh lobortis dictum. In cursus auctor diam, ac venenatis orci consequat semper. Quisque semper aliquet molestie. Ut bibendum convallis nunc, in dictum dolor consequat nec. Sed sit amet dui in purus placerat suscipit eu nec ipsum. Phasellus rhoncus nulla ut tortor sodales, vitae pellentesque odio venenatis. Sed facilisis nec odio aliquet sollicitudin. Donec ante mi, eleifend vitae ante id, fermentum porta ante. In fermentum massa nunc, nec malesuada lectus accumsan vitae. Integer lobortis magna at tortor mattis, a finibus erat facilisis.
+## 시작합니다
 
+제가 평소에 다니면서 궁금하던거 정리하면서 글을 올립니다. Front-End에 대한 모든 것 올려봅시다.
 
-```js
-var test = "test"
-function() {
-    console.log(test);
-}
-```
+* 2017년 06월 한큐에 자바 취업반 7기
+* 2017년 11월 엘라팡 입사
+* 2018년 02월 한큐에 자바 WebSquare교육 1기
+* 2018년 02월 수석 졸업
+* 2018년 02월 OnnBook 사이트 구축
+* 2018년 04월 Inswave Systems 입사
+* 2018년 04월 Selenium 기반 테스트 케이스 작업 진행
+* 2018년 04월 SWT, JFace를 이용한 Studio 유지 보수(진행중)
+* 2018년 08월 고도몰을 이용한 Silk Block 사이트 구축
+* 2018년 08월 하나의 기사작성으로 여러 SNS업로드 가능한 SNSMultiPlatform 사이트 구축
+* 2018년 09월 Studio Eclipse Oxygen지원을 위한 Target Eclipse 구성, Ant Script작성 및 Jenkins 구축
+* 2018년 10월 Studio SP3 업데이트 참여 및 유지보수 진행(JCEF, Vue)(진행중)
+* 2018년 10월 카페 ImHome을 위한 재고관리 사이트 구축(진행중)
+
+<br>
+
+## 테마
+
+정말 여러 곳을 보면서 이쁜 테마를 찾아 다녔습니다. 이런 테마를 만들어 주셔서 감사합니다.
+
+<br>
+
+[Go to Moon](https://github.com/TaylanTatli/Moon){: .btn}

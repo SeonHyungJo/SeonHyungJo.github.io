@@ -7,8 +7,6 @@ tags: ["browser"]
 category: "post"
 ---
 
-# 웹 브라우저 작동 원리 :tada:
-
 ## Rendering Engine
 
 > Webkit Engine : Chrome, Safari

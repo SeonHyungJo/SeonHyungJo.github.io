@@ -33,7 +33,7 @@ export default function Index(props) {
                     <div className="tagContainer">
                       {post.frontmatter.tags.map(tag => {
                         return (
-                          <GatsbyLink to={`/tags/${tag}`}>
+                          <GatsbyLink key={`article_${tag}`} to={`/tags/${tag}`}>
                             <span className="tag">{tag}</span>
                           </GatsbyLink>
                         );

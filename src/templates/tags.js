@@ -10,7 +10,6 @@ import '../css/posts.scss'
 import '../css/post.scss'
 
 function Tags({ posts, post, tag }) {
-  console.log(posts);
   return (
     <div>
       <h1>Tags</h1>

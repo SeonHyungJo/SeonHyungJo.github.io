@@ -10,10 +10,10 @@ category: "post"
 제이쿼리는 다양한 플러그인을 제공하고 있습니다. 저 역시 많은 것을 사용해보고 싶으나 그 종류가 너무나도 많아서 몰랐던 것을 알게 되면 연습해보는 식으로 해보고 있습니다.
 <br/>
 
-이번 이미지 확대는 [한큐에 자바](http://cafe.naver.com/javahanq/4748)라는 카페에 올라온 내용 토대로 진행했습니다.
+이번 이미지 확대는 [한큐에 자바](http://cafe.naver.com/javahanq/4748) 라는 카페에 올라온 내용 토대로 진행했습니다.
 <br/>
 
-[여러가지 제이쿼리 플러그인](https://www.jqueryscript.net/zoom/)가 있습니다. 이중에서 자신이 원하는 맘에드는 플러그인을 선택해서 데모를 체험해보고 다운받을 것을 추천합니다.[제가 사용한 플러그인](https://www.jqueryscript.net/zoom/jQuery-Plugin-For-Image-Zoom-On-Hover-picZoomer.html)은 위의 주소입니다.
+[여러가지 제이쿼리 플러그인](https://www.jqueryscript.net/zoom/) 가 있습니다. 이중에서 자신이 원하는 맘에드는 플러그인을 선택해서 데모를 체험해보고 다운받을 것을 추천합니다.[제가 사용한 플러그인](https://www.jqueryscript.net/zoom/jQuery-Plugin-For-Image-Zoom-On-Hover-picZoomer.html) 은 위의 주소입니다.
 <br/>
 
 ## 기본 파일
@@ -39,7 +39,7 @@ category: "post"
 
 기본적으로 자신이 원하는 자리에 원하는 클래스명을 넣어주고, `document.ready`로 스크립트를 실행해줍니다.
 
-```javascript
+```js
 $(document).ready(function(){
   $('.picZoomer').picZoomer();
 });
@@ -91,7 +91,7 @@ $(document).ready(function(){
 
 소스파일 공개합니다. (트와이스 사진들입니다.)
 
-```js
+```html
 <div class="picZoomer">
   <img alt="" src="https://images7.alphacoders.com/848/thumb-1920-848920.png">
 </div>
