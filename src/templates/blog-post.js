@@ -18,7 +18,7 @@ export default function Template(props) {
   // Disqus config
   const post = props.data.markdownRemark;
   //const siteTitle = get(this.props, "data.site.siteMetadata.title");
-  const disqusShortname = "sseonblogtest";
+  const disqusShortname = "dev-s";
   const disqusConfig = {
     identifier: post.id,
     title: post.frontmatter.title,
