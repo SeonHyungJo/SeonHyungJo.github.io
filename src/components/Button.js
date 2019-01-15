@@ -11,17 +11,31 @@ import '../css/button.scss';
 const Button = ({ children = 'Button', type = 'nav', to = '' }) => {
   return (
     <>
-      <GatsbyLink to={to}>
-        <div
-          className={
-            type.toLowerCase() === 'nav'
-              ? classNames(`defaultClass, buttonContainer`)
-              : classNames(`defaultClass, ${type}`)
-          }
-        >
-          {children}
-        </div>
-      </GatsbyLink>
+      {to.startsWith('/') ?
+        <GatsbyLink to={to}>
+          <div
+            className={
+              type.toLowerCase() === 'nav'
+                ? classNames(`defaultClass, buttonContainer`)
+                : classNames(`defaultClass, ${type}`)
+            }
+          >
+            {children}
+          </div>
+        </GatsbyLink>
+        :
+        <a href={to} target="blank">
+          <div
+            className={
+              type.toLowerCase() === 'nav'
+                ? classNames(`defaultClass, buttonContainer`)
+                : classNames(`defaultClass, ${type}`)
+            }
+          >
+            {children}
+          </div>
+        </a>
+      }
     </>
   );
 };

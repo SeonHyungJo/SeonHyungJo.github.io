@@ -25,21 +25,21 @@ export default function Index(props) {
             </Link>
           </div>
           {/* My Name */}
-          <div className="name">My Name</div>
+          <div className="name">SeonHyung Jo</div>
           {/* Title */}
-          <div className="title">Write Something</div>
+          <div className="title">자바스크립트 개발자가 되고있는 개발자</div>
           {/* SNS Buttons */}
           <div className="sns">
-            <Button key={'Mail_button'} type={'snsBtn'} to={'mailto:id@gmail.com'}>
+            <Button key={'Mail_button'} type={'snsBtn'} to={'mailto:seonhyung.jo@gmail.com'}>
               <IoEmail size="1.5rem" />
             </Button>
             <Button key={'Github_button'} type={'snsBtn'} to={'http://github.com/SeonHyungJo'}>
               <FaGithub size="1.5rem" />
             </Button>
-            <Button key={'FaceBook_button'} type={'snsBtn'} to={'http://facebook.com/'}>
+            <Button key={'FaceBook_button'} type={'snsBtn'} to={'https://www.facebook.com/profile.php?id=100015515351267'}>
               <FaFacebook size="1.5rem" />
             </Button>
-            <Button key={'Youtube_button'} type={'snsBtn'} to={'https://youtube.com/'}>
+            <Button key={'Youtube_button'} type={'snsBtn'} to={'https://www.youtube.com/channel/UCCs6KHf_Zo_iI2jfg_eqeDg?view_as=subscriber'}>
               <FaYoutube size="1.5rem" />
             </Button>
           </div>

@@ -42,7 +42,7 @@ export default function AboutMe(props) {
 
 export const pageQuery = graphql`
   query AboutmeQuery {
-    markdownRemark(frontmatter: { path: { eq: "/aboutme" } }) {
+    markdownRemark(frontmatter: { category: { eq: "aboutme" } }) {
       id
       html
       frontmatter {

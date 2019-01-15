@@ -3,13 +3,14 @@ import GatsbyLink from 'gatsby-link';
 import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
+import { classNames } from '../util/commonUtil'
 
 import '../css/posts.scss';
-import '../css/post.scss';
+//import '../css/post.scss';
 
 export default function Index(props) {
   const { data } = props;
-  const { edges: posts } = data.allMarkdownRemark;
+  const { edges: posts} = data.allMarkdownRemark;
 
   return (
     <Layout {...props}>
@@ -39,7 +40,7 @@ export default function Index(props) {
                       })}
                     </div>
                   </div>
-                  <div className="blog-sub-container">
+                  <div className={classNames('blog-sub-container, right')}>
                     <p className="date">{post.frontmatter.date}</p>
                     <p className="author">{`By ${post.frontmatter.author}`}</p>
                   </div>

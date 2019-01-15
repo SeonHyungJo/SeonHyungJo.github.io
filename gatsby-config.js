@@ -12,9 +12,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        title: 'Blog',
-        name: 'Blog Starter',
-        short_name: 'Blog',
+        title: 'SSEON Dev Blog',
+        name: 'Front End Blog',
+        short_name: 'Front End',
         start_url: '/',
         background_color: '#fff',
         theme_color: '#663399',

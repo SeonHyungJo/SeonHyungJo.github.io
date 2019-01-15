@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 
 import Link from '../components/Link'
 import Layout from '../components/Layout'
+import { classNames } from '../util/commonUtil'
 
 import '../css/posts.scss'
 import '../css/post.scss'
@@ -43,8 +44,8 @@ export default function PostList(props) {
                       })}
                     </div>
                   </div>
-                  <div className='blog-sub-container'>
-                    <p className='date'>
+                  <div className={classNames('blog-sub-container, right')}>
+                    <p className={classNames('date')}>
                       {post.frontmatter.date}
                     </p>
                     <p className='author'>
@@ -70,6 +71,7 @@ export const blogListQuery = graphql`
   query blogListQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { category: { eq: "post" } } }
       limit: $limit
       skip: $skip
     ) {
