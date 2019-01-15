@@ -55,7 +55,7 @@ exports.createPages = ({ actions, graphql }) => {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       limit: 1000
-      filter: { frontmatter :{ category :{ eq: "post"}}}
+      filter: { frontmatter :{ category :{ in: ["post", "article"]}}}
     ) {
       edges {
         node {
