@@ -7,7 +7,7 @@ comments: false
 ---
 
 <center>
-    <a href="https://seonhyungjo.github.io/"><b>Sseon</b></a>너는 정말로 크게 될거야.
+    <a href="https://seonhyung.netlify.com/"><b>Sseon</b></a>너는 정말로 크게 될거야.
 </center>
 
 # Features
