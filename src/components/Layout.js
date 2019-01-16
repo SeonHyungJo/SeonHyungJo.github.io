@@ -68,7 +68,7 @@ export default class Layout extends React.Component {
 
         {/* ----------------------------------------------------- */}
         {location.pathname !== "/" && (
-          <Header location={location}>
+          <Header title={`Dev_S`}>
             {navList.map(navItem => {
               return (
                 <Button key={navItem.name} to={navItem.path}>{navItem.name.toUpperCase()}</Button>

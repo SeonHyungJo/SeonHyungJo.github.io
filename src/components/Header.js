@@ -7,7 +7,7 @@ import '../css/header.scss';
 /**
  * @description 상단 헤더 부분 구현
  */
-const Header = ({ title = 'Dev_S', children }) => {
+const Header = ({ title = 'Main Header', children }) => {
   return (
     <div className={classNames('HeaderContainer')}>
       {/* Header Title */}
