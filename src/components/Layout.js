@@ -56,6 +56,9 @@ export default class Layout extends React.Component {
             {
               name: 'viewport',
               content: 'width=device-width, initial-scale=1'
+            },{
+              name: 'google-site-verification',
+              content: 'cstQaxBjAfbhfEuoIHUlIpv1rEnbeh45N5RtnZal47E'
             }
           ]}
         >
