@@ -5,7 +5,7 @@ module.exports = {
   siteMetadata: {
     author: 'SeonHyungJo',
     title: `Renewal Blog`,
-    siteUrl: `https://www.example.com`,
+    siteUrl: `https://seonhyung.netlify.com`,
   },
   plugins: [
     'gatsby-plugin-catch-links',
