@@ -7,17 +7,13 @@ tags: ["spring", "sms"]
 category: "post"
 ---
 
-# **Spring_SMS**
-
 이게 뭔가 거창하게 스프링을 적용한 SMS서비스라고 하기에는 생각보다 API가 잘되어 있는 세상이기에 그냥 적절한 API를 가져와서 내 방식대로 살짝만 바꿔서 사용하는 정도?
-
-<br>
-<br>
+<br/>
 
 ## 제가 사용한 문자전송 서비스 사이트는
 
 제가 사용한 문자전송 서비스를 제공하고 잇는 사이트는 **coolsms** 라는 사이트 입니다. 자신이 원하는 만큼의 금액을 충전하여 사용할 수 있는 사이트로 SMS, MMS, MMS포토를 지원하고 있습니다. 각각의 단가는 다릅니다.
-<br>
+<br/>
 
 **5000원 충전 기준입니다.**
 
@@ -27,23 +23,22 @@ category: "post"
 |MMS|45.46원|50원|
 |MMS포토|181.84원|200원|
 암튼!! 제가 사용한 서비스는 coolsms입니다. (중요한건 가입하면 300원을 기본 제공함으로 15번의 문자를 그냥 테스트할 수 있습니다.)
-<br>
+<br/>
+
 총 3개로 문자서비스를 구현할 수 있습니다.
   
 - REST API
 - SDK
 - ClassicAPI
 
-<br>
-<br>
+<br/>
 
 ## SDK for Java
 
 저는 역시나 스프링에 적용을 해야함으로 Java를 사용해서 적용 해보겠습니다. 그전에 사이트에 들어가서 API키를 만들어 줍니다.
 [API키 만들기](https://www.coolsms.co.kr/index.php?mid=service_setup&act=dispSmsconfigCredentials)
 
-<br>
-<br>
+<br/>
 
 ### 1. jsp 만들기
 
@@ -68,26 +63,22 @@ category: "post"
   </script>
 ```
 
-<br>
+<br/>
 
 단순히 이렇게함으로써 앞부분이 끝났습니다.
-
-<br>
-<br>
+<br/>
 
 ### 2. Java파일 추가하기
 
 기본으로 제공하는 SDK를 다운받습니다.
-<br>
+<br/>
 
 - [SDK v2.1 다운받기](https://github.com/coolsms/java-sdk/archive/v2.1.zip)
 
-<br>
+<br/>
 
 다운을 받은 파일안에 경로 `java-sdk-2.1.zip\java-sdk-2.1\src`안에 있는 2개의 파일을 넣어줍니다. 또한 `lib`안에 있는 `.jar`파일도 넣어줍니다.
-
-<br>
-<br>
+<br/>
 
 #### (maven 추가)POM.xml
 
@@ -101,8 +92,7 @@ json 사용을 위한 추가라고 하는데 없으면 작동이 안됨...
   </dependency>
 ```
 
-<br>
-<br>
+<br/>
 
 ### 3. 마지막 컨트롤러 만들어주기
 
@@ -146,8 +136,7 @@ json 사용을 위한 추가라고 하는데 없으면 작동이 안됨...
   }
 ```
 
-<br>
-<br>
+<br/>
 
 ## 끝
 

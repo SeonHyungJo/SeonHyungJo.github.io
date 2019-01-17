@@ -7,16 +7,11 @@ tags: ["spring", "setting"]
 category: "post"
 ---
 
-# **Spring_Project_Setting_5**
-
 이제 마이바티스까지 연결을 했으니 사용을 해야 하지 않나? 이제는 데이터를 가지고 가져와서 뿌려줘 보겠다. 다시 한 번말씀드리지만 저는 MySQL사용했습니다.
-
-<br>
+<br/>
 
 저는 좀 빠르게 많은 데이터를 가지고 진행해 보기 위해 데이터를 랜덤 값으로 만들어주는 사이트를 이용했습니다. [랜덤 데이터 생성](https://www.generatedata.com/)
-
-<br>
-<br>
+<br/>
 
 ## 테이블 생성
 
@@ -35,8 +30,7 @@ category: "post"
   ) AUTO_INCREMENT=1;
 ```
 
-<br>
-<br>
+<br/>
 
 ## 랜덤 데이터 생성
 
@@ -55,8 +49,7 @@ category: "post"
   INSERT INTO `tb_board` (`IDX`,`PARENT_IDX`,`TITLE`,`CONTENTS`,`HIT_CNT`,`DEL_GB`,`CREA_DTM`) VALUES (91,2,"Avram","Bryar",4,"N","05/13/2017"),(92,7,"Graham","Bertha",5,"N","07/20/2018"),(93,3,"Ralph","Melyssa",8,"N","06/03/2017"),(94,3,"Aladdin","Ainsley",2,"N","12/09/2017"),(95,5,"Stewart","Camilla",6,"N","04/03/2018"),(96,2,"Yasir","Freya",4,"N","03/26/2017"),(97,4,"Justin","Fallon",5,"N","02/10/2018"),(98,6,"Allistair","Lisandra",4,"N","11/03/2018"),(99,7,"Merritt","Vielka",9,"N","02/07/2017"),(100,2,"Tyler","Wynne",9,"N","08/15/2017");
 ```
 
-<br>
-<br>
+<br/>
 
 ## MVC패턴을 위한 파일들 생성
 
@@ -86,11 +79,7 @@ category: "post"
   }
 ```
 
-<br>
-
 - 서비스는 인터페이스입니다.
-
-<br>
 
 ```java
   public interface MainService {
@@ -100,11 +89,7 @@ category: "post"
   }
 ```
 
-<br>
-
 - 서비스임플은 말그래도 서비스를 임플해서 사용합니다.
-
-<br>
 
 ```java
   @Service("mainService")
@@ -124,10 +109,10 @@ category: "post"
   }
 ```
 
----
 
-  - \_SQL.xml과 연결할 mapper입니다.
-```
+- \_SQL.xml과 연결할 mapper입니다.
+  
+```java
   @Repository("mainDAO")
   public class MainDAO extends AbstractDAO{
 
@@ -141,8 +126,7 @@ category: "post"
   }
 ```
 
-<br>
-<br>
+<br/>
 
 ## SQL문 작성
 
@@ -176,8 +160,7 @@ category: "post"
   </mapper>
 ```
 
-<br>
-<br>
+<br/>
 
 ## jsp화면 초기화
 
@@ -238,10 +221,8 @@ category: "post"
   </html>
 ```
 
-<br>
+---
 
-## 끝
-
-## 참고
+#### Reference
 
 - [흔한 개발자의  개발 노트](http://addio3305.tistory.com/43?category=772645)

@@ -7,20 +7,15 @@ tags: ["spring", "maven", "gradle"]
 category: "post"
 ---
 
-# **Maven vs Gradle**
-
 어느 순간 Gradle을 써야한다고 생각을 했다. Spring Boot에서도 Gradle을 쓰고 있는 시점에서 어느 정도는 익숙해야한다고 생각한다. 그러나 왜 Gradle인가? 과연 2개가 무엇이 다르기에 그런 것일까?
-
-<br>
-<br>
+<br/>
 
 ## Maven
 
 - Apache의 이름 아래 2004년 출시되었다.
 - Ant를 사용하던 개발자들의 불편함을 해소 + 부가기능 추가
 
-<br>
-<br>
+<br/>
 
 ### Maven은 무엇인가? 
 
@@ -38,24 +33,18 @@ category: "post"
 - 테스트 케이스에 환경을 설정하고 테스트 준비를 위해 빌드를 사용자 정의하지 않아도 된다.
 - 새로운 기능을 쉽게 설치할 수 있고 업데이트할 수 있음
 
-<br>
-<br>
+<br/>
 
 ## [Gradle](https://gradle.org/)
 
 - Ant와 Maven의 장점을 모아모아 2012년 출시
 - Android OS의 빌드 도구로 채택 됨
 
-<br>
-
 1. 빌드 스크립트가 '프로그래밍 언어'의 모습을 하고 있다. 자바와 같이 JVM위에서 동작하는 groovy 라는 언어로 작성하게 됩니다.
-
 2. 빌드 스크립트가 일률적이지 않다. - DSL(도메인언어)라는 모습으로 server side의 그레이들 스크립트와 안드로이드를 위한 gradle을 잘 안다고 해도 서버 사이드의 그레이들 스크립트는 잘 다루지 못합니다.
-
 3. 다수의 빌드 지원 파일로 구성되어 있다.
 
-<br>
-<br>
+<br/>
 
 ### [Gradle](https://gradle.org/)이란 무엇인가?
 
@@ -67,16 +56,14 @@ category: "post"
 - 원격 저장소나, pom, ivy 파일 없이 연결되는 의존성 관리 지원
 - 빌드를 설명하는 풍부한 도메인 모델
 
-<br>
-<br>
+<br/>
 
 ## Maven VS Gradle
 
 - Gradle에는 비교문서가 존재합니다.
 - Gradle이 시기적으로 늦게 나온만큼 사용성, 성능 등 비교적 뛰어난 스펙을 가지고있다.
 
-<br>
-<br>
+<br/>
 
 ### Gradle이 Maven보다 좋은점
 
@@ -89,9 +76,10 @@ category: "post"
 - Configuration Injection 방식을 사용해서 공통 모듈을 상속해서 사용하는 단점을 커버했다.
 설정 주입 시 프로젝트의 조건을 체크할 수 있어서 프로젝트별로 주입되는 설정을 다르게 할 수 있다.
 
-<br>
-<br>
+<br/>
 
-## 출처
+---
 
- - http://bkim.tistory.com/13 [어쩌다, 블로그]
+#### Reference
+
+ - [어쩌다, 블로그](http://bkim.tistory.com/13)

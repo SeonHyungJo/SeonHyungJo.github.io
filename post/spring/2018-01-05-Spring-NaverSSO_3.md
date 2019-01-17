@@ -7,16 +7,12 @@ tags: ["spring", "login"]
 category: "post"
 ---
 
-# **Spring_Naver_SSO_세번째**
-
 네이버 로그인 세번째로는 로그아웃을 하는 버튼을 만들어 보려고 합니다.
-<br>
 
 > [네이버 로그인 구현하기](https://seonhyungjo.github.io/Spring-NaverSSO_1/)
 > [네이버 로그인 구현하기](https://seonhyungjo.github.io/Spring-NaverSSO_2/)
 
-<br>
-<br>
+<br/>
 
 ## 컨트롤러 수정
 
@@ -39,11 +35,7 @@ category: "post"
 
 ```
 
-<br>
-
 - `oauthToken`이라는 토큰 생성
-
-<br>
 
 ## NaverLoginBO 수정
 
@@ -121,14 +113,13 @@ category: "post"
 
 ```
 
-<br>
-<br>
+<br/>
 
 ## 페이지에서 뿌리기
 
 먼저 토큰을 토대로 프로필 정보를 가져오게 되면 JSON형식으로 오게 된다. 먼저 변환을 해준 후 사용해야하지만 저는 보여주는 것에 의의를 두고 진행했습니다.
 
-```jsp
+```html
   <div class="padd">
     <h6>네이버 로그인 성공 화면</h6>
     <hr />
@@ -163,17 +154,11 @@ category: "post"
   </script>
 ```
 
-<br>
-<br>
+<br/>
 
-## 끝
+---
 
-추가적으로 로그아웃을 하는 블로그는 찾아도 안나와서 제가 해보려고합니다.
-
-<br>
-<br>
-
-## 참고 자료
+#### Reference
 
 - [네이버아이디로 로그인 적용하기](https://github.com/Blackseed/NaverLoginTutorial/wiki/Spring-MVC-%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-%EB%84%A4%EC%9D%B4%EB%B2%84%EC%95%84%EC%9D%B4%EB%94%94%EB%A1%9C-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0)
 - [네이버 개발자 사이트](https://developers.naver.com/main/)

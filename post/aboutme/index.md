@@ -8,7 +8,7 @@ category: "aboutme"
 ---
 
 <center>
-    <a href="https://seonhyungjo.github.io/"><b>누가 뭐라해도 난 개발자</b></a>
+    <a href="https://seonhyung.netlify.com"> **누가 뭐라해도 난 개발자** </a>
 </center>
 
 ## Features
@@ -19,7 +19,9 @@ category: "aboutme"
 
 ## 시작합니다
 
-제가 평소에 다니면서 궁금하던거 정리하면서 글을 올립니다. Front-End에 대한 모든 것 올려봅시다.
+제가 평소에 다니면서 궁금하던거 정리하면서 글을 올립니다. 
+<br/>
+**Front-End** 에 대한 모든 것을 같이 배우고 올립니다.
 
 ## Gatsby Theme
 

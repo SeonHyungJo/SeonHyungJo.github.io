@@ -10,13 +10,10 @@ category: "post"
 # **Spring_Facebook_SSO**
 
 드디어 소셜 로그인 3번째인 페이스북 로그인입니다. 이 역시 단순 로그인이지 디비에 저장하고 관리하고 그런거 없습니다. 필요하면 만드시면 됩니다.
-
-<br>
+<br/>
 
 [참고 사이트](http://osozaki.tistory.com/13)를 보고하는데 처음에 이해가 안되서 2일이나 걸렸습니다. 또 메서드 위치와 파일의 위치를 변경하느라 생각을 좀 했습니다.
-
-<br>
-<br>
+<br/>
 
 ## 1. 먼저 해야 할일
 
@@ -24,8 +21,7 @@ category: "post"
 2. 이전에 만들었던 앱, 프로젝트와 같이 리다이렉트 주소를 입력합니다.
 3. 사용자 인증 정보를 다시 가게되면 아이디와 보안비밀이 생성됩니다.
 
-<br>
-<br>
+<br/>
 
 ## 2. pom.xml 추가하기
 
@@ -52,12 +48,9 @@ category: "post"
   </dependency>
 ```
 
-<br>
-
 - 참고 사이트와 똑같이 진행을 하다보니 메이븐추가가 3개가 되었습니다.
 
-<br>
-<br>
+<br/>
 
 ## 3. FacebookController 추가하기
 
@@ -123,8 +116,7 @@ category: "post"
   }
 ```
 
-<br>
-<br>
+<br/>
 
 ## 4. LoginController 수정하기(리다이렉트 추가)
 
@@ -143,8 +135,7 @@ category: "post"
   }
 ```
 
-<br>
-<br>
+<br/>
 
 ## 5. 프로필 정보 가져와서 뿌리기
 
@@ -169,14 +160,10 @@ category: "post"
   </script>
 ```
 
-<br>
-<br>
+<br/>
 
-## 끝
+---
 
-<br>
-<br>
-
-## 참고 자료
+#### Reference
 
 - [Spring MVC에서 페이스북 소셜로그인 구현](http://osozaki.tistory.com/13)

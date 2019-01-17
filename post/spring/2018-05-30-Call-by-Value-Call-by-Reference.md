@@ -11,7 +11,7 @@ category: "post"
 
 ## **all by Value (값에 의한 호출)**
 
-- Call by Value는 <b>가장 일반적인 함수 호출형태로 값을 복사하는 것</b> 이다.
+- Call by Value는 **가장 일반적인 함수 호출형태로 값을 복사하는 것** 이다.
 
 ```java
 
@@ -28,8 +28,7 @@ cout << "a1: " << a1 << " a2: " << a2 << endl;
 
 ```
 
-<br>
-<br>
+<br/>
 
 ## **Call by Reference (참조의 의한 호출)**
 
@@ -50,14 +49,11 @@ cout << "a1: " << a1 << " a2: " << a2 << endl;
 
 ```
 
-<br>
-<br>
+<br/>
 
 ## java는 call by reference가 아니다.
 
 - 결론부터 말하자면 java는 항상 call by value이다. 흔히 java의 오해를 살 수 있는 부분을 살펴보자.
-
-<br>
 
 ```java
 
@@ -82,11 +78,7 @@ class Person {
 
 ```
 
-<br>
-
 > 위의 내용을 call by value로
-
-<br>
 
 ```java
 
@@ -110,7 +102,5 @@ class Person {
 }
 
 ```
-
-<br>
 
 > 위에서 내용이 call by reference에 의한 변경이다 이게 되야 call by reference라는 것이다.

@@ -7,31 +7,25 @@ tags: ["spring", "validation"]
 category: "post"
 ---
 
-# **Spring_FormTag & Spring_Validation**
-
 스프링 폼태그와 벨리데이션을 한번에 처리해서 회원가입 유효성검사를 한 후 저장을 하는 부분까지 하려고 했으나 생각보다 폼태그가 많아서 정리를 하고 넘어가려고 합니다.
-
-<br>
+<br/>
 
 - 참고사이트 [anyframe](http://dev.anyframejava.org/anyframe/doc/web/3.0.1/webfw/springmvc/basic/tag.html#configuration)
 - 그래도 내방식으로 조금은 바꿔서 진행
 - 태그는 왜케 많은거야....
 
-<br>
-<br>
+<br/>
 
 ## 태그추가
 
 먼저 사용하려면 jsp파일 상단에 taglib를 추가해주어야한다.
-
-<br>
+<br/>
 
 ```jsp
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 ```
 
-<br>
-<br>
+<br/>
 
 ## form태그
 
@@ -43,11 +37,11 @@ category: "post"
   </form:form>
 ```
 
-<br>
+<br/>
 
 이 페이지를 가져오는 컨트롤러에 VO를 추가해봅시다.
 
-<br>
+<br/>
 
 ```java
   //UserVO를 선언해줍니다.
@@ -63,7 +57,7 @@ category: "post"
 
 여기까지는 누구나 적습니다. 그런데 여러 블로그를 보면 VO작성에 대한 설명이 없어요... 그래서 난 추가 통으로
 
-```javas
+```java
   public class UserVO {
 
     private String userId;
@@ -95,47 +89,46 @@ category: "post"
   }
 ```
 
-<br>
-<br>
+<br/>
 
 ## input 태그
 
 - `path`를 지정해줍니다.(이게 user라고 설정한 VO의 내부의 변수와 매핑이 됩니다.)
 - 그래서 위의 VO를 그대로 사용했다면 input창 안에 `sseon`이른 글자가 나옵니다.
 
-<br>
+<br/>
 
 ```jsp
   //심플하게 이런식입니다.
   userId : <form:input path="userId" />
 ```
 
-<br>
+<br/>
 
 ## checkbox 태그
 
 - 체크박스는 하나인 경우와 다수인 경우로 된다.
 - 먼저 하나인 경우
 
-<br>
+<br/>
 
 ```jsp
   //개인적으로 동의함 같은 경우가 하나라고 생각함
   <form:checkbox path="hobby" value="" label="동의함"/>
 ```
 
-<br>
+<br/>
 
 - `label`에 종류를 적어준다.
 - `value`에는 우리가 흔히 사용하듯이 한다.
 - `path`에는 우리가 사용하는 `name`과 같다
 
-<br>
+<br/>
 
 - 다수의 경우
 - 여러개는 한번에 뿌려줄 수 있다.
 
-```jsp
+```java
   //controller에 추가해주면 됨
   Map<String, String> interest =new HashMap<String, String>();
 
@@ -158,7 +151,7 @@ category: "post"
   }
 ```
 
-<br>
+<br/>
 
 - 다수의 경우에는 `Map`으로 받아서 바로 jsp파일로 보내버린다.
 
@@ -166,13 +159,12 @@ category: "post"
   <form:checkboxes path="hobby" items="${interest}" />
 ```
 
-<br>
+<br/>
 
 - 한 개씩하는 경우와 비교를 하자면 `checkboxes`이다
 - 또한 `items="${interest}"`이다. 안에 interest는 항상 바뀔 수 있다.
 
-<br>
-<br>
+<br/>
 
 ## radiobutton 태그
 
@@ -195,15 +187,14 @@ category: "post"
   }
 ```
 
-<br>
-<br>
+<br/>
 
 ## password 태그
 
 - 비밀번호를 위한 태그가 따로 존재합니다.
 - **input 태그가 아닙니다.**
 
-<br>
+<br/>
 
 ```jsp
   <form:password class="form-control" path="password" />
@@ -220,8 +211,7 @@ category: "post"
   }
 ```
 
-<br>
-<br>
+<br/>
 
 ## select 태그
 
@@ -231,34 +221,33 @@ category: "post"
 <form:select path="address" items="${address}" />
 ```
 
-<br>
+<br/>
 
-```jsp
-//컨트롤러 추가
-Map<String, String> address =new HashMap<String, String>();
-address.put("seoul","서울");
-address.put("daegu","대구");
-address.put("busan","부산");
+```java
+  //컨트롤러 추가
+  Map<String, String> address =new HashMap<String, String>();
+  address.put("seoul","서울");
+  address.put("daegu","대구");
+  address.put("busan","부산");
 
-model.addAttribute("address",address);
+  model.addAttribute("address",address);
 ```
 
-<br>
+<br/>
 
-```jsp
-//VO추가
-private String address;
+```java
+  //VO추가
+  private String address;
 
-public String getAddress() {
-  return comment;
-}
-public void setAddress(String comment) {
-  this.comment = comment;
-}
+  public String getAddress() {
+    return comment;
+  }
+  public void setAddress(String comment) {
+    this.comment = comment;
+  }
 ```
 
-<br>
-<br>
+<br/>
 
 ### select + options
 
@@ -268,8 +257,7 @@ public void setAddress(String comment) {
   </form:select>
 ```
 
-<br>
-<br>
+<br/>
 
 ## textarea 태그
 
@@ -277,10 +265,9 @@ public void setAddress(String comment) {
   <form:textarea path="comment" rows="3" cols="20"></form:textarea>
 ```
 
-<br>
-<br>
+<br/>
 
-```jsp
+```java
   //VO추가
   private String comment;
 
@@ -292,8 +279,7 @@ public void setAddress(String comment) {
   }
 ```
 
-<br>
-<br>
+<br/>
 
 ## hidden 태그
 
@@ -301,8 +287,7 @@ public void setAddress(String comment) {
   <form:hidden path="userId" />
 ```
 
-<br>
-<br>
+<br/>
 
 ## 번외편(Lombok 적용하기)
 
@@ -310,8 +295,7 @@ public void setAddress(String comment) {
 - 어노테이션 기반으로 Getter, Setter 작업을 손쉽게 도와주는 라이브러리 입니다.
 - 한 번쯤 테스트하고 싶었는데 VO를 사용하는 이 시점에서 사용해 보겠습니다.
 
-<br>
-<br>
+<br/>
 
 ### pom.xml 추가 수정
 
@@ -326,13 +310,12 @@ public void setAddress(String comment) {
   </dependency>
 ```
 
-<br>
+<br/>
 
 이렇게 추가를 하고 `.jar` 파일까지 설치가 완료된 것을 확인 했으나... 아무리 `@Data`를 선언부에 적어도 먹지를 않아요.
-<br>
 찾아보니 안먹는 사람이 많습니다. 이럴 경우 jar파일에 직접 접근을 하여 ini설정을 해주면 됩니다.
 
-<br>
+<br/>
 
 ```
   //저의 경우
@@ -344,10 +327,10 @@ public void setAddress(String comment) {
 - 해당 이클립스가 설치되어있는 곳을 들어가서 `eclipse.exe`를 클릭하여 등록한다.
 - 이클립스 재시작
 
-<br>
+<br/>
 
 위에 처럼하게 되면 이제는 `@Data` 어노테이션이 아주 잘 먹습니다.
-<br>
+<br/>
 
 lombok의 경우 여러 어노테이션이 있지만 `@Data`를 적용하게 되면 전부 적용이 됨으로 쉽게 사용할 수 있습니다. 그리고 뭔가 실무에서 쓴다면 저것만 쓸거 같습니다.
 
@@ -365,18 +348,15 @@ lombok의 경우 여러 어노테이션이 있지만 `@Data`를 적용하게 되
 ```
 
 너무나도 심플...
-
-<br>
-<br>
+<br/>
 
 ## Validation
 
 하도 여러개를 찾아봤는데 마땅히 해봐야 할 것을 나도 잘모르겠다. 그래서 내가 맞춤으로 한 번 해보는 것에 의의를 두기로 했다.
-<br>
-빠르게 진행합니다.
+<br/>
 
-<br>
-<br>
+빠르게 진행합니다.
+<br/>
 
 ### VO 만들기
 
@@ -402,8 +382,7 @@ lombok의 경우 여러 어노테이션이 있지만 `@Data`를 적용하게 되
   }
 ```
 
-<br>
-<br>
+<br/>
 
 ### Validation 만들기
 
@@ -430,23 +409,21 @@ lombok의 경우 여러 어노테이션이 있지만 `@Data`를 적용하게 되
   }
 ```
 
-<br>
-<br>
+<br/>
 
 - `implements Validator`을 사용합니다.
 - 주로 사용하게 될 코드는 `ValidationUtils.rejectIfEmptyOrWhitespace`와 `rejectValue`입니다.
 - 이제는 오류에 대한 문구를 적어줍니다.
 
-<br>
-<br>
+<br/>
 
 ### 문구 넣어주기
 
-- message-common_ko.properties 파일에 들어갑니다.
+- `message-common_ko.properties` 파일에 들어갑니다.
 - 아래와 같이 자신이 원하는 문구를 적어줍니다.
 - 단 message가 맵핑이 되어있어야 사용할 수 있겠죠?
 
-<br>
+<br/>
 
 ```java
   negativevalue = 입력해주세요
@@ -454,9 +431,9 @@ lombok의 경우 여러 어노테이션이 있지만 `@Data`를 적용하게 되
   empty = 값이 없습니다.
 ```
 
-<br>
+<br/>
 
-```java
+```xml
   //messageSource bean추가
   <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
     <property name="basenames">
@@ -472,8 +449,7 @@ lombok의 경우 여러 어노테이션이 있지만 `@Data`를 적용하게 되
   </bean>
 ```
 
-<br>
-<br>
+<br/>
 
 ### Controller 수정하기
 
@@ -497,14 +473,14 @@ lombok의 경우 여러 어노테이션이 있지만 `@Data`를 적용하게 되
   }
 ```
 
-<br>
-<br>
+<br/>
 
-## 다음에는 @Valid를 찾아보겠습니다
+다음에는 @Valid를 찾아보겠습니다
+끝(VO를 쓰는 이유를 알겠다....)
 
-## 끝(VO를 쓰는 이유를 알겠다....)
+---
 
-## 참고 참고사이트
+## Reference
 
 - [anyframe](http://dev.anyframejava.org/anyframe/doc/web/3.0.1/webfw/springmvc/basic/tag.html#configuration)
 - [스프링 - @Valid Annotation을 이용한 유효성 체크](http://appsnuri.tistory.com/115)

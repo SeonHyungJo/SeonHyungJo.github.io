@@ -13,9 +13,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        title: 'SSEON Dev Blog',
-        name: 'Front End Blog',
-        short_name: 'Front End',
+        title: 'seonhyung Dev Log',
+        name: 'seonhyung Memory Container',
+        short_name: 'SeonLog',
         start_url: '/',
         background_color: '#fff',
         theme_color: '#663399',

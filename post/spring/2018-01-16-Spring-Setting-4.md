@@ -7,12 +7,8 @@ tags: ["spring", "setting"]
 category: "post"
 ---
 
-# **Spring_Project_Setting_4**
-
 이번에는 실무에서 많이 사용하고 있는 마이바티스 설정이다. 기본적으로 전자정부프레임워크에서는 지원을 하고 있으니 나도 해야되지 않겠나?
-
-<br>
-<br>
+<br/>
 
 ## 1. pom.xml(마이바티스 라이브러리 추가)
 
@@ -54,8 +50,7 @@ category: "post"
   </dependency>
 ```
 
-<br>
-<br>
+<br/>
 
 ## 2. MyBatis와 DB(데이터베이스) 연결 설정
 
@@ -71,7 +66,7 @@ category: "post"
   </context-param>
 ```
 
-<br>
+<br/>
 
 ### MyBatis 연결 설정
 
@@ -93,8 +88,7 @@ category: "post"
 
 - 여기서 주소는 로컬일 경우 127.0.0.1 또는 localhost 입니다.
 
-<br>
-<br>
+<br/>
 
 ### context-mapper.xml 생성
 
@@ -121,7 +115,7 @@ category: "post"
 - mapperLocations는 앞으로 우리가 작성할 SQL문이 위치할 장소이다. 여기서 classpath:/mapper/\*\*/\*\_SQL.xml 이라는 정의를 살펴보자.
 - sqlSessionTemplate은 마이바티스 스프링 연동모듈의 핵심이다. SQLSessionTemplate은 SqlSession을 구현하고, 코드에서 SqlSessoin을 대체하는 역할을 한다.
 
-<br>
+<br/>
 
 ## 3. DAO(Data Access Object) 작성
 
@@ -179,9 +173,10 @@ category: "post"
 
 - SqlSessionTemplate을 선언하고 여기에 Autowired 어노테이션(Annotation)을 통해서 xml에 선언했던 의존관계를 자동으로 주입하도록 하였다.
 
-<br>
-<br>
+<br/>
 
-## 참고
+---
+
+#### Reference
 
 - [흔한 개발자의  개발 노트](http://addio3305.tistory.com/43?category=772645)

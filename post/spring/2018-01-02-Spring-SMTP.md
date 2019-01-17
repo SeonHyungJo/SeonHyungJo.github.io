@@ -7,14 +7,9 @@ tags: ["spring", "smtp"]
 category: "post"
 ---
 
-# **Spring_SMTP**
+메일 보내기를 해보자!! 웹에서 메일 가져오기를 쓸일이 있을까? 라는 생각을 하지만 필요한 곳도 있겠지... 사내 웹페이지 같은? 그래도 나는 메일 보내기를 먼저 해보려고 합니다..
+<br/>
 
-메일 보내기를 해보자!!!
-<br>
-웹에서 메일 가져오기를 쓸일이 있을까? 라는 생각을 하지만 필요한 곳도 있겠지... 사내 웹페이지 같은?
-<br>
-그래도 나는 메일 보내기를 먼저 해보려고 합니다..
-<br>
 크게 주제는 3개입니다.
 
 - 단순 메시지 보내기(텍스트)
@@ -22,22 +17,20 @@ category: "post"
 - 이미지 추가해서 보내기
 - 추후 추가 가능성 있습니다.(가령 난수생성해서 보내기_임시비밀번호 보내기)
 
-<br>
-<br>
+<br/>
 
 ## 단순 메시지 보내기(텍스트)
 
 단순한 텍스트를 보내는 것은 쉬울 것이라는 생각에 금방 끝내자 했는데 찾는데 마다 말이 다르고 파일구조가 다르니까 따라하기가 힘듭니다.....
-<br>
+<br/>
 이 역시 제 방식으로 합니다. 간단하게 수정해야 할 파일은 3군데 입니다.
-<br>
+<br/>
 
 - pom.xml(Java Mail API추가_javax.mail)
 - dispatcher-servlet.xml(bean추가)
 - controller 추가
 
-<br>
-<br>
+<br/>
 
 ### 1. pom.xml
 
@@ -52,10 +45,7 @@ category: "post"
   </dependency>
 ```
 
-- 끝(너무나 심플)
-
-<br>
-<br>
+<br/>
 
 ### 2. dispatcher-servlet.xml(bean추가)
 
@@ -65,14 +55,11 @@ category: "post"
 - Naver (SSL)
 - Daum (SSL)
 
-<br>
-<br>
+<br/>
 
 #### 2.1. Gmail(제일 간단하게 해결)
 
 역시 구글이었습니다. 제일 심플하고 쉽게 되어있습니다.
-
-<br>
 
 ```xml
   <!-- Gmail -->
@@ -92,14 +79,11 @@ category: "post"
 
 - 대략적으로 보시면 이해가 되실거라 생각됩니다.
 
-<br>
-<br>
+<br/>
 
 #### 2.2. Naver(네이버)
 
 네이버에서는 SSL을 추가하지 않을 경우 전송이 안되더라고요. 이거 때문에 30분 삽질했습니다....
-
-<br>
 
 ```xml
   <!-- naver mail -->
@@ -121,14 +105,11 @@ category: "post"
   </bean>
 ```
 
-<br>
-
 - 여기서 주의사항은 username에는 아이디만 적으면 됩니다.
 - 포트 번호도 확인해주세요
 - 추가적으로 `<prop key="mail.smtp.socketFactory.class"> javax.net.ssl.SSLSocketFactory </prop>` 를 적어주지 않으면 전송이 안되네요
 
-<br>
-<br>
+<br/>
 
 #### 2.3. Daum(다음카카오)
 
@@ -154,12 +135,9 @@ category: "post"
   </bean>
 ```
 
-<br>
-
 - 다른점이 있다면 아이디를 적는 공간이 다릅니다.
 
-<br>
-<br>
+<br/>
 
 #### 보안 설정하기
 
@@ -169,8 +147,7 @@ category: "post"
 - [네이버 보안 설정하기](https://mail.naver.com/option/imap)
 - [다음 보안 설정하기](https://mail.daum.net/?nil_profile=mini&nil_src=mail#setting/POP3IMAP)
 
-<br>
-<br>
+<br/>
 
 ### 3. 컨트롤러 생성하기
 
@@ -221,18 +198,14 @@ public class MailController {
 }
 ```
 
-<br>
-
 - 크게는 4개의 정보가 들어갑니다.(보내는사람, 받는사람, 제목, 내용)
 - 이렇게 3개의 파일을 수정하면 완료가 됩니다. 이제 보내는 페이지에서 클릭시 전송을 해주면됩니다.
 
-<br>
-<br>
+<br/>
 
 ### 4. 메일 보내기 페이지
 
 단순히 보내는사람, 제목, 내용만 적어주고 버튼을 눌러주면 보내지는 페이지입니다.
-<br>
 
 ```jsp
   <h4>메일 보내기</h4>
@@ -262,10 +235,7 @@ public class MailController {
     </form>
 ```
 
-## 끝
-
-<br>
-<br>
+<br/>
 
 ## 2. 파일첨부해서 보내기
 
@@ -316,19 +286,16 @@ public class MailController {
 
 ```
 
-<br>
-
 - 제일 중요한건 저 파일 경로다....
 - 자바스크립트로는 보안상 경로자체를 가져올수 없다.
 - 파일업로드하듯이 가져와야 할 것 같다.
 
-<br>
-<br>
+<br/>
 
 ## 3. 이미지 추가해서 보내기
 
 진짜 단순히 img 태그를 추가하는 방법이다. 결국 이미지는 이미지 태그를 추가해서 이미지 경로를 써주는 되는거였다....
-<br>
+<br/>
 
 ```java
   String contents = content + "<img src=\"https://s3.ap-northeast-2.amazonaws.com/opentutorials-user-file/module/1590/3428.jpg\">";

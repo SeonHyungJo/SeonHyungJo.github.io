@@ -7,12 +7,8 @@ tags: ["spring", "login"]
 category: "post"
 ---
 
-# **Spring_Google_SSO**
-
 이것도 나에게 맞는 자료를 찾느라 너무나도 힘들었다. 그래도 겨우겨우 찾아서 나한테 맞추는 것에 성공을 하였고, 이후에는 페이스북, 네이버, 카카오톡까지 해보려고 한다.
-
-<br>
-<br>
+<br/>
 
 ## 먼저 해야 할일
 
@@ -22,13 +18,11 @@ category: "post"
 4. 하단 승인된 자바스크립트 원본에 자신의 사이트 주소 (ex. http://localhost) 를 적어줍니다.
 5. 승인된 리디렉션 URI에는 승인된 후 이동할 url를 적어줍니다.
 
-<br>
-<br>
+<br/>
 
 ## pom.xml 추가하기
 
 소셜 로그인 라이브러리 추가(구글편)
-<br>
 
 ```xml
   <!-- 구글 소셜 로그인 구현 -->
@@ -40,13 +34,11 @@ category: "post"
   <!-- 구글 소셜 로그인 구현 -->
 ```
 
-<br>
-<br>
+<br/>
 
 ## dispatcher-servlet 수정
 
 여기서 아이디와 보안비밀번호를 적어줍니다.
-<br>
 
 ```xml
   <!-- google Class Bean설정 추가 -->
@@ -65,13 +57,10 @@ category: "post"
   <!-- google Class Bean설정 추가 -->
 ```
 
-<br>
-
 - 하단 `redirectUri`에는 자신이 구글 프로젝트에 적었던 **승인된 후 주소와 똑같이** 적어줍니다.
 - 안그러면 에러 뜹니다.
 
-<br>
-<br>
+<br/>
 
 ## controller 구현
 
@@ -101,11 +90,11 @@ category: "post"
   }
 ```
 
-<br>
+<br/>
 
 - 로그인이 성공하면 불러오는 컨트롤러
 
-<br>
+<br/>
 
 ```java
   // 구글 Callback호출 메소드
@@ -119,13 +108,11 @@ category: "post"
   }
 ```
 
-<br>
-<br>
+<br/>
 
 ## 로그인 버튼 구현
 
 간단하게 로그인 버튼을 구현합니다.
-<br>
 
 ```
   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -138,13 +125,10 @@ category: "post"
   </div>
 ```
 
-<br>
+<br/>
 
-## 끝
+---
 
-<br>
-<br>
+#### Referece
 
-## 참고 자료
-
-[Spring MVC기반 소셜 로그인 구현(2)](http://blog.naver.com/PostView.nhn?blogId=sam_sist&logNo=220969414214&parentCategoryNo=&categoryNo=30&viewDate=&isShowPopularPosts=false&from=postView)
+- [Spring MVC기반 소셜 로그인 구현(2)](http://blog.naver.com/PostView.nhn?blogId=sam_sist&logNo=220969414214&parentCategoryNo=&categoryNo=30&viewDate=&isShowPopularPosts=false&from=postView)

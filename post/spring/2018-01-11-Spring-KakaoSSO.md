@@ -10,11 +10,10 @@ category: "post"
 # **Spring_KakaoTalk_SSO**
 
 이 카카오톡을 마지막으로 우리나라에서 사용하는 대부분의 SSO는 다했다고 생각합니다. 이제 처음 로그인을 하게 되면 디비에 넣고 다음에 로그인을 할경우 id를 비교해서 권한을 부여하면될거 같습니다. REST Api로 진행합니다.
+<br/>
 
 [참고 사이트](http://gongcha.tistory.com/20?category=737124)를 보고하였습니다. 블로그를 너무나도 잘 적어주셔서 따라하기 쉬웠습니다.
-
-<br>
-<br>
+<br/>
 
 ## 1. 먼저 해야 할일
 
@@ -23,15 +22,12 @@ category: "post"
 3. 아래에 플랫폼에서 추가 버튼을 눌러서 내 사이트 주소와 아래의 리다이렉트 주소를 입력해줍니다.
 4. 설정>사용자 관리에 들어가서 내가 받아오고 싶은 프로필정보는 선택해주며 사유도 적어줍니다.
 
-<br>
-<br>
+<br/>
 
 ## 2. pom.xml 추가하기(없음)
 
 카카오톡을 REST Api로 받아오는 것이라 따로 추가가 없습니다.
-
-<br>
-<br>
+<br/>
 
 ## 3. KakaoController 추가하기
 
@@ -138,8 +134,7 @@ category: "post"
   }
 ```
 
-<br>
-<br>
+<br/>
 
 ## 4. LoginController 수정하기(리다이렉트 추가)
 
@@ -152,11 +147,7 @@ category: "post"
   model.addAttribute("kakao_url", kakaoUrl);
 ```
 
-<br>
-
 이제 리다이렉트를 만들어 줍니다.
-
-<br>
 
 ```java
 /**
@@ -190,12 +181,8 @@ public String getKakaoSignIn(ModelMap model,@RequestParam("code") String code, H
 }
 ```
 
-<br>
-
 저는 유저 정보가 다 담겨있는 k_userInfo와 아이디, 이메일, 닉네임, 이미지를 가져왔습니다.
-
-<br>
-<br>
+<br/>
 
 ## 화면에 뿌리기
 
@@ -221,14 +208,10 @@ public String getKakaoSignIn(ModelMap model,@RequestParam("code") String code, H
   </script>
 ```
 
-<br>
-<br>
+<br/>
 
-## 끝
+---
 
-<br>
-<br>
-
-## 참고 자료
+#### Reference
 
 - [개발자라면 블로그](http://gongcha.tistory.com/18)

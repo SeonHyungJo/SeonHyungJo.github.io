@@ -7,15 +7,12 @@ tags: ["spring", "security"]
 category: "post"
 ---
 
-# 스프링 시큐리티(Spring_Security) 간단 설정(내기준)
-
 이제는 그냥 기본이 되어버린 스프링시큐리티...
 나만 모르면 안되니까 기록하면서 하자 까먹겠다...
 
 - **모든 기준은 제 스프링 시큐리티 파일을 기본으로 합니다.**
 
-<br>
-<br>
+<br/>
 
 ## 목록
 
@@ -25,20 +22,15 @@ category: "post"
 4.  자동 로그인 기능 **(추가)**
 5.  Https 기능 **(추가)**
 
-<br>
-<br>
+<br/>
 
 ## 활동순서
 
 1. 기본 환경설정  (POM.XML /  WEB.XML / context-Security.XML )
 2. 로그인페이지 로그아웃 구현
-
 3. (예정)로그인 인증 시스템  (로그인페이지등 제작)
 
-출처: http://hamait.tistory.com/325 [HAMA 블로그]
-
-<br>
-<br>
+<br/>
 
 ## 1. 기본 환경설정
 
@@ -70,8 +62,7 @@ category: "post"
   <!-- Spring Security -->
 ```
 
-<br>
-<br>
+<br/>
 
 ### web.xml 설정_필터 등록
 
@@ -90,11 +81,7 @@ category: "post"
 </context-param>
 ```
 
-<br>
-
 - 기존의 경로를 사용해서 파일을 추가해주는 방향으로 갔습니다.
-
-<br>
 
 ```xml
 <context-param>
@@ -108,18 +95,17 @@ category: "post"
 </context-param>
 ```
 
-<br>
+<br/>
 
 - classpath*: => 프로젝트를 클릭한 상태에서 **alt+enter** 를 누르고 검색창에서 **Deployment Assebly** 를 검색하면 설정된 경로가 보입니다.
 
-<br>
-<br>
+<br/>
 
 #### 필터추가
 
 - 같은 파일에서 필터를 추가해준다.
 
-<br>
+<br/>
 
 ```xml
 <!-- Spring Security -->
@@ -134,14 +120,13 @@ category: "post"
 </filter-mapping>
 ```
 
-<br>
+<br/>
 
 - 다음과 같이 추가를 해주면 애플리케이견의 모든 요청을 스프링 시큐리티가 감싸서 처리할 수 있게 된다.
 - 이 필터와 관련된 설명이 잘되어있는 곳이 있어 링크로 설정해 두겠습니다.
 - [스프링시큐리티_2필터](http://www.nextree.co.kr/p1886/)
 
-<br>
-<br>
+<br/>
 
 ### context-security.XML 파일 추가
 
@@ -149,7 +134,7 @@ category: "post"
 - 실질적으로 시큐리티에 관련 설정을 하는 공간이다.
 - 시큐리티는 기본설정은 모든 경로를 막고 자신이 열고 싶은 부분만 여는 구조이다.
 
-<br>
+<br/>
 
 ```xml
  <?xml version="1.0" encoding="UTF-8"?>
@@ -219,15 +204,14 @@ category: "post"
 </beans:beans>
 ```
 
-<br>
+<br/>
 
 - 현재는 임의의 사용자 아이디와 패스워드로 접속을 할 수 있도록 해놓은 상태이다 추후에 디비를 사용해서 사용자 인증하는 파일을 만들예정이다.
 - 또한 패스워드가 현재 암호화가 되어 있지 않은 상태이다. 이 부분도 수정 예정
 - **csrf보안** 에 대한 간략한 설정
 - [위키백과 : csrf_사이트 간 요청 위조](https://ko.wikipedia.org/wiki/%EC%82%AC%EC%9D%B4%ED%8A%B8_%EA%B0%84_%EC%9A%94%EC%B2%AD_%EC%9C%84%EC%A1%B0)
 
-<br>
-<br>
+<br/>
 
 ### 로그인, 로그아웃 구현
 
@@ -235,7 +219,7 @@ category: "post"
 
 - 아이디, 패스워드 입력란
 
-```
+```jsp
 //form 설정
 <form id="loginFrm" name="frm" class="test" action="/sample/login" method="post">
 
@@ -270,14 +254,13 @@ category: "post"
 </script>
 ```
 
-<br>
-<br>
+<br/>
 
 #### 2. 로그아웃 버튼
 
 - 로그아웃 역시 토큰을 같이 던져주어야 한다.
 
-```
+```jsp
   //로그아웃시 토큰
   <form action="./logout" method="post" id="logoutForm">
     <input type="hidden"
@@ -297,17 +280,12 @@ category: "post"
 </script>
 ```
 
-<br>
-<br>
-
-## 끝..(추후 디비 연동, 암호화 예정)
+<br/>
 
 ## DB연동으로 사용자 인증(했다....) 17-12-15
 
 왜 이렇게 디비를 연동을 했다는 사람들의 내용을 보면서 하는데 안되고 이해가 안된다. 그래서 내가 직접 밥로 뛰면서 6시간 투자해서 디비연동하고 암호화까지 겨우겨우 완료했다. 잊어버리지 말자.
-
-<br>
-<br>
+<br/>
 
 ### mysql에 연동하기 순서
 
@@ -316,8 +294,7 @@ category: "post"
 - DB 테이블 만들기(기본 테이블 모양과 데이터 넣기)
 - context-security.xml 설정하기(시큐리티 로그인 진행시 DB에서 가져와서 권한 부여)
 
-<br>
-<br>
+<br/>
 
 #### 1. pom.xml\_mysql 추가하기
 
@@ -326,7 +303,7 @@ category: "post"
 
 - mysql 의존성 주입 시작
 
-```
+```xml
 <dependency>
   <groupId>com.googlecode.log4jdbc</groupId>
   <artifactId>log4jdbc</artifactId>
@@ -354,8 +331,7 @@ category: "post"
 
 - 제 기준으로 3개 추가 완료
 
-<br>
-<br>
+<br/>
 
 #### 2. context-datasource.xml 설정하기
 
@@ -371,8 +347,7 @@ category: "post"
 
 ```
 
-<br>
-<br>
+<br/>
 
 #### 3. DB 테이블 만들기
 
@@ -391,19 +366,16 @@ CREATE TABLE `user` (
 INSERT INTO `user` VALUES ('guest','guest',1,'ROLE_USER'),('niee','zzzz',1,'ROLE_ADMIN'),('test','test',1,'ROLE_USER');
 ```
 
-<br>
-
 - INSERT INTO `user` VALUES 이 부분은 회원들을 더 추가해서 시험해도 됩니다.
 - 어짜피 아래에서 회원가입도 구현예정입니다.
 
-<br>
-<br>
+<br/>
 
 #### 4. context-security.xml 설정하
 
 - provider교체
 
-<br>
+<br/>
 
 ```xml
   <authentication-manager>
@@ -412,11 +384,11 @@ INSERT INTO `user` VALUES ('guest','guest',1,'ROLE_USER'),('niee','zzzz',1,'ROLE
   </authentication-manager>
 ```
 
-<br>
+<br/>
 
 - 마지막으로 이걸 추가 시켜주시면 됩니다.
 
-<br>
+<br/>
 
 ```xml
   <jdbc-user-service data-source-ref="dataSource" id="userService"
@@ -428,24 +400,23 @@ INSERT INTO `user` VALUES ('guest','guest',1,'ROLE_USER'),('niee','zzzz',1,'ROLE
   WHERE EMAIL=?"/>
 ```
 
-<br>
+<br/>
 
 - 여기서 중요한 부분은 EMAIL as username, PASSWD as password 이 부분을 아래의 이름과 같도록 해야 된다.
 
-<br>
+<br/>
 
 ```java
   username-parameter="username"
   password-parameter="password"
 ```
 
-<br>
+<br/>
 
 - 이렇게 진행을 하면 신기하게 디비에 있는 사용자를 확인해서 권한까지 주게 됩니다.
 - 추가적으로 성공적으로 로그인이 될 경우 초기 페이지 이동으로 이동까지 합니다.
 
-<br>
-<br>
+<br/>
 
 ## 암호화하기(완료 17_12_15)\_반복해야함
 
@@ -456,8 +427,7 @@ INSERT INTO `user` VALUES ('guest','guest',1,'ROLE_USER'),('niee','zzzz',1,'ROLE
 - mybatis 연결
 - SQL_xml파일 생성
 
-<br>
-<br>
+<br/>
 
 ## Spring_Security 암호화 모듈
 
@@ -472,8 +442,7 @@ INSERT INTO `user` VALUES ('guest','guest',1,'ROLE_USER'),('niee','zzzz',1,'ROLE
 7. PlaintextPasswordEncoder
 8. ShaPasswordEncoder
 
-<br>
-<br>
+<br/>
 
 ### 1.context-security.xml 설정하기
 
@@ -486,11 +455,7 @@ INSERT INTO `user` VALUES ('guest','guest',1,'ROLE_USER'),('niee','zzzz',1,'ROLE
   </beans:bean>
 ```
 
-<br>
-
 - password를 암호화 provider에 추가해줍니다.
-
-<br>
 
 ```xml
   <!--  provider  -->
@@ -501,8 +466,7 @@ INSERT INTO `user` VALUES ('guest','guest',1,'ROLE_USER'),('niee','zzzz',1,'ROLE
   </authentication-manager>
 ```
 
-<br>
-<br>
+<br/>
 
 ### 2. UserDaoService.java 파일 생성하기
 
@@ -518,36 +482,36 @@ INSERT INTO `user` VALUES ('guest','guest',1,'ROLE_USER'),('niee','zzzz',1,'ROLE
   }
 ```
 
-<br>
+<br/>
 
 - UserDaoServiceImpl.java파일 생성
 - 서비스 임플을 해준다.
 
-<br>
+<br/>
 
 ```java
-package egovframework.example.user;
+  package egovframework.example.user;
 
-import java.util.Map;
+  import java.util.Map;
 
-import org.mybatis.spring.support.SqlSessionDaoSupport;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+  import org.mybatis.spring.support.SqlSessionDaoSupport;
+  import org.springframework.stereotype.Service;
+  import org.springframework.transaction.annotation.Transactional;
 
-@Service("userDaoService")
-public class UserDaoServiceImpl extends SqlSessionDaoSupport implements
-UserDaoService {
+  @Service("userDaoService")
+  public class UserDaoServiceImpl extends SqlSessionDaoSupport implements
+  UserDaoService {
 
-  @Override
-  @Transactional
-  public int insertUser(Map<String, String> paramMap) {
+    @Override
+    @Transactional
+    public int insertUser(Map<String, String> paramMap) {
 
-    return getSqlSession().insert("user.insertUser", paramMap);
+      return getSqlSession().insert("user.insertUser", paramMap);
+    }
   }
-}
 ```
 
-<br>
+<br/>
 
 - InputUser_SQL.xml 파일 생성 및 디비 쿼리 작성
 - 당연히 디비의 이름과 맞게 해주며 #{이름}은 paramMap의 키와 같도록 맞춰주어야한다.
@@ -563,9 +527,9 @@ UserDaoService {
 </mapper>
 ```
 
-<br>
+<br/>
 
-- \*\*암호화 서비스 생성(ShaEncoder.java)
+- **암호화 서비스 생성(ShaEncoder.java)**
 
 ```java
   package egovframework.example.user;
@@ -586,15 +550,14 @@ UserDaoService {
 }
 ```
 
-<br>
-<br>
+<br/>
 
 ### 3. Controller 생성
 
 - 컨트롤러에 서비스를 연결합니다.
 - 패스워드는 암호화를 해서 넘깁니다.
 
-```JAVA
+```java
 //리소스 추가
 @Resource(name="shaEncoder")
 private ShaEncoder encoder;
@@ -618,8 +581,7 @@ public String Input(@RequestParam("email")String email, @RequestParam("password"
 }
 ```
 
-<br>
-<br>
+<br/>
 
 ### 4. 마지막으로 회원가입 페이지를 만들면 됩니다.
 
@@ -627,15 +589,14 @@ public String Input(@RequestParam("email")String email, @RequestParam("password"
 - 비밀번호 : password
 - 권한 이름 : 자유롭게 추가하시면 됩니다.(기본 : ROLE_USER)
 
-<br>
-<br>
+<br/>
 
 ## 새로운 추가!!!
 
 ## 자동 로그인
 
 시큐리티를 하다보니 욕심이 생겨서 요즘 자주 들어가는 사이트는 자동로그인을 걸어놓고 로그인을 따로 하지 않아도 들어갈 수 있도록 한다.(개인 컴퓨터에 한정해서) 그에 맞에 나도 자동로그인을 구현하고자한다.
-<br>
+<br/>
 
 [참고 사이트 : 스프링 시큐리티 기초 따라가기 (2) - Remember Me](http://hamait.tistory.com/327?category=128263)
 
@@ -643,8 +604,7 @@ public String Input(@RequestParam("email")String email, @RequestParam("password"
 - 하다 보니까 이게 필요할까라는 생각을 하는 중.....
 - 기본적으로 웹에서 크롬에서 지원을 함으로....
 
-<br>
-<br>
+<br/>
 
 ### 일단 적용(context-security.xml 추가)
 
@@ -656,8 +616,7 @@ public String Input(@RequestParam("email")String email, @RequestParam("password"
 <remember-me key="wmoskey" token-validity-seconds="2419200"/> <!-- 4 주 -->
 ```
 
-<br>
-<br>
+<br/>
 
 ### 로그인 페이지 자동로그임 버튼 추가
 
@@ -665,15 +624,12 @@ public String Input(@RequestParam("email")String email, @RequestParam("password"
 <input type="text" class="form-control" id="inputId" placeholder="ID" name="username">
 ```
 
-<br>
-<br>
-
-## 끝
+<br/>
 
 ## Https 적용
 
 쉽게 말해서 http의 보안이 강화된 버전이다. HTTPS는 통신의 인증과 암호화를 위해 넷스케이프 커뮤니케이션즈 코퍼레이션이 개발했으며, 전자 상거래에서 널리 쓰인다.
-<br>
+<br/>
 
 - Http + SSL
 
@@ -689,8 +645,7 @@ public String Input(@RequestParam("email")String email, @RequestParam("password"
   <intercept-url pattern="/**" access="hasRole('ROLE_USER')"  requires-channel="https" />  
 ```
 
-<br>
-<br>
+<br/>
 
 #### 인증서 만들기
 
@@ -701,7 +656,7 @@ public String Input(@RequestParam("email")String email, @RequestParam("password"
 
 ##### 2. keystore를 만들어준다
 
-```
+```cmd
   keytool -genkey -alias {{키 ID}} -keyalg RSA -keystore {{/Users/Administrator/Desktop/sseon.keystore}}
 ```
 
@@ -709,12 +664,11 @@ public String Input(@RequestParam("email")String email, @RequestParam("password"
 - DSA, RSA, DES가 있다.
 - {{/Users/Administrator/Desktop/sseon.keystore}}는 저장위치로 개인 설정해도된다.
 
-<br>
-<br>
+<br/>
 
 ##### 3. 각각의 질문에 작성을 해준다
 
-```
+```cmd
   Roger$ keytool -genkey -alias MyKeyAlias -keyalg RSA -keystore /Users/Roger/tmp/roger.keystore
   <!-- 비밀번호 설정 -->
   Enter keystore password:
@@ -747,8 +701,7 @@ public String Input(@RequestParam("email")String email, @RequestParam("password"
   (RETURN if same as keystore password):
 ```
 
-<br>
-<br>
+<br/>
 
 ##### 4. 키가 생성된 것을 확인한다.
 
@@ -762,7 +715,7 @@ public String Input(@RequestParam("email")String email, @RequestParam("password"
 <Connector SSLEnabled="true" keystoreFile="/Users/Administrator/Desktop/sseon.keystore" keystorePass="{{비밀번호}}" port="8443" scheme="https" secure="true" sslProtocol="TLS"/>
 ```
 
-<br>
+<br/>
 
 - `{/Users/Administrator/Desktop/sseon.keystore}`는 조금전 저장한 위치와 파일명을 적는다.
 - 비밀번호를 추가한다.
@@ -772,3 +725,9 @@ public String Input(@RequestParam("email")String email, @RequestParam("password"
 - 주소창 왼쪽에 안전하지 않음이라고 하며, https로 접속되는 걸 확인할 수 있다. 제대로 된 것이다.
 
 ## 끝
+
+---
+
+#### Reference 
+
+- [HAMA 블로그](http://hamait.tistory.com/325 )
