@@ -24,10 +24,12 @@
     background-color: white;
 
     .HeaderTitle{
+        color: #252c41;
+
         font: {
             family: 'SCDream';
-            size: 40px;
-            weight: 700;
+            size: 34px;
+            weight: 800;
         }
     }
 
@@ -54,6 +56,7 @@
             font: {
                 size: 29px;
             }
+            margin-bottom: 10px;
         }
     }
 }

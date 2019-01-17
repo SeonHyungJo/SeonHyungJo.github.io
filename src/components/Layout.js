@@ -68,7 +68,7 @@ export default class Layout extends React.Component {
 
         {/* ----------------------------------------------------- */}
         {location.pathname !== "/" && (
-          <Header title={`SH-DevLog`}>
+          <Header title={`<S/> DevNote`}>
             {navList.map(navItem => {
               return (
                 <Button key={navItem.name} to={navItem.path}>{navItem.name.toUpperCase()}</Button>
@@ -93,7 +93,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt(pruneLength: 120)
+          excerpt(pruneLength: 100)
           id
           frontmatter {
             title
