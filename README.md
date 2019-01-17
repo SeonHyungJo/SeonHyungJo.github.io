@@ -6,6 +6,8 @@
 
 ### Desktop
 
+#### 메인 페이지
+
 <img src="./assets/preview/desktop/gatsby-sseon-starter-index.png" alt="index-page" />
 
 <img src="./assets/preview/desktop/gatsby-sseon-starter-aboutMe.png" alt="aboutMe" />
