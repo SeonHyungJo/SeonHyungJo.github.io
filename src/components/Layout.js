@@ -62,7 +62,7 @@ export default class Layout extends React.Component {
               content: 'uqsuHdzpL7wVqDf9dit8jnuBvq-FUIYtdxUdD35T2Mo'
             },
             {
-              name: 'mobile-web-app-capable',
+              name: 'apple-mobile-web-app-capable',
               content: 'yes'
             },
             {
