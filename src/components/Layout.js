@@ -64,6 +64,10 @@ export default class Layout extends React.Component {
             {
               name: 'mobile-web-app-capable',
               content: 'yes'
+            },
+            {
+              name: 'theme-color',
+              content: '#252C41'
             }
           ]}
         >
