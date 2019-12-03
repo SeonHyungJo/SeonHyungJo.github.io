@@ -1,0 +1,56 @@
+@import '../../style/valuables.scss';
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #5f2c82;
+  background: -webkit-linear-gradient(to left, #49a09d, #5f2c82);
+  background: linear-gradient(to left, #49a09d, #5f2c82);
+
+
+  height: $header-height;
+  padding: 1rem;
+
+  box-shadow: $shadow;
+
+
+  border-width: 0px 0px 1px;
+  border-style: solid;
+  border-image: linear-gradient(to right, #8cd790, #285943) 0 0 100%;
+
+  font: {
+    size: 13px;
+    weight: 500;
+  }
+
+  .header-title {
+    color: white;
+
+    font: {
+      size: 36px;
+      weight: 500;
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .header-container {
+    border-bottom: 2px solid #aaaaaa;
+    box-shadow: none;
+    flex-direction: column;
+    height: $header-height + 2rem;
+    padding: 1rem;
+
+    font: {
+      size: 13px;
+    }
+
+    .header-title {
+      font: {
+        size: 25px;
+      }
+    }
+  }
+}

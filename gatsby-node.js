@@ -1,123 +1,102 @@
-const path = require('path');
+const path = require('path')
 
-/**
- * Tag Page 생성
- * Tag만 넘기도록 구성하지 왜 edges를 전부 넘겼지?
- */
-const createTagPages = (createPage, edges) => {
-  const tagTemplate = path.resolve(`src/templates/tags.js`);
-  const posts = {};
+const AboutMeTemplate = path.resolve(`src/template/aboutme/index.jsx`)
+const PostTemplate = path.resolve(`src/template/blog-post/index.jsx`)
+const pagesComponent = path.resolve(`src/template/post-list/index.jsx`)
 
-  edges
-    .forEach(({ node }) => {
-      if (node.frontmatter.tags) {
-        node.frontmatter.tags
-          .forEach(tag => {
-            if (!posts[tag]) {
-              posts[tag] = [];
+const getPostsQuery = (graphql, categoryName) => graphql(`
+    {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+        filter: { frontmatter: { category: { eq: "${categoryName}" } } }
+      ) {
+        edges {
+          node {
+            html
+            id
+            timeToRead
+            frontmatter {
+              date(formatString: "YYYY/MM/DD")
+              path
+              tags
+              title
             }
-            posts[tag].push(node);
-          });
-      }
-    });
-
-  createPage({
-    path: '/tags',
-    component: tagTemplate,
-    context: {
-      posts
-    }
-  });
-
-  Object.keys(posts)
-    .forEach(tagName => {
-      const post = posts[tagName];
-      createPage({
-        path: `/tags/${tagName}`,
-        component: tagTemplate,
-        context: {
-          posts,
-          post,
-          tag: tagName
-        }
-      })
-    });
-};
-
-/**
- * Post Page 생성 
- */
-exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions;
-  const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
-
-  return graphql(`{
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 1000
-      filter: { frontmatter :{ category :{ in: ["post", "article"]}}}
-    ) {
-      edges {
-        node {
-          excerpt(pruneLength: 100)
-          html
-          id
-          timeToRead
-          frontmatter {
-            date(formatString: "YYYY/MM/DD")
-            path
-            tags
-            title
           }
         }
       }
     }
-  }`)
-  .then(result => {
-    if (result.errors) {
-      return Promise.reject(result.errors)
-    }
+  `)
 
-    const posts = result.data.allMarkdownRemark.edges;
+const createPostPages = (createPage, graphql, categoryName) =>
+  getPostsQuery(graphql, categoryName).then(result => {
+    if (result.errors) Promise.reject(result.errors)
 
-    // Create Tag Pages
-    createTagPages(createPage, posts);
+    CreateCommonPage(createPage, result.data.allMarkdownRemark.edges, categoryName)
+  })
 
-    // Create blog-list pages
-    // 한페이지에 보일 게시물수
-    const postsPerPage = 5
-    // 페이지수
-    const numPages = Math.ceil(posts.length / postsPerPage)
 
-    Array.from({ length: numPages }).forEach((_, i) => {
-      createPage({
-        path: i === 0 ? `/posts` : `/posts/${i + 1}`,
-        component: path.resolve(`src/templates/post-list.js`),
-        context: {
-          limit: postsPerPage,
-          skip: i * postsPerPage,
-          prev: i === 1 ? '' : i, //페이지 이동을 위해서 추가
-          next: i + 2,  //페이지 이동을 위해서 추가
-          numPages
-        },
-      })
+const CreateCommonPage = (createPage, posts, categoryName) => {
+  const limit = 5
+  const maxPageNum = Math.ceil(posts.length / limit)
+
+  Array.from({ length: maxPageNum }).forEach((_, i) => {
+    const pagePath = i === 0 ? '' : i
+    const path = `/${categoryName}/${pagePath}`
+    const next = i === maxPageNum - 1 ? '' : i + 1
+    const prev = i === 0 ? '' : i === 1 ? 0 : i - 1
+
+    createPage({
+      path: path,
+      component: pagesComponent,
+      context: {
+        limit,
+        skip: i * limit,
+        prev,
+        next,
+        maxPageNum,
+        categoryName
+      }
     })
+  })
 
-    // Create pages for each markdown file.
+  // blog - post, blog - article pages
+  if (posts.length > 0) {
     posts.forEach(({ node }, index) => {
-      const prev = index === 0 ? null : posts[index - 1].node;
-      const next = index === posts.length - 1 ? null : posts[index + 1].node;
+      const prev = index === 0 ? null : posts[index - 1].node
+      const next = index === posts.length - 1 ? null : posts[index + 1].node
 
       createPage({
         path: node.frontmatter.path,
-        component: blogPostTemplate,
+        component: PostTemplate,
         context: {
+          limit,
           prev,
           next
         }
-      });
-    });
+      })
+    })
+  }
+}
 
-    return posts;
+const createAboutme = (createPage, graphql, categoryName) =>
+  getPostsQuery(graphql, categoryName).then(result => {
+    if (result.errors) Promise.reject(result.errors)
+    const post = result.data.allMarkdownRemark.edges
+
+    // Aboutme Page
+    if (post.length === 1) {
+      createPage({
+        path: post[0].node.frontmatter.path,
+        component: AboutMeTemplate,
+        context: {
+        }
+      })
+    }
   })
-};
+
+exports.createPages = async ({ actions: { createPage }, graphql }) => {
+  await createPostPages(createPage, graphql, 'post')
+  await createPostPages(createPage, graphql, 'article')
+  await createAboutme(createPage, graphql, 'aboutme')
+}

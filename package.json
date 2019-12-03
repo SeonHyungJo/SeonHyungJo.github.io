@@ -1,53 +1,79 @@
 {
   "name": "gatsby-sseon-starter",
-  "description": "Gatsby Sseon starter example",
-  "version": "0.8.0",
-  "author": "SeonHyung Jo <seonhyung.jo@gmail.com>",
-  "repository": "https://github.com/SeonHyungJo/gatsby-sseon-starter",
+  "description": "Very simple Blog Template",
+  "version": "0.9.0",
+  "author": "sNyung <seonhyung.jo@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SeonHyungJo/gatsby-sseon-starter.git"
+  },
+  "license": "MIT",
   "dependencies": {
+    "core-js": "^3.4.5",
     "disqus-react": "^1.0.5",
-    "gatsby": "^2.0.85",
-    "gatsby-link": "^2.0.7",
-    "gatsby-plugin-catch-links": "2.0.2-beta.2",
-    "gatsby-plugin-manifest": "~2.0.2-beta.3",
-    "gatsby-plugin-offline": "^2.0.21",
-    "gatsby-plugin-react-helmet": "3.0.0-beta.3",
-    "gatsby-plugin-sass": "^2.0.7",
-    "gatsby-plugin-sharp": "2.0.0-beta.5",
-    "gatsby-remark-images": "2.0.1-beta.6",
-    "gatsby-source-filesystem": "2.0.1-beta.3",
-    "gatsby-transformer-remark": "^2.1.19",
-    "node-sass": "^4.11.0",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
+    "gatsby": "^2.18.6",
+    "gatsby-image": "^2.2.34",
+    "gatsby-link": "^2.2.25",
+    "gatsby-plugin-catch-links": "^2.1.19",
+    "gatsby-plugin-layout": "^1.1.16",
+    "gatsby-plugin-manifest": "^2.2.31",
+    "gatsby-plugin-react-helmet": "^3.1.16",
+    "gatsby-plugin-remove-serviceworker": "^1.0.0",
+    "gatsby-plugin-robots-txt": "^1.4.0",
+    "gatsby-plugin-root-import": "^2.0.5",
+    "gatsby-plugin-sass": "^2.1.24",
+    "gatsby-plugin-sharp": "^2.3.5",
+    "gatsby-plugin-sitemap": "^2.2.22",
+    "gatsby-remark-emoji": "0.0.3",
+    "gatsby-remark-images": "^3.1.35",
+    "gatsby-remark-prismjs": "^3.3.25",
+    "gatsby-source-filesystem": "^2.1.40",
+    "gatsby-transformer-remark": "^2.6.39",
+    "gatsby-transformer-sharp": "^2.3.6",
+    "node-sass": "^4.13.0",
+    "prismjs": "^1.15.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-helmet": "^5.2.0",
-    "react-icon": "^1.0.0",
-    "react-icons": "~2.2.5"
+    "react-transition-group": "^4.3.0",
+    "typeface-fira-sans": "0.0.75",
+    "typeface-lato": "0.0.75",
+    "typeface-nanum-gothic": "0.0.63",
+    "typeface-nanum-gothic-coding": "0.0.63",
+    "typeface-nanum-myeongjo": "0.0.63",
+    "typeface-noto-sans-kr": "0.0.63",
+    "typeface-poor-story": "0.0.63"
   },
   "devDependencies": {
-    "gatsby-plugin-sitemap": "^2.0.4",
-    "gatsby-remark-emojis": "^0.2.3",
-    "gatsby-remark-prismjs": "^3.2.0",
-    "gh-pages": "1.1.0",
-    "prettier": "1.10.2",
-    "prismjs": "^1.15.0"
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.7.2",
+    "eslint-plugin-react": "^7.17.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.17.0"
   },
   "keywords": [
     "gatsby",
-    "sseon",
-    "starter"
+    "snyung",
+    "blog"
   ],
-  "license": "MIT",
-  "main": "n/a",
   "scripts": {
-    "build": "gatsby build",
-    "deploy": "gatsby build --prefix-paths",
-    "postdeploy": "gh-pages -d public",
     "dev": "gatsby develop",
+    "start": "npm run dev",
+    "build": "gatsby build",
     "preserve": "npm run build",
     "serve": "gatsby serve",
-    "start": "npm run develop",
-    "format": "prettier --trailing-comma es5 --single-quote --write \"src/**/*.js\"",
-    "test": "echo \"Should probably write some tests!\""
+    "lint": "eslint --ext .js,.jsx --ignore-pattern public ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "npm run lint",
+      "git add"
+    ]
   }
 }
