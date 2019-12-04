@@ -27,6 +27,9 @@ const CustomHelmet = () => (
         name: 'viewport',
         content: 'width=device-width, initial-scale=1',
       },
+      { name:"google-site-verification" ,
+        content:"hDzzkGSdcpcCt94YWZs1eqeK8tpkC5ZT0UjypZ3H3JQ"
+      }
     ]}
   >
     <html lang="ko" />
