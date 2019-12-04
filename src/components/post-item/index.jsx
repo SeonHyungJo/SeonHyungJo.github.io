@@ -10,9 +10,9 @@ const PostListItem = ({ post }) =>
   <div className="blog-post-preview" key={post.id}>
     <Link to={post.frontmatter.path}>
       <div className="blog-container">
-        <h1 className="title">
+        <p className="title">
           {post.frontmatter.title}
-        </h1>
+        </p>
       </div>
       <p className="summary">{post.excerpt}</p>
     </Link >
