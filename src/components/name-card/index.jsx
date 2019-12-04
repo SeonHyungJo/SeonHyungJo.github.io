@@ -13,7 +13,7 @@ import {
 import './index.scss'
 
 const AvataImg = (fixed) =>
-  <Link to={'/'}>
+  <Link to={'/aboutme'}>
     <Image
       className='img-circle'
       fixed={fixed}
