@@ -1,6 +1,6 @@
 ---
 path: "/content/excel"
-author: "sseon"
+author: "snyung"
 date: "2018-01-02"
 title: "스프링 엑셀 업로드 & 다운로드"
 tags: ["spring", "excel"]

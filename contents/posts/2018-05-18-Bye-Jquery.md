@@ -1,6 +1,6 @@
 ---
 path: "/content/bye-jquery"
-author: "sseon"
+author: "snyung"
 date: "2018-05-18"
 title: "jquery(제이쿼리) 이제는 그만 사용하자"
 tags: ["jquery"]

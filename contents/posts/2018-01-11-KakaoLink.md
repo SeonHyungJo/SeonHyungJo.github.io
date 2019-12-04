@@ -1,6 +1,6 @@
 ---
 path: "/content/kakaotalk"
-author: "sseon"
+author: "snyung"
 date: "2018-01-11"
 title: "카카오링크 Api 사용하기 - DefaultButton"
 tags: ["javascript", "kakaotalk"]

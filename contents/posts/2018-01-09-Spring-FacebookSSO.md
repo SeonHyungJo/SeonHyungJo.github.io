@@ -1,6 +1,6 @@
 ---
 path: "/content/facebook-login"
-author: "sseon"
+author: "snyung"
 date: "2018-01-09"
 title: "스프링 - 페이스북 로그인 구현"
 tags: ["spring", "login"]

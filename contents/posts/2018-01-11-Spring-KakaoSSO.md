@@ -1,6 +1,6 @@
 ---
 path: "/content/kakao-login"
-author: "sseon"
+author: "snyung"
 date: "2018-01-11"
 title: "스프링 - 카카오톡 로그인 구현"
 tags: ["spring", "login"]

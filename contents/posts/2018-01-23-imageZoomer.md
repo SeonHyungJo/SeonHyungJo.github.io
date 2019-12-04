@@ -1,6 +1,6 @@
 ---
 path: "/content/image-zoomer"
-author: "sseon"
+author: "snyung"
 date: "2018-01-23"
 title: "Jquery(제이쿼리) 플러그인 - 이미지 확대"
 tags: ["jquery"]

@@ -1,6 +1,6 @@
 ---
 path: "/content/validation"
-author: "sseon"
+author: "snyung"
 date: "2018-01-02"
 title: "스프링 폼태그와 벨리데이션 체크"
 tags: ["spring", "validation"]

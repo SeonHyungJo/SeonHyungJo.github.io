@@ -1,6 +1,6 @@
 ---
 path: "/content/call-by"
-author: "sseon"
+author: "snyung"
 date: "2018-05-28"
 title: "Java Call by Value와 Call by Reference"
 tags: ["spring", "call by"]

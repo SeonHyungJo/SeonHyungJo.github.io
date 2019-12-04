@@ -1,6 +1,6 @@
 ---
 path: "/content/naver-login-2"
-author: "sseon"
+author: "snyung"
 date: "2018-01-05"
 title: "스프링 - 네이버 로그인 구현_두번째"
 tags: ["spring", "login"]

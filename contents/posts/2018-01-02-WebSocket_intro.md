@@ -1,6 +1,6 @@
 ---
 path: "/content/web-socket"
-author: "sseon"
+author: "snyung"
 date: "2018-01-02"
 title: "웹 소켓"
 tags: ["spring", "web-socket"]

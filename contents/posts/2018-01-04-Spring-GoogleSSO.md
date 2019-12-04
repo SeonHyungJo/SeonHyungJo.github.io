@@ -1,6 +1,6 @@
 ---
 path: "/content/google-login"
-author: "sseon"
+author: "snyung"
 date: "2018-01-04"
 title: "스프링 - 구글 로그인 구현"
 tags: ["spring", "login"]

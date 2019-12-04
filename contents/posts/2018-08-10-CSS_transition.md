@@ -1,6 +1,6 @@
 ---
 path: "/content/transition"
-author: "sseon"
+author: "snyung"
 date: "2018-08-10"
 title: "CSS - Transition"
 tags: ["css", "jquery"]

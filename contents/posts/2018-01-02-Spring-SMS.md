@@ -1,6 +1,6 @@
 ---
 path: "/content/sms"
-author: "sseon"
+author: "snyung"
 date: "2018-01-02"
 title: "스프링 문자보내기"
 tags: ["spring", "sms"]

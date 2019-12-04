@@ -1,6 +1,6 @@
 ---
 path: "/content/maven-gradle"
-author: "sseon"
+author: "snyung"
 date: "2018-01-08"
 title: "Maven과 Gradle의 차이점"
 tags: ["spring", "maven", "gradle"]

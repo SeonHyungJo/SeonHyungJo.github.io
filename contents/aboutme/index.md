@@ -1,6 +1,6 @@
 ---
 path: "/aboutme"
-author: "sseon"
+author: "snyung"
 date: "2018-12-31"
 title: "About Me"
 tags: ["AboutMe", "Resume"]

@@ -1,6 +1,6 @@
 ---
 path: "/content/hungarian"
-author: "sseon"
+author: "snyung"
 date: "2018-01-04"
 title: "헝가리안 표기법"
 tags: ["javascript", "Hungarian", "Notation"]

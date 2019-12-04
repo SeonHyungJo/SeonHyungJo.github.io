@@ -1,6 +1,6 @@
 ---
 path: "/content/function"
-author: "sseon"
+author: "snyung"
 date: "2019-01-19"
 title: "[ES3]ECMA-262-3 Function"
 tags: ["ES3"]

@@ -1,6 +1,6 @@
 ---
 path: "/content/smtp"
-author: "sseon"
+author: "snyung"
 date: "2018-01-02"
 title: "스프링 이메일 보내기(smtp)"
 tags: ["spring", "smtp"]

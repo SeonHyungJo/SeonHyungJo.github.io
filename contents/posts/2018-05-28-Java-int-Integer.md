@@ -1,6 +1,6 @@
 ---
 path: "/content/Wrapper"
-author: "sseon"
+author: "snyung"
 date: "2018-05-28"
 title: "Java int와 Integer의 차이"
 tags: ["spring", "wrapper"]

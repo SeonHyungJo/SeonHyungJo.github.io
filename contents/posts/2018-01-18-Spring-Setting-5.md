@@ -1,6 +1,6 @@
 ---
 path: "/content/setting-5"
-author: "sseon"
+author: "snyung"
 date: "2018-01-18"
 title: "스프링 혼자서 셋팅 해보기 5탄"
 tags: ["spring", "setting"]

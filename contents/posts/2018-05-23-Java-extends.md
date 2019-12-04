@@ -1,6 +1,6 @@
 ---
 path: "/content/extends"
-author: "sseon"
+author: "snyung"
 date: "2018-05-23"
 title: "Java 상속에 관하여"
 tags: ["spring", "extends"]

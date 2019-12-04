@@ -1,7 +1,7 @@
 ---
 comments: true
 path: "/content/mobile"
-author: "sseon"
+author: "snyung"
 date: "2018-01-02"
 title: "스프링 모바일 체크"
 tags: ["spring", "mobile"]

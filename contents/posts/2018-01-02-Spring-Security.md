@@ -1,6 +1,6 @@
 ---
 path: "/content/security"
-author: "sseon"
+author: "snyung"
 date: "2018-01-02"
 title: "스프링 시큐리티"
 tags: ["spring", "security"]
