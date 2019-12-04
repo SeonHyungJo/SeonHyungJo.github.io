@@ -43,7 +43,6 @@ export const Posts = graphql`
           id
           frontmatter {
             title
-            date(formatString: "YYYY/MM/DD")
             path
             tags
           }

@@ -8,10 +8,6 @@ import {
   EmailIcon,
   FacebookIcon,
   GithubIcon,
-  InstagramIcon,
-  LinkedinIcon,
-  TwitterIcon,
-  YoutubeIcon
 } from 'component/social-icon'
 
 import './index.scss'
@@ -40,18 +36,6 @@ const SocialBox = ({ snsList = [] }) =>
     <div className='sns-item'>
       <GithubIcon />
     </div>
-    <div className='sns-item'>
-      <InstagramIcon />
-    </div>
-    <div className='sns-item'>
-      <LinkedinIcon />
-    </div>
-    <div className='sns-item'>
-      <TwitterIcon />
-    </div>
-    <div className='sns-item'>
-      <YoutubeIcon />
-    </div>
   </div>
 
 const Presentation = ({ text = 'Hello My Blog Template' }) =>
@@ -78,7 +62,6 @@ const NameCard = ({ cardMode }) => (
     }}
   />
 )
-
 
 const cardQuery = graphql`
   query cardQuery {

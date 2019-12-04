@@ -17,19 +17,16 @@ import 'style/baseLayout.scss'
 import './index.scss'
 
 const CONTENT_LIST = ['content', 'aboutme']
-const CustomHelmet = () => (
+const CustomHelmet = ({title = "Home | sNyung'B "}) => (
   <Helmet
-    title="Gatsby for SSEON"
+    title= {title}
     meta={[
-      { name: 'description', content: 'sseon theme' },
-      { name: 'keywords', content: 'sseon, blog, theme' },
+      { name: 'description', content: 'snyung simple dev blog' },
+      { name: 'keywords', content: 'snyunb, blog, fe, front, js' },
       {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1',
       },
-      { name:"google-site-verification" ,
-        content:"hDzzkGSdcpcCt94YWZs1eqeK8tpkC5ZT0UjypZ3H3JQ"
-      }
     ]}
   >
     <html lang="ko" />
@@ -84,7 +81,7 @@ const Layout = (props) => {
           {status => (
             <div className={`blog-posts-container ${status}`}>
               {children}
-              {<Footer />}
+              {location.pathname !== '/' && <Footer />}
             </div>
           )}
         </Transition>

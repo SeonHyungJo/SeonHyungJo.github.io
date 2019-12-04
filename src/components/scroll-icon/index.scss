@@ -37,6 +37,7 @@ $animDuration: 5s;
   border-radius: 100px;
   background-size: 100% 200%;
   animation: colorSlide $animDuration linear infinite, nudgeMouse $animDuration ease-out infinite;
+  margin-top: 20px;
 
   &:before,
   &:after {

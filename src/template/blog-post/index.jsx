@@ -22,8 +22,6 @@ const PostTemplate = (props) => {
   const { html, excerpt, frontmatter } = data.markdownRemark
   const { title, date, tags } = frontmatter
 
-  console.log(props)
-
   return (
     <>
       <PostHelmet title={title} excerpt={excerpt} tags={tags} />
@@ -65,7 +63,7 @@ export const pageQuery = graphql`
       id
       excerpt
       frontmatter {
-        date(formatString: "MMMM Do, YYYY")
+        date(formatString: "MMMM DD, YYYY")
         path
         tags
         title
