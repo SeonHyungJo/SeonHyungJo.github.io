@@ -4,7 +4,8 @@
     "alt": "sNyung"
   },
   "nickName": {
-    "name": "sNyung"
+    "name": "sNyung",
+    "to": "/aboutme"
   },
   "text": "Interested in JS & Learning New",
   "sns": {
@@ -17,7 +18,7 @@
     "twitter": ""
   },
   "utterences": {
-    "repo": "SeonHyungJo/gatsby-sseon-starter",
+    "repo": "SeonHyungJo/SeonHyungJo.github.io",
     "theme": "github-light"
   }
 }
