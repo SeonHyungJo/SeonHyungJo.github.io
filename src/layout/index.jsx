@@ -59,6 +59,10 @@ const Layout = (props) => {
   }
 
   useEffect(() => {
+    checkSlider && setFilter([])
+  }, [checkSlider])
+
+  useEffect(() => {
     const indexPathCheck = location.pathname !== '/'
 
     setScrolling(indexPathCheck)
