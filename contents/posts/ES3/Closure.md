@@ -3,8 +3,8 @@ path: "/content/closure"
 author: "snyung"
 updated: "2019-12-05"
 date: "2019-01-19"
-title: "ECMA-262-3 Closure"
-tags: ["es3"]
+title: "[ES3] Closure"
+tags: ["ES3"]
 category: "post"
 ---
 
