@@ -19,12 +19,12 @@ import './index.scss'
 
 const CONTENT_LIST = ['content', 'aboutme']
 const SLIDER_PAGE_LIST = ['content', 'aboutme', 'article']
-const CustomHelmet = () => (
+const CustomHelmet = ({title = "Home | sNyung'B "}) => (
   <Helmet
-    title="Gatsby for SSEON"
+    title= {title}
     meta={[
-      { name: 'description', content: 'sseon theme' },
-      { name: 'keywords', content: 'sseon, blog, theme' },
+      { name: 'description', content: 'snyung simple dev blog' },
+      { name: 'keywords', content: 'snyunb, blog, fe, front, js' },
       {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1',
