@@ -3,7 +3,7 @@ path: "/content/transition"
 author: "snyung"
 date: "2018-08-10"
 title: "[CSS] Transition"
-tags: ["css", "jquery"]
+tags: ["CSS", "Jquery"]
 category: "post"
 ---
 

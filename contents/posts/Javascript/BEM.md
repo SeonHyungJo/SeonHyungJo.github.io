@@ -3,7 +3,7 @@ path: "/content/bem"
 author: "snyung"
 date: "2018-05-23"
 title: "BEM(Block Element Modifier)"
-tags: ["javascript"]
+tags: ["Javascript"]
 category: "post"
 ---
 
