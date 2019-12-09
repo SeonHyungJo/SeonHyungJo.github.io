@@ -3,39 +3,39 @@ path: "/content/transition"
 author: "snyung"
 date: "2018-08-10"
 title: "[CSS] Transition"
-tags: ["CSS", "Jquery"]
+tags: ["CSS"]
 category: "post"
 ---
 
-우리가 흔히 애니메이션이라고 생각하는 것들이 생각해보면 간단하다.
+여러 사이트에서 보여주는 애니메이션은 생각보다 간단하게 구현을 해볼 수 있다.
 
-왼쪽에서 오른쪽으로 넓어진다든지, `Header`에 메뉴에 `:hover`를 했더니 아래로 내려온다는 정도의 `Smooth` 한 변화가 이루어진다.
+왼쪽에서 오른쪽으로 넓어지는 애니메이션, `Header`에 메뉴에 `:hover`를 했더니 아래로 내려오는 애니메이션 정도의 `Smooth` 한 변화는 제목처럼 Transition을 사용하여 간단하게 구현이 가능하다.
 
-그러한 것들이 Javascript단이 아닌 CSS단에서 간단하게 이루어질 수 있다.
+Javascript단이 아닌 CSS단에서 간단하게 이루어진다는 것이다.
 
-`Transition` 의 하위 속성으로는 **4가지** 가 있다. 
+`Transition` 의 하위 속성으로는 기본적으로 **4가지**이다.
 
-- 변화가 이루어지는 속성
-- 지속시간
-- 변화 방법
-- 지연시간
+- 변화 감지를 할 속성(Transition-property)
+- 지속시간(Transition-duration)
+- 변화 방법(Transition-timing-function)
+- 지연시간(Transition-delay)
 
 ## Transition-property
 
-Transition을 적용해야 하는 CSS Property의 name 혹은 names를 명시.
+Transition을 적용할 CSS 속성명을 명시한다.
 
-여기에 나열한 속성만 트랜지션하는 동안 움직인다. 다른 모든 속성에 대한 **변화는 기본값으로 즉시 일어난다.**
+나열한 속성들은 어떤 행위를 하게되면 부드럽게 변화를 한다. 다른 모든 속성에 대한 **변화는 기본값으로 즉시 일어난다.**
 
 ```css
-transition-property: width; //단일 변화
-transition-property: height width; // 다중변화
+transition-property: width; // 단일 변화
+transition-property: height width; // 다중 변화
 transition-property: font-size;
 transition-property: background-color;
 ```
 
 ## Transition-duration
 
-Transition이 일어나는 **지속 시간**을 명시.
+Transition이 일어나는 **지속 시간**을 명시한다.
 
 Transition동안 모든 속성에 적용하는 단일 지속 시간을 명시하거나, 다른 주기로 각 속성이 트랜지션하게 하는 여러 지속 시간을 명시할 수 있다.
 
@@ -43,14 +43,14 @@ Transition동안 모든 속성에 적용하는 단일 지속 시간을 명시하
 transition-duration: 0.5s;
 transition-duration: 1s;
 transition-duration: 2s;
-    transition-duration: 4s;
+transition-duration: 4s;
 ```
 
-초가 작을 수록 빠르게 진행이 이루어진다.
+시간이 작을수록 빠르게 끝난다.
 
 ## Transition-timing-function
 
-Timing functions은 **트랜지션의 중간값을 계산하는 방법**을 결정.
+Timing functions은 **트랜지션의 중간값을 계산하는 방법**을 명시한다.
 
 대부분의 타이밍 함수는 **큐빅 베이지어(cubic bezier)** 를 정의하는 4개의 값에 의해 정의되므로 상응하는 함수의 그래프로 제공해서 명시할 수 있다.
 
@@ -83,7 +83,7 @@ transition-timing-function: unset;
 
 ## Transition-delay
 
-속성이 **변한 시점과 트랜지션이 실제로 시작하는 사이에 기다리는 시간** 을 정의.
+속성이 **변한 시점과 트랜지션이 실제로 시작하는 사이에 기다리는 시간** 을 정의한다.
 
 ```css
 transition-delay: 0.5s
@@ -92,7 +92,7 @@ transition-delay: 2s
 transition-delay: 4s
 ```
 
-초가 길어질수록 반응하는데 기다리는 시간이 길어진다.
+시간이 길어질수록 반응하는데 기다리는 시간이 길어진다.
 
 ## Transition shorthand
 
@@ -106,10 +106,11 @@ transition-timing-function: ease
 transition: margin-left 4s ease-in-out 1s;
 ```
 
-위에 처럼 한줄로 표현이 가능하다. 순서는 지켜서 작성해야 하는건 당연!!
+위에 처럼 한줄로 표현이 가능하다. 물론 순서는 지켜서 작성해야 한다.
 
 ---
 
-#### 참고
+#### Reference
 
+- [UI로 만들어보는 cubic bezier](https://cubic-bezier.com/)
 - [MDN-Trasition](https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
