@@ -223,7 +223,7 @@ DEBUG: sseon.sample.app.common.logger.LoggerInterceptor - ======================
 
 <br/>
 
-![순서도](http://cfile28.uf.tistory.com/image/24636835551216741514B9)
+![순서도](../../assets/setting3.png)
 
 <br/>
 
