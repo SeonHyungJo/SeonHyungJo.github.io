@@ -18,13 +18,13 @@ import 'style/baseLayout.scss'
 import './index.scss'
 
 const CONTENT_LIST = ['content', 'aboutme']
-const SLIDER_PAGE_LIST = ['content', 'aboutme', 'article']
+const SLIDER_PAGE_LIST = ['', 'content', 'aboutme', 'article']
 const CustomHelmet = ({title = "Home | sNyung'B "}) => (
   <Helmet
     title= {title}
     meta={[
       { name: 'description', content: 'snyung simple dev blog' },
-      { name: 'keywords', content: 'snyunb, blog, fe, front, js' },
+      { name: 'keywords', content: 'snyung, blog, fe, front, js' },
       {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1',
