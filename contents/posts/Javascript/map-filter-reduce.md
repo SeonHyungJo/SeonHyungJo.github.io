@@ -1,280 +1,207 @@
 ---
-path: "/content/memo-2"
+path: "/content/map-filter-reduce"
 author: "snyung"
-date: "2018-01-02"
+date: "2019-12-19"
 title: "[JS] Map, Filter, Reduce"
 tags: ["Javascript"]
 category: "post"
 ---
 
-# **JavaScript_Array 메소드 살펴보기(map, filter, reduce)**
+함수형 프로그래밍의 주요 기능 중 하나는 리스트와 리스트 연산자의 사용이다.
 
-## 자바스크립트를 하면서
+Javascript에는 초기 리스트에서 제공하는 모든 함수를 map, filter, reduce를 사용하여 원본 리스트는 그대로 유지하면서 다른 것으로 변환가능하다.
 
-자바스크립트는 쉬운 언어인거 같으면서도 그렇지 않다는게 함정이다. 단순한 문법들은 사람들이 이미 알고 사용하고 있지만 그게 전부가 아닌 것 같다는 생각을 요즘에 많이 하고 있다. 그중에도 오늘은 Array의 메소드들 중에서 Map, Filter, Reduce에 대해서 제대로 공부를 하고 정리를 하는 시간을 가지려고 한다. 다만 나를 위해서...하는 겁니다.
+## Map
 
-<br>
-<br>
+### 구문
 
-### 1. map()
-
-- MDN : map() 메소드는 배열 내의 모든 요소 각각에 대하여  제공된 함수(callback)를 호출하고, 그 결과를 모아서, 새로운 배열을 반환합니다.
-
+```js
+arr.map(callback(currentValue[, index[, array]])[, thisArg])
 ```
 
-  //기본적인 형태
-  arr.map(callback[, thisArg])
+`map()` 메서드는 콜백함수를 적용하고 나오는 결과물을 가지고 새로운 배열로 반환한다.
 
+객체 리스트에서 우리가 원하는 속성을 추가, 수정하는데 사용한다.
+
+map은 callback을 인자로 받는다. 이 calllback은 iteration의 현재 값을 받으며 인덱스와 원본 배열도 같이 불린다.
+
+optional하게 두 번째 인자로는 callback 내부에서 사용될 this를 바인딩한다.
+
+> [V8 엔진](https://github.com/v8/v8/blob/288aaef9ae15605383eb49f38b1df6e1f5d50ffb/src/builtins/array-map.tq#L79) 내부적으로 두번째 인자를 가지고 `fn.call(secondArg, ...)`를 사용하여 바인딩하고 있다.
+
+### Example
+
+```js
+const numbers = [2, 4, 8, 10];
+const halves = numbers.map(x => x / 2);
+// halves is [1, 2, 4, 5]
 ```
 
-<br>
+### pollyfill 만들어보기
 
-:point_right: **사용예제**
+```js
+Array.prototype.map = function (fn) {
+  var args
 
-```
-
-  //배열을 하나 만들어줍니다
-  var array = [1,2,3,4,5];
-
-  //이제 여기에 .map()을 이용하여 간단한 콜백함수를 만듭니다.
-
-  array.map(function(n){return n*2;});
-  array.map(n => n*2);
-
-```
-
-<br>
-
-- 현재 위아래 메소드사용을 결과값이 똑같습니다.
-- 아래의 문법은 축약형입니다. (인자값 => 결과값);
-  - es6에 적용된 문법으로 Arrow Function이라고 부릅니다.
-  - [설명이 잘되어있는 블로그](http://webframeworks.kr/tutorials/translate/arrow-function/)
-  - [MDN : 화살표함수](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/%EC%95%A0%EB%A1%9C%EC%9A%B0_%ED%8E%91%EC%85%98)
-- But **여기서 사용한 map()메소드의 결과값은 출력이되지만 array변수에는 담기지 않습니다.**
-  - 임시객체에 의한 메모리소멸로 인해 담기는 것이 아닌 보여주고 사라진다.
-
-<br>
-
-- 이번에는 다르게 사용해보고 싶다.
-- 함수를 미리선언을 하고 map()를 사용해서 결과값을 가져오도록하고싶다.
-
-```
-
-  //전체 배열에 +1을 하는 함수 생성
-  var add = function(n){
-    return n+1;
-  }
-  //전체 배열에 -1을 하는 함수 생성
-  var min = function(n){
-    return n-1;
+  if(this == null){
+    return new TypeError("this is null or not defined")
   }
 
-  //기존에 가지고 있던 배열을 가지고 실행
-  array.map(n => add(n));
-  array.map(add);//위의 문법과 같음
-  array.map(n => min(n));
-  array.map(min);//위의 문법과 같음
+  var o = Object(this)
+  var len = o.length >>> 0;
 
-  **실행결과**
-  (5) [2, 3, 4, 5, 6]
-  (5) [0, 1, 2, 3, 4]
+  if(typeof fn !== 'function'){
+    return new TypeError(fn, " is not a functions")
+  }
 
-```
+  var arr = new Array(len)
 
-- 이렇게 축약형으로 진행을 하여 선언해놓은 함수를 가져와서 재사용을 할 수 있다.
+  /* 추가적으로 들어오는 argument 처리 */
+  if (arguments.length > 1) {
+    args = arguments[1];
+  }
+  var n = 0;
 
-<br>
-<br>
-
-### 2. reduce()
-
-- MDN : reduce() 메서드는 왼쪽에서 오른쪽으로 이동하며 배열의 각 요소마다 누적 계산값과 함께 함수를 적용해 하나의 값으로 줄입니다.
-- 위의 설명대로 왼쪽에서 오른쪽으로 이동하면서 요소 하나하나를 계산을 하면서 나가 결과값으로 1개가 나온다.
-
-<br>
-
-```
-  //기본적인 형태
-  arr.reduce(callback[, initialValue])
-```
-
-<br>
-
-:point_right: **사용예제**
-
-<br>
-
-```
-
-  //기존에 사용했던 배열을 가지고
-  var array = [1,2,3,4,5];
-  //축약형으로 진행
-  array.reduce((acc, cur) => acc + cur);
-
-  //실행결과
-  15
-
-```
-
-<br>
-
-- reduce() 메소드로 2개의 인자명을 정해서 => 이후에 콜백함수를 만들어주고 있다.
-- 차례대로 계산을 하게 되면...
-  1. 1+2 => 3
-  2. 3+3 => 6
-  3. 6+4 => 10
-  4. 10+5 => 15
-- 결국 최종값으로 15가 나오게 되는 것이다.
-
-<br>
-<br>
-
-#### 받을 수 있는 인자값
-
-1. accumulator - 위의 경우, 1번째->결과값->결과값...
-2. currentValue - 위의 경우, 2번째부터 시작
-3. currentIndex - 현재 인덱스가 출력된다.
-4. array - 현재 배열값들이 출력
-
-<br>
-
-:point_right: 예외
-
-```
-
-array.reduce((acc, cur) => acc + cur, 10);
-
-```
-
-- 여기서 추가된 것이 있다면... 10이 추가 되었다.
-- 10은 초기값으로 지정을 해주는것으로
-- 처음 acc에 **10**이 들어가게 되고 cur에는 **첫번째 인자** 가 들어가게 되는것이다.
-
-<br>
-
-:point_right: **사용예제**
-
-```
-
-  //array의 인덱스 출력하기
-  array.reduce((acc, cur, index) => console.log(index));
-
-  //결과 출력
-  1
-  2
-  3
-  4
-  5
-
-  //array의 배열 출력하기
-  array.reduce((acc, cur, index, curArr) => console.log(curArr));
-
-  //결과 출력
-  (5) [1, 2, 3, 4, 5]
-  (5) [1, 2, 3, 4, 5]
-  (5) [1, 2, 3, 4, 5]
-  (5) [1, 2, 3, 4, 5]
-
-```
-
-- 다양한 활용이 가능할 것으로 생각이 된다.
-- map().reduce()로 사용하여 map메소드 진행 후 reduce메소드 진행 가능
-
-:point_right: **사용예제**
-
-```
-
-  var array = [1,2,3,4,5];
-  array.map(n => n+5).reduce((acc, cur) => acc+cur) ;
-
-  //실행결과
-  40
-
-```
-
-<br>
-<br>
-
-### 3. filter()
-
-- 말그래도 필터
-- MDN : filter() 메소드는 제공된 함수로 구현된 테스트를 통과하는 모든 요소가 있는 새로운 배열을 만듭니다.
-- if 같은 역할을 한다.
-- 반환값은 요소값으로 진행(if는 boolean으로 진행)
-
-<br>
-
-```
-
-  //기본적인 형태
-  arr.filter(callback[, thisArg])
-
-```
-
-<br>
-
-:point_right: **사용예제**
-
-<br>
-
-```
-
-  var array = [1,2,3,4,5]
-  array.filter(n => n>3);
-
-  //결과 출력
-  (2) [4, 5]
-
-```
-
-<br>
-
-- 객체를 넘기는 사용예제
-
-<br>
-
-```
-
-  //id가 숫자인 경우만 출력
-  //배열 선언
-  var arr = [
-    { id: 15 },
-    { id: -1 },
-    { id: 0 },
-    { id: 3 },
-    { id: 12.2 },
-    { },
-    { id: null },
-    { id: NaN },
-    { id: 'undefined' }
-  ];
-
-
-  var invalidEntries = 0;
-  //함수 선언
-  function filterByID(obj) {
-    if ('id' in obj && typeof(obj.id) === 'number' &&  !isNaN(obj.id)) {
-        return true;
-      } else {
-        invalidEntries++;
-        return false;
+  while (n < len){
+    if (n in o) {
+      arr[n] = fn.call(args, o[n], n, o)
+      n++
     }
   }
 
-  //filter진행
-  var arrByID = arr.filter(filterByID);
-
-  console.log('Filtered Array\n', arrByID);
-  // Filtered Array
-  // [{ id: 15 }, { id: -1 }, { id: 0 }, { id: 3 }, { id: 12.2 }]
-
-  console.log('Number of Invalid Entries = ', invalidEntries);
-
+  return arr
+}
 ```
 
-## 끝
+![Map](https://user-images.githubusercontent.com/24274424/71173584-79b45b80-22a6-11ea-813b-ace66fa11bc7.png)
 
-## 참고 자료
+## Filter
 
-- [MDN: 자바스크립트](https://developer.mozilla.org/ko/docs/Web/JavaScript)
-- [한큐에 자바 : 일일코딩](http://cafe.naver.com/javahanq)
+```js
+arr.filter(callback(element[, index[, array]])[, thisArg])
+```
+
+주어진 함수에 대해서 조건을 통과한 요소들을 가지고 새로운 배열을 만들어서 반환하는 메서드.
+
+filter는 map과 같은 arguments를 받는다. filter에서는 return 값으로 `true`나 `false`를 반환하면 된다. `true`를 반환하면 배열에 추가하며, `false`를 반환하면 추가하지 않는다. 
+
+결국, 새로운 배열이 나오되 `true`로 반환된 요소만 담겨서 나오게 된다.
+
+```js
+const words = ["spray", "limit", "elite", "exuberant", "destruction", "present"];
+
+const longWords = words.filter(word => word.length > 6);
+// longWords is ["exuberant", "destruction", "present"]
+```
+
+### pollyfill 만들어보기
+
+```js
+Array.prototype.filter = function (fn) {
+  var args
+
+  if(this == null){
+    return new TypeError("this is null or not defined")
+  }
+
+  var o = Object(this)
+  var len = o.length >>> 0;
+
+  if(typeof fn !== 'function'){
+    return new TypeError(fn, " is not a functions")
+  }
+
+  var arr = new Array(len)
+
+  if (arguments.length > 1) {
+    args = arguments[1];
+  }
+
+  var n = 0;
+  var i = -1;
+
+  while (++i !== len){
+    if (n in o) {
+      if(fn.call(args, o[i], i, o)){
+        arr[n++] = o[i]
+      }
+    }
+  }
+
+  arr.length = n
+  return arr
+}
+```
+
+![Filter](https://user-images.githubusercontent.com/24274424/71173596-820c9680-22a6-11ea-93af-46b528439e9f.png)
+
+## Reduce
+
+```js
+arr.reduce(callback[, initialValue])
+```
+
+`reduce()` 메서드는 accumulator와 배열의 각 요소(왼쪽에서 오른쪽으로)에 대해 함수를 적용하여 단일 값으로 반환한다.
+
+map, filter와 비슷하지만, callback argument가 다르다. callback은 accumulator를 받는다. 이 값은 이전에 누적된 반환값으로 현재 값, 현재 인덱스, 원본 배열을 같이 받는다.
+
+```js
+const total = [0, 1, 2, 3].reduce((sum, value) => sum + value, 1);
+// total is 7
+```
+
+### pollyfill 만들어보기
+
+```js
+Array.prototype.reduce = function (fn) {
+  var args;
+
+  if(this == null){
+    return new TypeError("this is null or not defined");
+  }
+
+  var o = Object(this);
+  var len = o.length >>> 0; 
+
+  if(typeof fn !== 'function'){
+    return new TypeError(fn, " is not a functions");
+  }
+
+  var n = 0;
+  var value;
+
+  /* 추가적으로 들어오는 argument 처리 */
+  if (arguments.length > 1) {
+    value = arguments[1];
+  }else{
+    while (n < len && !(n in o)) {
+      n++; 
+    }
+
+    if (n >= len) {
+      throw new TypeError( 'Reduce of empty array with no initial value' );
+    }
+
+    value = o[n++];
+  }
+  
+  while (n < len){
+    if (n in o) {
+      value = fn(value, o[n], n, o);
+    }
+    n++;    
+  }
+
+  return value
+}
+```
+
+![Reduce](https://user-images.githubusercontent.com/24274424/71173608-8769e100-22a6-11ea-964b-eb9a113761d6.png)
+
+---
+
+#### Reference
+
+- [JavaScript Functional Programming](https://medium.com/jsguru/javascript-functional-programming-map-filter-and-reduce-846ff9ba492d)
+- [Learn map, filter and reduce in Javascript](https://medium.com/@joomiguelcunha/learn-map-filter-and-reduce-in-javascript-ea59009593c4)
+- [V8.array-map](https://github.com/v8/v8/blob/master/src/builtins/array-map.tq#L79)
