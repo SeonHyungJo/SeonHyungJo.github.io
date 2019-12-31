@@ -41,6 +41,7 @@ const Layout = (props) => {
   const pathSplit = location.pathname.split('/')
   const checkContent = CONTENT_LIST.includes(pathSplit[1])
   const checkSlider = SLIDER_PAGE_LIST.includes(pathSplit[1])
+  const checkPostPath = pathSplit[1] === "post"
   const bodyElm = useRef()
 
   const [scrolling, setScrolling] = useState(false)
@@ -59,8 +60,8 @@ const Layout = (props) => {
   }
 
   useEffect(() => {
-    navigate(tabList[0].path)
-  }, filterList)
+    checkPostPath && navigate(tabList[0].path)
+  }, [filterList])
 
   useEffect(() => {
     checkSlider && setFilter([])
