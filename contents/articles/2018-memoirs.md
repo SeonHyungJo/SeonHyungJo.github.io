@@ -1,5 +1,5 @@
 ---
-path: "/content/new-year"
+path: "/content/2018-memoirs"
 author: "snyung"
 date: "2018-01-02"
 title: "1년 동안 블로그 유지하기"
