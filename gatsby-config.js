@@ -4,7 +4,7 @@ const path = require('path')
 // env setting for netlify preview
 const {
   NODE_ENV,
-  URL: NETLIFY_SITE_URL = 'hhttps://gatsby-sseon-starter.netlify.com',
+  URL: NETLIFY_SITE_URL = 'https://snyung.com/',
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
   CONTEXT: NETLIFY_ENV = NODE_ENV
 } = process.env;
