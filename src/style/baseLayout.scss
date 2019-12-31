@@ -71,10 +71,7 @@ strong {
 dfn {
   font-style: italic;
 }
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
+
 mark {
   background-color: #ff0;
   color: #000;
@@ -234,7 +231,8 @@ img {
   margin-bottom: 1rem;
 }
 h1 {
-  margin: 1rem 0 0.5rem;
+  font-size: 2em;
+  margin: 0.67em 0;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
@@ -242,11 +240,10 @@ h1 {
   color: inherit;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 2.25rem;
   line-height: 2.9rem;
 }
 h2 {
-  margin: 1rem 0 0.5rem;
+  margin: 2.5rem 0 0.5rem;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
