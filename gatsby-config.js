@@ -110,8 +110,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://gatsby-sseon-starter.netlify.com',
-        sitemap: 'https://gatsby-sseon-starter.netlify.com/sitemap.xml',
+        host: 'https://snyung.com/',
+        sitemap: 'https://snyung.com/sitemap.xml',
         resolveEnv: () => NETLIFY_ENV,
         env: {
           production: {
@@ -119,8 +119,8 @@ module.exports = {
           },
           'branch-deploy': {
             policy: [{ userAgent: '*', disallow: ['/'] }],
-            host: 'https://gatsby-sseon-starter.netlify.com',
-            sitemap: 'https://gatsby-sseon-starter.netlify.com/sitemap.xml',
+            host: 'https://snyung.com/',
+            sitemap: 'https://snyung.com/sitemap.xml',
           },
           'deploy-preview': {
             policy: [{ userAgent: '*', disallow: ['/'] }],
