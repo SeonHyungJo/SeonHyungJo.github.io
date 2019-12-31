@@ -2,7 +2,7 @@
 path: "/content/2019-memoirs"
 author: "snyung"
 date: "2019-12-31"
-title: "[회고록] 우리 모두 고생했어"
+title: "[회고] 우리 모두 고생했어"
 tags: []
 category: "article"
 ---
