@@ -23,7 +23,7 @@ const CustomHelmet = ({title = "Home | sNyung'B "}) => (
   <Helmet
     title= {title}
     meta={[
-      { name: 'description', content: 'snyung simple dev blog' },
+      { name: 'description', content: `sNyung's 슬기로운 기술 블로그` },
       { name: 'keywords', content: 'snyung, blog, fe, front, js' },
       {
         name: 'viewport',

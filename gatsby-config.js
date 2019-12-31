@@ -15,8 +15,9 @@ const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
 module.exports = {
   pathPrefix: process.env.CI ? `/${name}` : '/',
   siteMetadata: {
-    author: 'snyung',
-    title: 'Simple Blog',
+    author: 'sNyung',
+    title: `sNyung'B`,
+    description: `sNyung's 슬기로운 기술 블로그`,
     siteUrl
   },
   plugins: [
@@ -130,6 +131,7 @@ module.exports = {
       }
     },
     // 'gatsby-plugin-offline',
+    `gatsby-plugin-feed`,
     'gatsby-plugin-remove-serviceworker',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
