@@ -59,6 +59,10 @@ const Layout = (props) => {
   }
 
   useEffect(() => {
+    navigate(tabList[0].path)
+  }, filterList)
+
+  useEffect(() => {
     checkSlider && setFilter([])
   }, [checkSlider])
 
