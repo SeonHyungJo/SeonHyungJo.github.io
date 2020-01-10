@@ -8,45 +8,50 @@ import {
   EmailIcon,
   FacebookIcon,
   GithubIcon,
+  TwitterIcon,
 } from 'component/social-icon'
 
 import './index.scss'
 
-const AvataImg = (fixed) =>
+const AvataImg = fixed => (
   <Link to={'/aboutme'}>
-    <Image
-      className='img-circle'
-      fixed={fixed}
-    />
+    <Image className="img-circle" fixed={fixed} />
   </Link>
+)
 
-const NickName = ({ name = '', to = '/aboutme' }) =>
-  <a href={to} >
-    <div className='nick-name'>{`@ ${name}`}</div>
+const NickName = ({ name = '', to = '/aboutme' }) => (
+  <a href={to}>
+    <div className="nick-name">{`@ ${name}`}</div>
   </a>
+)
 
-const SocialBox = ({ snsList = [] }) =>
-  <div className='sns-list'>
-    <div className='sns-item'>
+const SocialBox = ({ snsList = [] }) => (
+  <div className="sns-list">
+    <div className="sns-item">
       <EmailIcon />
     </div>
-    <div className='sns-item'>
+    <div className="sns-item">
       <FacebookIcon />
     </div>
-    <div className='sns-item'>
+    <div className="sns-item">
       <GithubIcon />
     </div>
+    <div className="sns-item">
+      <TwitterIcon />
+    </div>
   </div>
+)
 
-const Presentation = ({ text = 'Hello My Blog Template' }) =>
-  <div className='presentation'>{text}</div>
+const Presentation = ({ text = 'Hello My Blog Template' }) => (
+  <div className="presentation">{text}</div>
+)
 
 const NameCard = ({ cardMode }) => (
   <StaticQuery
     query={cardQuery}
-    render={(data) => {
+    render={data => {
       return (
-        <div className={`card-item ${cardMode}`} >
+        <div className={`card-item ${cardMode}`}>
           <div className={'card-img-container'}>
             <AvataImg {...data.avatar.childImageSharp.fixed} />
           </div>
@@ -57,7 +62,7 @@ const NameCard = ({ cardMode }) => (
             <SocialBox />
             {!cardMode && <ScrollIcon />}
           </div>
-        </div >
+        </div>
       )
     }}
   />
@@ -76,6 +81,3 @@ const cardQuery = graphql`
 `
 
 export default NameCard
-
-
-
