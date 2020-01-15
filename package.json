@@ -51,6 +51,7 @@
     "eslint-plugin-react": "^7.17.0",
     "husky": "^4.0.2",
     "lint-staged": "^9.5.0",
+    "plop": "^2.5.3",
     "prettier": "^1.19.1"
   },
   "keywords": [
@@ -64,7 +65,8 @@
     "build": "gatsby build",
     "preserve": "npm run build",
     "serve": "gatsby serve",
-    "lint": "eslint --ext .js,.jsx --ignore-pattern public ."
+    "lint": "eslint --ext .js,.jsx --ignore-pattern public .",
+    "generate": "plop --plopfile ./generators/plopfile.js"
   },
   "husky": {
     "hooks": {
