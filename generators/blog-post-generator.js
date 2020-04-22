@@ -1,5 +1,4 @@
 const fs = require('fs');
-const path = require('path');
 const { inputRequired } = require('./utils');
 
 const {tabList} = JSON.parse(fs.readFileSync('./meta-data/tabList.json'));
@@ -30,12 +29,9 @@ module.exports = plop => {
       data.path = data.createdDate + '--' + data.title
 
       if (data.tags) {
-        data.tags = `\ntags:\n  - ${
-          data.tags.split(',')
-            .filter(tag => tag != '')
-            .map(tag => tag.trim())
-            .join('\n  - ')
-          }`;
+        data.tags = `\ntags: [${data.tags.split(',')}]`;
+      } else{
+        data.tags = `\ntags: []`
       }
 
       return [

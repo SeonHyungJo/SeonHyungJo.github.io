@@ -1,5 +1,6 @@
 ---
-path: "{{path}}"
+path: "/content/{{path}}"
+author: "snyung"
 date: "{{createdDate}}"
 title: {{title}}{{tags}}
 category: "{{postType}}"
