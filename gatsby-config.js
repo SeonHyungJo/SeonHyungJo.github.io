@@ -185,6 +185,19 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        // datalayer to be set before GTM is loaded
+        // should be a stringified object or object
+        // Defaults to null
+        defaultDataLayer: function () {
+          return {
+            pageType: window.pageType,
+          }
+        },
+      },
+    },
     'gatsby-plugin-remove-serviceworker',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
