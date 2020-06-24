@@ -1,11 +1,11 @@
 {
-  "name": "gatsby-sseon-starter",
-  "description": "Very simple Blog Template",
-  "version": "0.9.0",
+  "name": "snyung-dev-log",
+  "description": "FrontEnd Engineer sNyung's Dev log",
+  "version": "0.10.0",
   "author": "sNyung <seonhyung.jo@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SeonHyungJo/gatsby-sseon-starter.git"
+    "url": "git+https://github.com/SeonHyungJo/SeonHyungJo.github.io"
   },
   "license": "MIT",
   "dependencies": {
@@ -58,7 +58,10 @@
   "keywords": [
     "gatsby",
     "snyung",
-    "blog"
+    "blog",
+    "frontend",
+    "dev",
+    "log"
   ],
   "scripts": {
     "dev": "gatsby develop",
