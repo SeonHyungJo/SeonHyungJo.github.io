@@ -3,7 +3,7 @@ path: '/content/2020-06-24--네트워크-기초-IP'
 author: 'snyung'
 date: '2020-06-24'
 title: 네트워크 기초 - IP
-tags: [network, ip]
+tags: [network]
 category: 'post'
 ---
 
