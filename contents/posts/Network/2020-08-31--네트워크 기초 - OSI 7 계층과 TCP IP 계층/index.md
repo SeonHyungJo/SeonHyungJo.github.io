@@ -13,6 +13,7 @@ category: "post"
 2. [네트워크 기초 - SubnetMask](https://snyung.com/content/2020-07-11--%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%84%9C%EB%B8%8C%EB%84%B7%EB%A7%88%EC%8A%A4%ED%81%AC)
 3. [네트워크 기초 - Types of IP](https://snyung.com/content/2020-07-25--%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-Types-Of-IP)
 
+
 - 네트워크 : 두 대 이상의 컴퓨터가 논리적 또는 물리적으로 연결되어 통신이 가능한 상태(PAN, LAN, MAN, WAN).
 - IP 주소 : 네트워킹이 가능한 장비를 식별하는 주소.
 - IPv4, IPv6

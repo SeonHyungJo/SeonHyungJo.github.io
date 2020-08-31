@@ -11,6 +11,7 @@ category: "post"
 
 1. [네트워크 기초 - IP](https://snyung.com/content/2020-06-24--%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-IP)
 
+
 - 네트워크 : 두 대 이상의 컴퓨터가 논리적 또는 물리적으로 연결되어 통신이 가능한 상태(PAN, LAN, MAN, WAN).
 - IP 주소 : 네트워킹이 가능한 장비를 식별하는 주소.
 - IPv4, IPv6
