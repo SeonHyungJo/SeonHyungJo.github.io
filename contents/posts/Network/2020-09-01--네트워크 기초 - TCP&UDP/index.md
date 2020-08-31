@@ -1,20 +1,21 @@
 ---
-path: "/content/2020-08-31--네트워크-기초-TCP&UDP"
+path: "/content/2020-09-01--네트워크-기초-TCP&UDP"
 author: "snyung"
-date: "2020-08-31"
+date: "2020-09-01"
 title: 네트워크 기초 - TCP & UDP
 tags: [network]
 category: "post"
 ---
 
-# TCP와 UDP
-
 ### 이전 글 복습하기
 
-1. [네트워크 기초 - IP](https://snyung.com/content/2020-06-24--%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-IP)
-2. [네트워크 기초 - SubnetMask](https://snyung.com/content/2020-07-11--%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%84%9C%EB%B8%8C%EB%84%B7%EB%A7%88%EC%8A%A4%ED%81%AC)
-3. [네트워크 기초 - Types of IP](https://snyung.com/content/2020-07-25--%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-Types-Of-IP)
-4. [네트워크 기초 - OSI 7 계층과 TCP/IP 계층](https://snyung.com/content/2020-08-31--%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-OSI-7-%EA%B3%84%EC%B8%B5%EA%B3%BC-TCP-IP-%EA%B3%84%EC%B8%B5)
+[네트워크 기초 - IP](https://snyung.com/content/2020-06-24--%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-IP)
+
+[네트워크 기초 - SubnetMask](https://snyung.com/content/2020-07-11--%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%84%9C%EB%B8%8C%EB%84%B7%EB%A7%88%EC%8A%A4%ED%81%AC)
+
+[네트워크 기초 - Types of IP](https://snyung.com/content/2020-07-25--%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-Types-Of-IP)
+
+[네트워크 기초 - OSI 7 계층과 TCP/IP 계층](https://snyung.com/content/2020-08-31--%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-OSI-7-%EA%B3%84%EC%B8%B5%EA%B3%BC-TCP-IP-%EA%B3%84%EC%B8%B5)
 
 
 - 네트워크 : 두 대 이상의 컴퓨터가 논리적 또는 물리적으로 연결되어 통신이 가능한 상태(PAN, LAN, MAN, WAN).
