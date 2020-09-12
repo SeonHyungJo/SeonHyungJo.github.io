@@ -1,10 +1,10 @@
 ---
-path: "/content/2020-07-25--네트워크-기초-Types-Of-IP"
-author: "snyung"
-date: "2020-07-25"
+path: '/content/2020-07-25--네트워크-기초-Types-Of-IP'
+author: 'snyung'
+date: '2020-07-25'
 title: 네트워크 기초 - Types Of IP
 tags: [network]
-category: "post"
+category: 'post'
 ---
 
 ### 이전 글 복습하기
@@ -13,6 +13,9 @@ category: "post"
 
 [네트워크 기초 - SubnetMask](https://snyung.com/content/2020-07-11--%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-%EC%84%9C%EB%B8%8C%EB%84%B7%EB%A7%88%EC%8A%A4%ED%81%AC)
 
+[네트워크 기초 - OSI 7 계층과 TCP/IP 계층](https://snyung.com/content/2020-08-31--%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-OSI-7-%EA%B3%84%EC%B8%B5%EA%B3%BC-TCP-IP-%EA%B3%84%EC%B8%B5)
+
+[네트워크 기초 - TCP와 UDP](https://snyung.com/content/2020-09-01--%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-TCP&UDP)
 
 - 네트워크 : 두 대 이상의 컴퓨터가 논리적 또는 물리적으로 연결되어 통신이 가능한 상태(PAN, LAN, MAN, WAN).
 - IP 주소 : 네트워킹이 가능한 장비를 식별하는 주소.
@@ -103,5 +106,3 @@ NAT는 네트워크 주소를 변환시켜주는 기술을 말하며, NAT의 장
 - [공인(Public) && 사설(Private) IP의 차이점](https://velog.io/@hidaehyunlee/%EA%B3%B5%EC%9D%B8Public-%EC%82%AC%EC%84%A4Private-IP%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90)
 - [공인 IP, 사설 IP, 고정 IP, 유동 IP](http://gotocloud.co.kr/?p=320)
 - [공인아이피 사설아이피 정의 및 이해 : 네이버 블로그](https://m.blog.naver.com/mogni/70183970559)
-
-

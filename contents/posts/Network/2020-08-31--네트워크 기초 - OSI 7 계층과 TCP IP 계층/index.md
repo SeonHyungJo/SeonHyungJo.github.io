@@ -1,10 +1,10 @@
 ---
-path: "/content/2020-08-31--네트워크-기초-OSI-7-계층과-TCP-IP-계층"
-author: "snyung"
-date: "2020-08-31"
+path: '/content/2020-08-31--네트워크-기초-OSI-7-계층과-TCP-IP-계층'
+author: 'snyung'
+date: '2020-08-31'
 title: 네트워크 기초 - OSI 7 계층과 TCP/IP 계층
 tags: [network]
-category: "post"
+category: 'post'
 ---
 
 ### 이전 글 복습하기
@@ -15,6 +15,7 @@ category: "post"
 
 [네트워크 기초 - Types of IP](https://snyung.com/content/2020-07-25--%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-Types-Of-IP)
 
+[네트워크 기초 - TCP와 UDP](https://snyung.com/content/2020-09-01--%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-TCP&UDP)
 
 - 네트워크 : 두 대 이상의 컴퓨터가 논리적 또는 물리적으로 연결되어 통신이 가능한 상태(PAN, LAN, MAN, WAN).
 - IP 주소 : 네트워킹이 가능한 장비를 식별하는 주소.
@@ -116,7 +117,7 @@ OSI는 `Open Systems Interconnection`의 약자로 개방형 시스템이라는 
 
 ### 5 계층 - 세션 계층(Session Layer)
 
-통신 세션을 구성하는 계층으로, 포트(Port)번호를 기반으로 연결한다. 통신장치 간의 상호작용을 설정하고 유지하며 동기화한다. 
+통신 세션을 구성하는 계층으로, 포트(Port)번호를 기반으로 연결한다. 통신장치 간의 상호작용을 설정하고 유지하며 동기화한다.
 
 > 세션이란 **데이터가 통신하기 위한 논리적인 연결**을 말한다. (통신을 하기 위한 문)
 
@@ -167,12 +168,12 @@ OSI 7계층의 물리 계층과 데이터 링크 계층에 해당한다.
 
 ### 2 계층 - 인터넷 계층(Internet Layer)
 
-OSI 7계층의 네트워크 계층에 해당한다. 
+OSI 7계층의 네트워크 계층에 해당한다.
 
 ### 3 계층 - 전송 계층(Transport Layer)
 
 OSI 7계층의 전송 계층에 해당한다.
- 
+
 ### 4 계층 - 응용 계층(Application Layer)
 
 OSI 7계층의 세션 계층, 표현 계층, 응용 계층에 해당한다.
@@ -184,4 +185,3 @@ OSI 7계층의 세션 계층, 표현 계층, 응용 계층에 해당한다.
 - [TCP/IP 4계층(TCP/IP 4 Layer)](https://hahahoho5915.tistory.com/15)
 - [[OSI 7계층, TCP/IP 4계층] 네트워크의 기본 계층 구조](https://ryusae.tistory.com/4)
 - ["데이터가 전달되는 원리" OSI 7계층 모델과 TCP/IP 모델](https://velog.io/@hidaehyunlee/%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B0%80-%EC%A0%84%EB%8B%AC%EB%90%98%EB%8A%94-%EC%9B%90%EB%A6%AC-OSI-7%EA%B3%84%EC%B8%B5-%EB%AA%A8%EB%8D%B8%EA%B3%BC-TCPIP-%EB%AA%A8%EB%8D%B8)
-
