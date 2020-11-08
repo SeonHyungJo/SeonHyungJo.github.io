@@ -17,6 +17,10 @@ category: 'post'
 
 [네트워크 기초 - TCP와 UDP](https://snyung.com/content/2020-09-01--%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EC%B4%88-TCP&UDP)
 
+[네트워크 기초 - DHCP & DNS](https://snyung.com/content/2020-11-07--%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%20%EA%B8%B0%EC%B4%88%20-%20DHCP&DNS)
+
+[네트워크 기초 - HTTP3](https://snyung.com/content/2020-11-07--%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%20%EA%B8%B0%EC%B4%88%20-%20HTTP3)
+
 - 네트워크 : 두 대 이상의 컴퓨터가 논리적 또는 물리적으로 연결되어 통신이 가능한 상태(PAN, LAN, MAN, WAN).
 - IP 주소 : 네트워킹이 가능한 장비를 식별하는 주소.
 - IPv4, IPv6
