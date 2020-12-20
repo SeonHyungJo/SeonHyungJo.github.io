@@ -1,8 +1,8 @@
 ---
-path: "/content/2020-12-20--Preact Vite를 아시나요"
+path: "/content/2020-12-20--Preact Vite 일주일 사용후기"
 author: "snyung"
 date: "2020-12-20"
-title: Preact, Vite를 아시나요?
+title: Preact, Vite 일주일 사용후기?
 tags: [preact,vite]
 category: "post"
 ---
