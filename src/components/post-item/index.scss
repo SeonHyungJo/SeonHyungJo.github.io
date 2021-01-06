@@ -3,26 +3,26 @@
 .blog-post-preview {
   background: white;
   box-shadow: $shadow;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 
-  padding: 0.2rem 1.6rem;
-  margin: 0.6rem 0rem;
+  padding: 0.8rem;
+  margin: 0.4rem 0rem;
 
-  line-height: 1.5;
+  border-radius: 8px;
+  line-height: 1.43;
 
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 
   & .title {
-    color: black;
-    font-size: 1.1rem;
+    color: #222;
+    font-size: 0.95rem;
     font-weight: 600;
-    margin: 0.5rem 0 0.2rem;
+    margin: 0.2rem 0;
   }
 
   & .summary {
     font-size: 0.8rem;
     color: #7d7d7d;
-    margin-bottom: 0.7rem;
+    margin: 0.3rem 0 ;
   }
 
   &:hover {

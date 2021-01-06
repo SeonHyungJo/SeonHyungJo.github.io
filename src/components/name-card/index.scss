@@ -12,7 +12,7 @@ body::-webkit-scrollbar {
   background: #77af9c;
   padding: 2rem;
 
-  border-radius: 3px;
+  border-radius: 8px;
   box-shadow: $shadow;
 
   img {
@@ -35,12 +35,13 @@ body::-webkit-scrollbar {
       color: white;
       background-color: purple;
       border-radius: 10px;
+
       padding: 0.1rem 0.4rem 0.2rem;
       margin: 0.3rem;
 
       font: {
         size: 20px;
-        weight: 700;
+        weight: bold;
       }
     }
 
@@ -56,15 +57,17 @@ body::-webkit-scrollbar {
       margin: 1rem 0;
 
       font-size: 20px;
+      font-weight: bold;
     }
 
     .sns-list {
       display: flex;
       align-items: center;
 
+      padding: 0.3rem;
+
       .sns-item {
-        width: 40px;
-        margin: 0.3rem 0.5rem;
+        width: 20px;
       }
     }
   }
@@ -81,7 +84,7 @@ body::-webkit-scrollbar {
       width: $avataImg;
       height: $avataImg;
       border-radius: 100%;
-      margin: 0rem 1rem;
+      margin: 0rem 0.3rem;
     }
 
     .card-content-container {
@@ -105,9 +108,11 @@ body::-webkit-scrollbar {
       }
 
       .sns-list {
+        padding: 0.5rem 0.3rem 0;
+
         .sns-item {
-          width: 30px;
-          margin: 0.3rem;
+          width: 35px;
+          padding: 0 0.3rem;
         }
       }
     }

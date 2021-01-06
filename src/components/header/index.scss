@@ -6,19 +6,11 @@
   align-items: center;
 
   background: #5f2c82;
-  background: -webkit-linear-gradient(to left, #49a09d, #5f2c82);
-  background: linear-gradient(to left, #49a09d, #5f2c82);
+  background: -webkit-linear-gradient(95.2deg,  rgba(173,252,234,1) 26.8%, rgba(192,229,246,1) 64% );
+  background-image: linear-gradient( 95.2deg,  rgba(173,252,234,1) 26.8%, rgba(192,229,246,1) 64% );
 
-
-  height: $header-height;
-  padding: 1rem;
-
-  box-shadow: $shadow;
-
-
-  border-width: 0px 0px 1px;
-  border-style: solid;
-  border-image: linear-gradient(to right, #8cd790, #285943) 0 0 100%;
+  padding: 1.5rem;
+  box-shadow: 0 0 0.5px 0.5px #C6426E;
 
   font: {
     size: 13px;
@@ -26,12 +18,12 @@
   }
 
   .header-title {
-    color: white;
+    color: rgba(34, 34, 34, 0.688);
 
     font: {
       family: "Fira Sans", sans-serif;
-      size: 36px;
-      weight: 500;
+      size: 32px;
+      weight: bold;
     }
   }
 }

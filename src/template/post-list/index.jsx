@@ -17,7 +17,7 @@ const usePosts = () => {
         ) {
           edges {
             node {
-              excerpt
+              excerpt(pruneLength: 120)
               id
               frontmatter {
                 title

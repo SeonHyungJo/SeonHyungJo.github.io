@@ -1,9 +1,9 @@
 .tab-item {
-  color: white;
+  color: rgba(34, 34, 34, 0.688);
   padding: 0.2rem;
   margin-right: 0.5rem;
 
-  background-image: linear-gradient(to right, #8cd790, #285943);
+  background-image: linear-gradient(to right, #5B86E5, #5B86E5);
   background-repeat: no-repeat;
   background-position: 0 100%;
   background-size: 0 0.2em;
@@ -11,12 +11,16 @@
   transition: background-size 0.3s ease;
 
   &:hover {
-    color: white;
+    color: #5B86E5;
     background-size: 100% 0.2em;
+
+    font-weight: bold;
   }
 
   &.active {
-    color: white;
+    color: #5B86E5;
     background-size: 100% 0.2em;
+
+    font-weight: bold;
   }
 }

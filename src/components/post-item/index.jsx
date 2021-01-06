@@ -17,7 +17,7 @@ const PostListItem = ({ post }) =>
       <p className="summary">{post.excerpt}</p>
     </Link >
 
-    <TagList tags={post.frontmatter.tags} />
+    {/* <TagList tags={post.frontmatter.tags} /> */}
   </div >
 
 PostListItem.propTypes = {
