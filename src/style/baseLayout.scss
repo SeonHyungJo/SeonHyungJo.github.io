@@ -231,7 +231,7 @@ img {
   margin-bottom: 1rem;
 }
 h1 {
-  font-size: 26px;
+  font-size: 28px;
   margin: 0.67em 0;
   padding-bottom: 0;
   padding-left: 0;
@@ -243,7 +243,7 @@ h1 {
   line-height: 2.9rem;
 }
 h2 {
-  margin: 1.5rem 0 0.3rem;
+  margin: 1.7rem 0 0.3rem;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
@@ -251,11 +251,11 @@ h2 {
   color: inherit;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 2.175rem;
 }
 h3 {
-  margin: 1rem 0 0.3rem;
+  margin: 0.8rem 0 0.2rem;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
@@ -263,7 +263,7 @@ h3 {
   color: inherit;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 2.175rem;
 }
 h4 {
@@ -275,7 +275,7 @@ h4 {
   color: inherit;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.45rem;
 }
 h5 {
@@ -287,7 +287,7 @@ h5 {
   color: inherit;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 0.85028rem;
+  font-size: 14px;
   line-height: 1.45rem;
 }
 h6 {
@@ -299,7 +299,7 @@ h6 {
   color: inherit;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 0.78405rem;
+  font-size: 12px;
   line-height: 1.45rem;
 }
 hgroup {
@@ -358,8 +358,8 @@ dd {
 }
 p {
   font-size: 0.9rem;
-  line-height: 1.65;
-  margin: 0.8rem 0;
+  line-height: 1.53;
+  margin: 0.5rem 0;
   padding: 0;
 }
 figure {
@@ -414,9 +414,10 @@ fieldset {
   margin-bottom: 1rem;
 }
 blockquote {
-  margin: 0.5rem 0.6rem;
+  margin: 0.8rem 0.6rem;
   padding: 0 0.8rem;
-  font-weight: 800;
+  font-weight: 500;
+  color: rgba(34, 34, 34, 0.715);
 
   border-left: 5px solid #eee;
 }
