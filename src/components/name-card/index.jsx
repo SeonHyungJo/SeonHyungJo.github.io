@@ -43,7 +43,7 @@ const SocialBox = ({ snsList = [] }) => (
 )
 
 const Presentation = ({ text = 'Hello My Blog Template' }) => (
-  <div className="presentation">{text}</div>
+  <div className="presentation" dangerouslySetInnerHTML={{'__html':text}}/>
 )
 
 const NameCard = ({ cardMode }) => (

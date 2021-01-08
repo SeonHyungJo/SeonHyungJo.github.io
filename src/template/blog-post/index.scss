@@ -47,14 +47,16 @@
   }
 
   .post-footer {
-    border-top: 0.05rem solid #aaaaaa;
-
     .post-footer-content {
       display: flex;
       justify-content: space-around;
       align-items: center;
 
-      margin: 1.5rem 0;
+      margin: 1rem 0;
+
+      .card-item {
+       width: 100%;
+      }
     }
   }
 }

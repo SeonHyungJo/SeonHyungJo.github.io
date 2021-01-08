@@ -38,7 +38,7 @@ const PostTemplate = (props) => {
         <div className="post-footer">
           <div className="post-footer-content">
             <NameCardFull cardMode={"simple-card"} />
-            <SponsorButton sponsorId={'snyung'} />
+            {/* <SponsorButton sponsorId={'snyung'} /> */}
           </div>
           <div className="post-footer-movebtn">
             <PageBtnContainer pageContext={pageContext} />
