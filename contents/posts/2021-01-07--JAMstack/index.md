@@ -77,7 +77,7 @@ JAMstack 사이트는 다양한 도구로 구축이 가능하다. 하나의 기�
 
 ### Atomic deploys
 
-각각의 배포는 사이트의 전체 sanpshot이다. 이를 통해 전 세계적으로 일관된 버전의 사이트를 보장할 수 있다.
+각각의 배포는 사이트의 전체 Snapshot이다. 이를 통해 전 세계적으로 일관된 버전의 사이트를 보장할 수 있다.
 
 ### Cache invalidation
 
@@ -93,7 +93,7 @@ JAMstack 사이트는 다양한 도구로 구축이 가능하다. 하나의 기�
 
 ## 마무리
 
-지금 사용하고 있는 블로그로 Gatsby를 사용하며, Netlify 호스팅업체를 사용하여 JAMstack Best Practise에 기반하여 구현되어있다. 또한 현재 많이 사용되는 React, Vue, Preact도 JAMstack의 기반한 프레임워크라고도 할 수 있다. 이처럼 우리가 인지하고 있지 않지만 이미 사용하고 있다. 
+지금 사용하고 있는 블로그로 Gatsby와 Netlify 호스팅업체를 사용하여 JAMstack Best Practise에 기반하여 구현되어있다. 또한 현재 많이 사용되는 React, Vue, Preact도 JAMstack의 기반한 프레임워크라고도 할 수 있다. 이처럼 우리가 인지하고 있지 않지만 이미 사용하고 있다. 
 
 이번 기회를 통해 우리가 사용하는 것들이 JAMstack의 기반이라고 인지하고 있으면 좋을 거 같다.
 
