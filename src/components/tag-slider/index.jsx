@@ -84,7 +84,7 @@ const Slider = ({ setFilter }) => {
   }
 
   return (
-    <TagSlider tags={tagList} selectHandle={selectHandle} />
+    <TagSlider tags={tagList} selectHandle={selectHandle} customClassPrefix={'snyung'} />
   )
 }
 
