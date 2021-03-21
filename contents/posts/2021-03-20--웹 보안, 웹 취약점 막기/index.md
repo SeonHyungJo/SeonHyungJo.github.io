@@ -153,7 +153,7 @@ Lambda를 사용해서 CloudFront로 들어와 S3에서 Resource를 가져온 �
 
 ![lambda-3](../../assets/web-security/lambda-3.png)
 
-아래를 확인해보면 Request에 연결을 할 것인지, Response에 연결할 것인지 선택할 수 있다. 우리는 Response에 연결해주면 된다.
+아래를 확인해보면 Request에 연결할 것인지, Response에 연결할 것인지 선택할 수 있다. 우리는 Response에 연결해주면 된다.
 
 <br/>
 
