@@ -28,11 +28,12 @@ const PostTemplate = (props) => {
       <PostHelmet title={title} excerpt={excerpt} tags={tags} />
       <AdSense.Google
         client='ca-pub-8793464953717853'
-        slot='7806394673'
+        slot='3513526331'
         style={{ display: 'block' }}
         format='auto'
         responsive='true'
       />
+
       <div className="post-container">
         <div className={'post-header'}>
           <h1 className="title">{title}</h1>
