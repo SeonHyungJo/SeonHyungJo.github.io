@@ -11,7 +11,7 @@ body::-webkit-scrollbar {
   justify-content: center;
 
   // Card Color
-  background: #0083B0;  /* fallback for old browsers */
+  background: $cardColor;  /* fallback for old browsers */
 
   padding: 2rem;
 

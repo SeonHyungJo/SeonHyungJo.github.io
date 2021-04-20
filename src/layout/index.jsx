@@ -60,6 +60,10 @@ const Layout = (props) => {
   }
 
   useEffect(() => {
+    navigate(tabList[0].path)
+  }, [])
+
+  useEffect(() => {
     checkPostPath && navigate(tabList[0].path)
   }, [filterList])
 

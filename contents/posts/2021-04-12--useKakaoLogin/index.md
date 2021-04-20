@@ -2,12 +2,12 @@
 path: "/content/2021-04-12--useKakaoLogin"
 author: "snyung"
 date: "2021-04-12"
-title: React Custom Hooks - 카카오 로그인 구현하기
+title: React Custom hooks | 카카오 로그인
 tags: [react, hooks]
 category: "post"
 ---
 
-![useKakaoLogin - Custom Hooks](../../assets/hooks/useKakaoLogin.png)
+![useKakaoLogin - Custom Hook](../../assets/hooks/useKakaoLogin.png)
 
 구글, 네이버, 카카오톡 등 많은 간편 로그인들이 있다. 개인적으로는 구글 간편 로그인을 많이 사용하지만, 서비스마다 연령층이 다르게 되어 사용되는 간편 로그인도 그것에 맞게 사용해야 한다.
 

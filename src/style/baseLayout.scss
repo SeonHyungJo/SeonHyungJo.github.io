@@ -5,7 +5,7 @@ html {
 
 body {
   margin: 0;
-  background: #F8F8F8;
+  background: #fff;
 }
 
 article,
@@ -94,6 +94,7 @@ sup {
 }
 img {
   border-style: none;
+  box-shadow: 0 0 3px 3px #f5f5f5;
 }
 svg:not(:root) {
   overflow: hidden;
@@ -243,7 +244,19 @@ h1 {
   line-height: 2.9rem;
 }
 h2 {
-  margin: 1.7rem 0 0.3rem;
+  margin: 2rem 0 0.3rem;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  color: inherit;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+  font-size: 26px;
+  line-height: 2.175rem;
+}
+h3 {
+  margin: 1.2rem 0 0.2rem;
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
@@ -252,18 +265,6 @@ h2 {
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 22px;
-  line-height: 2.175rem;
-}
-h3 {
-  margin: 0.8rem 0 0.2rem;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  color: inherit;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
-  font-size: 18px;
   line-height: 2.175rem;
 }
 h4 {
@@ -275,7 +276,7 @@ h4 {
   color: inherit;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.45rem;
 }
 h5 {
@@ -287,7 +288,7 @@ h5 {
   color: inherit;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.45rem;
 }
 h6 {
@@ -299,7 +300,7 @@ h6 {
   color: inherit;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.45rem;
 }
 hgroup {
@@ -356,12 +357,14 @@ dd {
   padding-top: 0;
   margin-bottom: 1rem;
 }
+
 p {
-  font-size: 0.9rem;
-  line-height: 1.53;
-  margin: 0.5rem 0;
+  font-size: 16px;
+  line-height: 1.43;
+  margin: 1rem 0;
   padding: 0;
 }
+
 figure {
   margin-left: 0;
   margin-right: 0;

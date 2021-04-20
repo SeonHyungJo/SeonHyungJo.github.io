@@ -5,11 +5,11 @@
   justify-content: space-between;
   align-items: center;
 
-  background: #5f2c82;
-  background: -webkit-linear-gradient(95.2deg,  rgba(173,252,234,1) 26.8%, rgba(192,229,246,1) 64% );
-  background-image: linear-gradient( 95.2deg,  rgba(173,252,234,1) 26.8%, rgba(192,229,246,1) 64% );
+  background: $HeaderBackground1;
+  background: $HeaderBackground2;
+  background-image: $HeaderBackground3;
 
-  padding: 1.5rem;
+  padding: 16px 32px;
   box-shadow: 0 0 0.3px 0.3px #C6426E;
 
   font: {
@@ -18,11 +18,11 @@
   }
 
   .header-title {
-    color: rgba(34, 34, 34, 0.688);
+    color: $HeaderTitleColor;
 
     font: {
       family: "Fira Sans", sans-serif;
-      size: 32px;
+      size: 28px;
       weight: bold;
     }
   }
@@ -30,7 +30,7 @@
 
 @media only screen and (max-width: 640px) {
   .header-container {
-    border-bottom: 2px solid #aaaaaa;
+    border-bottom: 1px solid #aaaaaa;
     box-shadow: none;
     flex-direction: column;
     height: $header-height + 2rem;

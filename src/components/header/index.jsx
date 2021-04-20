@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 import './index.scss'
 
 const Title = ({ title }) =>
-  <Link to={'/'} className={'header-title'}>
+  <Link to={'/post'} className={'header-title'}>
     {title}
   </Link>
 
