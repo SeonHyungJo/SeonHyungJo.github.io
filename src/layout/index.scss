@@ -13,8 +13,8 @@
 }
 
 .blog-posts-container {
-  margin: 12px auto;
-  max-width: 660px;
+  margin: 0 auto;
+  max-width: 680px;
 
   transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 
@@ -58,11 +58,5 @@
   .blog-main-container {
     margin: 0;
     padding: 0;
-  }
-}
-
-@media only screen and (max-width: 640px) {
-  .blog-posts {
-    margin: 0px;
   }
 }

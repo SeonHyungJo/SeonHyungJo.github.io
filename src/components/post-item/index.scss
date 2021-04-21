@@ -2,24 +2,19 @@
 
 .blog-post-preview {
   background: white;
-  // box-shadow: $shadow;
 
-  padding: 0.8rem;
-  margin: 1rem 0rem;
-
-  border-radius: 8px;
-  line-height: 1.43;
+  padding: 0.3rem 0.8rem;
 
   transition: transform 0.5s ease;
 
-  & .title {
+  .title {
     color: #222;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
-    margin: 0.2rem 0;
+    margin: 0.8rem 0;
   }
 
-  & .summary {
+  .summary {
     font-size: 14px;
     color: #7d7d7d;
     margin: 0.3rem 0 ;
@@ -32,8 +27,6 @@
 
 @media only screen and (max-width: 640px) {
   .blog-post-preview {
-    padding: 16px;
-    margin: 0.1rem 0rem;
     box-shadow: none;
   }
 }

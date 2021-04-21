@@ -2,34 +2,28 @@
 
 .aboutme-container {
   background: white;
-  box-shadow: $shadow;
 
-  padding: 0.2rem 1rem;
   margin: 0rem auto;
 
-  max-width: 800px;
+  max-width: 720px;
 
   .aboutme-content{
     font: {
-      size: 0.9rem;
+      size: 20px;
       weight: 400;
     }
 
     line-height: 1.5;
-    letter-spacing: normal;
-
-    padding: 0.5rem;
+    padding: 0 1rem;
   }
 
   .aboutme-footer {
-    border-top: 0.05rem solid #aaaaaa;
-
     .aboutme-footer-content {
       display: flex;
       justify-content: space-around;
       align-items: center;
 
-      padding: 0.2rem;
+      padding: 2rem 0 ;
     }
   }
 }

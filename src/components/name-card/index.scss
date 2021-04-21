@@ -1,5 +1,14 @@
 @import '../../style/valuables.scss';
 
+@keyframes rotation {
+  from {
+    transform: rotate(-5deg);
+  }
+  to {
+    transform: rotate(5deg);
+  }
+}
+
 body::-webkit-scrollbar {
   display: none;
 }
@@ -10,22 +19,19 @@ body::-webkit-scrollbar {
   align-items: center;
   justify-content: center;
 
-  // Card Color
-  background: $cardColor;  /* fallback for old browsers */
+  background: $cardColor;
 
   padding: 2rem;
 
-  border-radius: 8px;
+  border-radius: 1rem;
   box-shadow: $shadow;
-
-  img {
-    margin: 0;
-  }
 
   .img-circle {
     width: $avataImg;
     height: $avataImg;
+
     border-radius: 100%;
+    border: 5px solid #fff;
   }
 
   .card-content-container {
@@ -34,44 +40,41 @@ body::-webkit-scrollbar {
     align-items: center;
     justify-content: center;
 
-    & .nick-name {
-      color: #222;
-      background-color: #a8c0ff;
-      border-radius: 10px;
+    .nick-name {
+      color: $cardColor;
+      background-color: $HeaderBackground1;
+      border-radius: 8px;
 
-      padding: 0.1rem 0.4rem 0.2rem;
-      margin: 0.3rem;
+      padding: 0.1rem 0.3rem;
 
       font: {
-        size: 20px;
+        size: 18px;
         weight: bold;
       }
+      line-height: 1.6;
+
+      animation: rotation 1s infinite alternate-reverse linear;
     }
 
     .presentation {
-      color: white;
-      min-width: 80%;
+      color: #fff;
       text-align: center;
 
-      border-top: 1px solid rgba(244, 244, 244, 0.8);
-      border-bottom: 1px solid rgba(244, 244, 244, 0.8);
-
       padding: 0.75rem;
-      margin: 1rem 0;
+      margin: 0;
 
-      font-size: 20px;
-      font-weight: bold;
+      white-space: pre-line;
+      word-break: keep-all;
+
     }
 
     .sns-list {
       display: flex;
       align-items: center;
 
-      padding: 0.3rem;
-
       .sns-item {
-        width: 20px;
-        margin: 0.4rem;
+        width: 15px;
+        margin: 0 0.2rem;
       }
     }
   }
@@ -80,7 +83,7 @@ body::-webkit-scrollbar {
     flex-direction: row;
     justify-content: flex-start;
 
-    padding: 0.6rem;
+    padding: 1rem;
 
     transition: all 1s ease;
 
@@ -93,7 +96,7 @@ body::-webkit-scrollbar {
 
     .card-content-container {
       align-items: flex-start;
-      padding: 0 0.3rem;
+      padding: 0 0.5rem;
 
       .nick-name {
         font: {
@@ -105,18 +108,23 @@ body::-webkit-scrollbar {
       .presentation {
         text-align: left;
 
-        border: 0px;
-        padding: 0rem;
-        margin: 0rem 0.5rem;
-        font-size: 0.8rem;
+        padding: 0 0.3rem;
+        margin: 0.3rem 0;
+
+        font: {
+          size: 14px;
+          weight: 700;
+        }
       }
 
       .sns-list {
-        padding: 0.5rem 0.3rem 0;
+        padding: 0.3rem 0;
 
         .sns-item {
-          width: 35px;
-          padding: 0 0.3rem;
+          width: 20px;
+          padding: 0;
+
+          margin: 0 0.2rem;
         }
       }
     }
@@ -132,27 +140,48 @@ body::-webkit-scrollbar {
 
     .card-content-container {
       .nick-name {
-        font-size: 20px;
+        font-size: 18px;
       }
 
       .presentation {
-        font-size: 16px;
+        font-size: 14px;
       }
 
       .sns-list {
         .sns-item {
-          width: 25px;
+          width: 26px;
         }
       }
     }
 
     &.simple-card {
-      height: 20%;
+      flex-direction: row;
+      justify-content: flex-start;
 
-      transition: none;
+      padding: 1rem 0.3rem;
 
-      .card-img-container {
-        display: none;
+      .img-circle {
+        width: 12px;
+        height: 12px;
+
+        margin: 0;
+      }
+
+
+      .card-content-container {
+        align-items: flex-start;
+        padding: 0 0.5rem;
+
+        .sns-list {
+          padding: 0.3rem 0;
+
+          .sns-item {
+            width: 20px;
+            padding: 0;
+
+            margin: 0 0.3rem;
+          }
+        }
       }
     }
   }

@@ -21,7 +21,7 @@ const AvataImg = fixed => (
 
 const NickName = ({ name = '', to = '/aboutme' }) => (
   <a href={to}>
-    <div className="nick-name">{`@ ${name}`}</div>
+    <div className="nick-name">{`👋 ${name}`}</div>
   </a>
 )
 
