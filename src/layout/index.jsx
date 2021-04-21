@@ -60,7 +60,7 @@ const Layout = (props) => {
   }
 
   useEffect(() => {
-    navigate(tabList[0].path)
+    pathSplit[1] === '' && navigate(tabList[0].path)
   }, [])
 
   useEffect(() => {
