@@ -3,7 +3,7 @@ path: "/content/module"
 author: "snyung"
 date: "2018-09-25"
 title: "[JS] Module"
-tags: ["Javascript"]
+tags: ["JavaScript"]
 category: "post"
 ---
 

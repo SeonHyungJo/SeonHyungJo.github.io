@@ -3,7 +3,7 @@ path: '/content/2020-07-25--네트워크-기초-Types-Of-IP'
 author: 'snyung'
 date: '2020-07-25'
 title: 네트워크 기초 - Types Of IP
-tags: [network]
+tags: [Network]
 category: 'post'
 ---
 

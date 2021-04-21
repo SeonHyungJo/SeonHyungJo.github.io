@@ -3,7 +3,7 @@ path: "/content/naver-login-1"
 author: "snyung"
 date: "2018-01-05"
 title: "[Spring] 네이버 로그인 구현"
-tags: ["Spring", "login"]
+tags: ["Spring", "Login"]
 category: "post"
 ---
 

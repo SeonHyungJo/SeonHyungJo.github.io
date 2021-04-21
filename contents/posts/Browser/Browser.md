@@ -3,7 +3,7 @@ path: "/content/웹 브라우저 작동 원리"
 author: "snyung"
 date: "2018-09-25"
 title: "[Browser] 웹 브라우저 작동 원리"
-tags: ["Browser"]
+tags: ["Frontend"]
 category: "post"
 ---
 

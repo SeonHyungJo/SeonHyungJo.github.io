@@ -3,7 +3,7 @@ path: "/content/execute-context"
 author: "snyung"
 date: "2019-12-11"
 title: "[ES3] Execution Contexts"
-tags: ["ES3"]
+tags: ["JavaScript"]
 category: "post"
 ---
 

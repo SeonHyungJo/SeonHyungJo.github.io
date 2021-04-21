@@ -3,7 +3,7 @@ path: '/content/2020-07-11--네트워크-기초-서브넷마스크'
 author: 'snyung'
 date: '2020-07-11'
 title: 네트워크 기초 - 서브넷마스크(Subnetmask)
-tags: [network]
+tags: [Network]
 category: 'post'
 ---
 

@@ -3,7 +3,7 @@ path: "/content/2021-03-21--web security"
 author: "snyung"
 date: "2021-03-21"
 title: 웹 보안, 웹 취약점 막기
-tags: [security]
+tags: [Security]
 category: "post"
 ---
 

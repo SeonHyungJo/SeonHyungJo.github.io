@@ -3,7 +3,7 @@ path: "/content/2021-02-11--Brotli"
 author: "snyung"
 date: "2021-02-11"
 title: Gzip 아시나요? 그러면 Brotli는요?
-tags: [broli]
+tags: [Frontend]
 category: "post"
 ---
 

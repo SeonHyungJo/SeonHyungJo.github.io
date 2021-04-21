@@ -3,7 +3,7 @@ path: "/content/2020-12-20--Preact Vite 일주일 사용후기"
 author: "snyung"
 date: "2020-12-20"
 title: Preact, Vite 일주일 사용후기?
-tags: [preact,vite]
+tags: [Preact, Vite]
 category: "post"
 ---
 

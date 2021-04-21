@@ -4,7 +4,7 @@ author: "snyung"
 date: "2018-05-23"
 update: "2019-12-11"
 title: "[JS] BEM(Block Element Modifier)"
-tags: ["Javascript"]
+tags: ["JavaScript"]
 category: "post"
 ---
 

@@ -3,7 +3,7 @@ path: "/content/memo-1"
 author: "snyung"
 date: "2018-08-10"
 title: "[JS] Callstack"
-tags: ["Javascript", "Callstack"]
+tags: ["JavaScript"]
 category: "post"
 ---
 

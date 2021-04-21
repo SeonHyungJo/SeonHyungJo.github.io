@@ -3,7 +3,7 @@ path: "/content/map-filter-reduce"
 author: "snyung"
 date: "2019-12-19"
 title: "[JS] Map, Filter, Reduce"
-tags: ["Javascript"]
+tags: ["JavaScript"]
 category: "post"
 ---
 

@@ -3,7 +3,7 @@ path: "/content/memo-3"
 author: "snyung"
 date: "2018-01-02"
 title: "[JS] 최적화 코드 작성법"
-tags: ["Javascript", "Optimization"]
+tags: ["JavaScript"]
 category: "post"
 ---
 

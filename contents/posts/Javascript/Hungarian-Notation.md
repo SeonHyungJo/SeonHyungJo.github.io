@@ -3,7 +3,7 @@ path: "/content/hungarian"
 author: "snyung"
 date: "2018-01-04"
 title: "[JS] 헝가리안 표기법"
-tags: ["Javascript", "Hungarian"]
+tags: ["JavaScript"]
 category: "post"
 ---
 

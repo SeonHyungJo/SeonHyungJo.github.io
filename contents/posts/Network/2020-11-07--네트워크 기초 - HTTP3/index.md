@@ -3,7 +3,7 @@ path: "/content/2020-11-07--네트워크 기초 - HTTP3"
 author: "snyung"
 date: "2020-11-07"
 title: 네트워크 기초 - HTTP3
-tags: [network]
+tags: [Network]
 category: "post"
 ---
 

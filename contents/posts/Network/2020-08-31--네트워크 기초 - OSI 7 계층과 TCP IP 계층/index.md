@@ -3,7 +3,7 @@ path: '/content/2020-08-31--네트워크-기초-OSI-7-계층과-TCP-IP-계층'
 author: 'snyung'
 date: '2020-08-31'
 title: 네트워크 기초 - OSI 7 계층과 TCP/IP 계층
-tags: [network]
+tags: [Network]
 category: 'post'
 ---
 

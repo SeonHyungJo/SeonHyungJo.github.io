@@ -3,7 +3,7 @@ path: "/content/google-login"
 author: "snyung"
 date: "2018-01-04"
 title: "[Spring] 구글 로그인 구현"
-tags: ["Spring", "login"]
+tags: ["Spring", "Login"]
 category: "post"
 ---
 

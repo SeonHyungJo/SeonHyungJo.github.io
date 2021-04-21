@@ -3,7 +3,7 @@ path: "/content/function"
 author: "snyung"
 date: "2019-01-19"
 title: "[ES3] Function"
-tags: ["ES3"]
+tags: ["JavaScript"]
 category: "post"
 ---
 

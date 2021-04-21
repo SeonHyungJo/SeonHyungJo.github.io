@@ -3,7 +3,7 @@ path: "/content/2021-01-08--jamstack"
 author: "snyung"
 date: "2021-01-08"
 title: JAMstack
-tags: [jamstack]
+tags: [Frontend]
 category: "post"
 ---
 

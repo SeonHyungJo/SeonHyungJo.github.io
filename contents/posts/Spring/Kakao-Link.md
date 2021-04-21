@@ -2,8 +2,8 @@
 path: "/content/kakaotalk"
 author: "snyung"
 date: "2018-01-11"
-title: "[Sprint] 카카오링크 Api 사용하기"
-tags: ["Sprint"]
+title: "[Spring] 카카오링크 Api 사용하기"
+tags: ["Spring"]
 category: "post"
 ---
 

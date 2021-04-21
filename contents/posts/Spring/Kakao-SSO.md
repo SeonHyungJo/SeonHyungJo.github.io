@@ -3,7 +3,7 @@ path: "/content/kakao-login"
 author: "snyung"
 date: "2018-01-11"
 title: "[Spring] 카카오톡 로그인 구현"
-tags: ["Spring", "login"]
+tags: ["Spring", "Login"]
 category: "post"
 ---
 

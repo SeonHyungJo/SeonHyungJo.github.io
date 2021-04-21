@@ -3,7 +3,7 @@ path: "/content/2020-11-07--네트워크 기초 - DHCP&DNS"
 author: "snyung"
 date: "2020-11-07"
 title: 네트워크 기초 - DHCP & DNS
-tags: [network]
+tags: [Network]
 category: "post"
 ---
 

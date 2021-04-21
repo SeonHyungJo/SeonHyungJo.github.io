@@ -2,8 +2,8 @@
 path: "/content/2021-04-12--useKakaoLogin"
 author: "snyung"
 date: "2021-04-12"
-title: React Custom hooks | 카카오 로그인
-tags: [react, hooks]
+title: React Custom Hook | 카카오 로그인 훅
+tags: [React, Hook]
 category: "post"
 ---
 

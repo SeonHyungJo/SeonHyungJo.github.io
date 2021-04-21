@@ -4,7 +4,7 @@ path: "/content/log"
 author: "snyung"
 date: "2018-01-02"
 title: "[Spring] 로그설정하기"
-tags: ["Spring", "log4j2"]
+tags: ["Spring"]
 category: "post"
 ---
 

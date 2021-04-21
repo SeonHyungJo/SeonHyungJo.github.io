@@ -3,7 +3,7 @@ path: "/content/2020-09-01--네트워크-기초-TCP&UDP"
 author: "snyung"
 date: "2020-09-01"
 title: 네트워크 기초 - TCP & UDP
-tags: [network]
+tags: [Network]
 category: "post"
 ---
 

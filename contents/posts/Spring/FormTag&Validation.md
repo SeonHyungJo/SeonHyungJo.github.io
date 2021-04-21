@@ -3,7 +3,7 @@ path: "/content/validation"
 author: "snyung"
 date: "2018-01-02"
 title: "[Spring] 폼태그와 벨리데이션 체크"
-tags: ["Spring", "Validation"]
+tags: ["Spring"]
 category: "post"
 ---
 

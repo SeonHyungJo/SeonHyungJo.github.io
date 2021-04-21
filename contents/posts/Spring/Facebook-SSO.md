@@ -3,7 +3,7 @@ path: "/content/facebook-login"
 author: "snyung"
 date: "2018-01-09"
 title: "[Spring] 페이스북 로그인 구현"
-tags: ["Spring", "login"]
+tags: ["Spring", "Login"]
 category: "post"
 ---
 

@@ -4,7 +4,7 @@ author: "snyung"
 updated: "2019-12-05"
 date: "2019-01-19"
 title: "[ES3] Closure"
-tags: ["ES3"]
+tags: ["JavaScript"]
 category: "post"
 ---
 
