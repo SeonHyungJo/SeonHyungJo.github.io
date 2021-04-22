@@ -107,8 +107,6 @@ CSP를 적용하기는 쉽지 않다. 모든 페이지를 정확히 알고 있�
 
 ## X-XSS-Protection
 
-이 Header는 한 번 https로 접속하는 경우 이후의 모든 요청을 http로 요청하더라도 브라우저가 자동으로 https로 요청한다.
-
 ```json
 X-XSS-Protection: 1;mode=block
 ```
