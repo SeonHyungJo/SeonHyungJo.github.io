@@ -32,13 +32,6 @@ const PostTemplate = (props) => {
   return (
     <>
       <PostHelmet title={title} excerpt={excerpt} tags={tags} />
-      <AdSense.Google
-        client="ca-pub-8793464953717853"
-        slot="3513526331"
-        style={{ display: 'block' }}
-        format="auto"
-        responsive="true"
-      />
 
       <div className="post-container">
         <div className={'post-header'}>
@@ -50,6 +43,15 @@ const PostTemplate = (props) => {
           dangerouslySetInnerHTML={{ __html: html }}
         />
         <TagList tags={tags} />
+
+        <AdSense.Google
+          client="ca-pub-8793464953717853"
+          slot="3513526331"
+          style={{ display: 'block' }}
+          format="auto"
+          responsive="true"
+        />
+
         <div className="post-footer">
           <div className="post-footer-content">
             <NameCardFull cardMode={'simple-card'} />
