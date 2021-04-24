@@ -1,3 +1,5 @@
+@import "_valuables.scss";
+
 /**
  * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
  * Based on https://github.com/chriskempson/tomorrow-theme
@@ -42,17 +44,19 @@ pre[class*="language-"] {
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-  padding: 0 0.2em;
+  padding: 0 4px;
   margin: 0 0.1em;
-  border-radius: 0.2em;
+  border-radius: 5px;
 
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 15px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
 
   white-space: normal;
 
   background: white;
-  border : 1.2px solid #2d2d2d;
+  border : 2px solid $cardColor;
   color: #2d2d2d;
 }
 
@@ -129,3 +133,15 @@ pre[class*="language-"] {
 .token.inserted {
   color: green;
 }
+
+.gatsby-highlight-code-line {
+  background-color: #08416f;
+  display: block;
+
+  margin-right: -1em;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 0.25em solid $HeaderBackground1;
+}
+
