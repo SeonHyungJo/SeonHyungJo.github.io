@@ -299,6 +299,13 @@ const useUpdateUserName = (data) => {
 
 이번 글을 적은 후에 다시 보니 오히려 이 글이 react-query를 부추기는 글이라고 생각될까 걱정된다. 😂
 
+| | |
+|:--:|--|
+| **SWR이란** | [Redux 말고 SWR](/content/2021-01-09--SWR) |
+| **SWR 더 나아가기** | [SWR / react-query useMutation처럼 사용하기](/content/2021-04-25--SWR-useMutation) |
+
+<br/>
+
 #### Reference
 
 - [Redux 말고 SWR](/content/2021-01-09--SWR)
