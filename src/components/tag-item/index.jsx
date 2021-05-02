@@ -6,7 +6,7 @@ import './index.scss'
 
 const Tag = ({ tagName }) =>
   // <Link to={`/category/${tagName}`}>
-  <span className="tag">{`# ${tagName}`}</span>
+  <span className="skill-tag">{`# ${tagName}`}</span>
 // </Link>
 
 Tag.propTypes = {
