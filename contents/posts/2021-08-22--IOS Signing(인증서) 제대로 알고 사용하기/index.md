@@ -7,7 +7,7 @@ tags: [RN 개발기, IOS, Signing]
 category: "post"
 ---
 
-![IOS_Signing](../../assets/ios_Signing/IOS_Signing_main.png)
+![IOS_Signing](../../assets/ios_signing/IOS_Signing_main.png)
 
 > 회사에서 RN(React Native)을 사용할 수 있는 날이 왔다. 개발을 위한 한 달간 사전 공부를 하고 [테스트 레포](https://github.com/SeonHyungJo/rn-practise)도 만들어 보며 준비를 하였으나 진행해보니 어려움이 많다는 걸 느꼈다. 그동안의 경험과 느낌을 공유하는 시간을 가지고 싶어 시리즈 글을 작성하게 되었다.
 
