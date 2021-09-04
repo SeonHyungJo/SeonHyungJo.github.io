@@ -1,23 +1,19 @@
-import { graphql, navigate } from 'gatsby'
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { TransitionGroup, Transition } from 'react-transition-group'
 import Helmet from 'react-helmet'
 
-import { Header, TabContainer, TagSlider, Footer, NameCard } from '@components/index'
-
-import TabList from '@data/TabList'
+import { Header, Footer } from '@components/index'
 
 import '@style/reset.scss'
 import { styled } from '@stitches.config'
 
-const CONTENT_LIST = ['content', 'aboutme']
-const SLIDER_PAGE_LIST = ['', 'content', 'aboutme', 'article']
-
 const LayoutC = styled('section', {
+  position: 'relative',
+  backgroundColor: '$gray01',
+  minHeight: '100vh',
   maxHeight: '100vh',
 
-  'overflow': '-moz-scrollbars-none',
-  'overflow-x': 'auto',
+  overflow: 'auto',
   '-ms-overflow-style': 'none',
 
   '&::-webkit-scrollbar': {
@@ -74,34 +70,11 @@ const CustomHelmet = ({ title = 'Home | sNyung\'B ' }) => (
 )
 
 export default function Layout({ location, children }: { location: any, children: Element }): JSX.Element {
-  const pathSplit = location.pathname.split('/')
-  const checkContent = CONTENT_LIST.includes(pathSplit[1])
-  const checkSlider = SLIDER_PAGE_LIST.includes(pathSplit[1])
-  const checkPostPath = pathSplit[1] === 'post'
-
-  const [filterList, setFilter] = useState([])
-
-  useEffect(() => {
-    pathSplit[1] === '' && navigate(TabList[0].path)
-  }, [])
-
-  useEffect(() => {
-    checkPostPath && navigate(TabList[0].path)
-  }, [filterList])
-
-  useEffect(() => {
-    checkSlider && setFilter([])
-  }, [checkSlider])
-
   return (
     <LayoutC>
       <CustomHelmet />
-      <Header title={'sNyung.com'}>
-        <TabContainer TabList={TabList} />
-      </Header>
 
-      {checkContent || <NameCard key={pathSplit[1]} />}
-      {checkSlider || <TagSlider setFilter={setFilter} />}
+      <Header/>
 
       <TransitionGroup>
         <Transition
@@ -110,7 +83,7 @@ export default function Layout({ location, children }: { location: any, children
         >
           {status => (
             <PostC className={status}>
-              {React.cloneElement(children, { filterList })}
+              {React.cloneElement(children)}
               {location.pathname !== '/' && <Footer />}
             </PostC>
           )}
@@ -119,24 +92,3 @@ export default function Layout({ location, children }: { location: any, children
     </LayoutC>
   )
 }
-
-export const pageQuery = graphql`
-    query NavQuery {
-        allMarkdownRemark(
-            sort: { order: DESC, fields: [frontmatter___date] }
-            filter: { frontmatter: { category: { eq: "post" } } }
-        ) {
-            edges {
-                node {
-                    excerpt(pruneLength: 100)
-                    id
-                    frontmatter {
-                        title
-                        date(formatString: "YYYY/MM/DD")
-                        path
-                    }
-                }
-            }
-        }
-    }
-`

@@ -1,3 +1,6 @@
+export * from './Icon'
+export * as Layout from './Layout'
+
 export { default as Footer }from './Footer'
 export { default as Header } from './Header'
 export { default as NameCard } from './NameCard'
@@ -15,5 +18,4 @@ export { default as Utterences } from './Utterences'
 export { default as ImgCircle } from './ImgCircle'
 
 export * from './SNS'
-export * from './Icon'
 

@@ -1,10 +1,15 @@
 import { styled } from '@stitches.config'
 
 const HeaderLayout = styled('header', {
+  position: 'sticky',
+  top: 0,
+
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'space-between',
   alignItems: 'center',
+
+  width: '100%',
 
   backgroundImage: '$headerBackground3',
 
@@ -12,6 +17,9 @@ const HeaderLayout = styled('header', {
 
   fontSize: '$1',
   fontWeight: 500,
+  boxShadow: '$navShadow',
+
+  zIndex: 100000,
 
   '@mobile': {
     flexDirection: 'column',

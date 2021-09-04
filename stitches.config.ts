@@ -15,6 +15,7 @@ export const globalStyles = globalCss({
   },
   'body': {
     lineHeight: 1,
+    maxHeight: '100vh'
   },
 
   'ol, ul': {
@@ -65,8 +66,8 @@ export const { styled, css, getCssText } = createStitches({
       headerBackground4: '#EF629F',
     },
     shadows: {
-      shadow: '0 0 4px 3px #7a7a7a',
-      shadowHover: '0 0 7px 7px #7a7a7a',
+      navShadow: 'rgb(63 70 125 / 20%) 0px 1px 3px 0px, rgb(101 94 115 / 10%) 2px 4px 8px 1px',
+      shadow: 'rgb(20 20 20 / 2%) 2px 8px 12px 0px, rgb(20 20 20 / 2%) 0px 1px 3px 0px',
     },
     fontSizes: {
       1: '12px',

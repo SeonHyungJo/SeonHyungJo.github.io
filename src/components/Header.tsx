@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { memo } from 'react'
 
-import { HeaderLayout } from '@components/Layout'
+import TabList from '@data/tabList'
+
+import { Layout, TabContainer } from '@components/index'
 import { styled } from '@stitches.config'
 
 const HeaderTitle = styled('a', {
@@ -16,15 +18,12 @@ const HeaderTitle = styled('a', {
   },
 })
 
-export default function Header({ title = '', children }: { title: string, children: Element }): JSX.Element {
+export default memo(function Header(): JSX.Element {
   return (
-    <HeaderLayout>
-      <HeaderTitle href={'/post'}>
-        {title}
-      </HeaderTitle>
-
-      {children}
-    </HeaderLayout>
+    <Layout.HeaderLayout>
+      <HeaderTitle href={'/post'}>{'SNYUNG.COM'}</HeaderTitle>
+      <TabContainer tabList={TabList} />
+    </Layout.HeaderLayout>
   )
-}
+})
 
