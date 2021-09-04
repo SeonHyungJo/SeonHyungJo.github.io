@@ -25,10 +25,14 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
-.gatsby-context.js
-.sass-cache/
-public/
-.cache/
 .DS_Store
-
 .vscode/
+.idea/
+
+# gatsby files
+.cache/
+public
+
+# GraphQL generated
+/graphql.json
+/src/graphql.ts

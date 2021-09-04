@@ -1,19 +1,25 @@
 module.exports = {
-  env: {
-    browser: true,
-    es6: true,
+  parser: '@typescript-eslint/parser', // Specifies the ESLint parser
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+  ],
+  settings: {
+    react: {
+      version: 'detect'
+    }
   },
-  plugins: ['react'],
-  globals: {
-    graphql: false,
-  },
+  plugins: ['@typescript-eslint', 'react'],
   parserOptions: {
-    ecmaVersion: 2019,
-    sourceType: 'module',
     ecmaFeatures: {
-      experimentalObjectRestSpread: true,
-      jsx: true,
+      jsx: true
     },
+    ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
+    sourceType: 'module' // Allows for the use of imports
   },
-  parser: 'babel-eslint'
-}
+  rules: {
+    'react/prop-types': 'off', // Disable prop-types as we use TypeScript for type checking
+    '@typescript-eslint/explicit-function-return-type': 'off'
+  },
+};

@@ -1,10 +1,10 @@
 const path = require('path')
-const fs = require('fs')
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-const AboutMeTemplate = path.resolve(`src/template/aboutme/index.jsx`)
-const PostTemplate = path.resolve(`src/template/blog-post/index.jsx`)
-const pagesComponent = path.resolve(`src/template/post-list/index.jsx`)
+const BlogTemplate = path.resolve(`src/template/Post.tsx`)
+const PagesComponent = path.resolve(`src/template/PostList.tsx`)
+
+const limit = 10
 
 const getPostsQuery = (graphql, categoryName) => graphql(`
     {
@@ -31,16 +31,14 @@ const getPostsQuery = (graphql, categoryName) => graphql(`
     }
   `)
 
-const createPostPages = (createPage, graphql, categoryName) =>
-  getPostsQuery(graphql, categoryName).then(result => {
-    if (result.errors) Promise.reject(result.errors)
+const createPostPages = async (createPage, graphql, categoryName) => {
+  const result = await getPostsQuery(graphql, categoryName)
 
-    CreateCommonPage(createPage, result.data.allMarkdownRemark.edges, categoryName)
-  })
+  if (result.errors) {
+    throw new Error(result.errors)
+  }
 
-
-const CreateCommonPage = (createPage, posts, categoryName) => {
-  const limit = 5
+  const posts = result.data.allMarkdownRemark.edges
   const maxPageNum = Math.ceil(posts.length / limit)
 
   Array.from({ length: maxPageNum }).forEach((_, i) => {
@@ -51,58 +49,40 @@ const CreateCommonPage = (createPage, posts, categoryName) => {
 
     createPage({
       path: path,
-      component: pagesComponent,
+      component: PagesComponent,
       context: {
         limit,
         skip: i * limit,
         prev,
         next,
         maxPageNum,
-        category : categoryName
-      }
+        category: categoryName,
+      },
     })
   })
 
-  // blog - post, blog - article pages
-  if (posts.length > 0) {
-    posts.forEach(({ node }, index) => {
-      const prev = index === 0 ? null : posts[index - 1].node
-      const next = index === posts.length - 1 ? null : posts[index + 1].node
+  for (let i = 0; i < posts.length; i++) {
+    const { node } = posts[i]
+    const path = node.frontmatter.path
+    const prev = i === 0 ? null : posts[i - 1].node
+    const next = i === posts.length - 1 ? null : posts[i + 1].node
 
-      createPage({
-        path: node.frontmatter.path,
-        component: PostTemplate,
-        context: {
-          limit,
-          prev,
-          next,
-          category : categoryName
-        }
-      })
+    createPage({
+      path,
+      component: BlogTemplate,
+      context: {
+        limit,
+        prev,
+        next,
+        category: categoryName,
+      },
     })
   }
 }
 
-const createAboutme = (createPage, graphql, categoryName) =>
-  getPostsQuery(graphql, categoryName).then(result => {
-    if (result.errors) Promise.reject(result.errors)
-    const post = result.data.allMarkdownRemark.edges
-
-    // Aboutme Page
-    if (post.length === 1) {
-      createPage({
-        path: post[0].node.frontmatter.path,
-        component: AboutMeTemplate,
-        context: {
-        }
-      })
-    }
-  })
-
 exports.createPages = async ({ actions: { createPage }, graphql }) => {
-  await createPostPages(createPage, graphql, 'post')
-  await createPostPages(createPage, graphql, 'article')
-  await createAboutme(createPage, graphql, 'aboutme')
+  createPostPages(createPage, graphql, 'post').then()
+  createPostPages(createPage, graphql, 'article').then()
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -117,6 +97,18 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 
-// exports.onPostBuild = () => {
-//   fs.renameSync('./public', './server/public')
-//  }
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        '@components': path.resolve(__dirname, 'src/components'),
+        '@query': path.resolve(__dirname, 'src/query'),
+        '@hooks': path.resolve(__dirname, 'src/hooks'),
+        '@style': path.resolve(__dirname, 'src/style'),
+        '@template': path.resolve(__dirname, 'src/template'),
+        '@data': path.resolve(__dirname, 'meta-data'),
+        '@stitches.config': path.resolve(__dirname, 'stitches.config.ts'),
+      },
+    },
+  })
+}

@@ -16,15 +16,15 @@ module.exports = {
   pathPrefix: process.env.CI ? `/${name}` : '/',
   siteMetadata: {
     author: 'sNyung',
-    title: `sNyung'B`,
-    description: `sNyung's 슬기로운 기술 블로그`,
+    title: `sNyung's Dev-Log`,
+    description: `프론트엔드 개발자 sNyung의 개발 일기`,
     siteUrl
   },
   plugins: [
     {
       resolve: 'gatsby-plugin-layout',
       options: {
-        component: require.resolve('./src/layout/index.jsx')
+        component: require.resolve('./src/layout/index.tsx')
       }
     },
     {
@@ -51,7 +51,7 @@ module.exports = {
       resolve: 'gatsby-plugin-sitemap',
       options: {
         output: '/sitemap.xml',
-        exclude: [],
+        excludes: [],
         query: `
           {
             site {
@@ -199,7 +199,7 @@ module.exports = {
         },
       },
     },
-    'gatsby-plugin-remove-serviceworker',
+    'gatsby-plugin-typescript',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',

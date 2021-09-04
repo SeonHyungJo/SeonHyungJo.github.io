@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "jsx": "preserve",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "moduleResolution": "node",
+    "strict": true,
+    "noEmit": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "noUnusedLocals": false,
+    "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@query/*": [
+        "src/query/*"
+      ],
+      "@hooks/*": [
+        "src/hooks/*"
+      ],
+      "@style/*": [
+        "src/style/*"
+      ],
+      "@template/*": [
+        "src/template/*"
+      ],
+      "@data/*": [
+        "meta-data/*"
+      ],
+      "@stitches.config": [
+        "stitches.config.ts"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "public",
+    ".cache"
+  ]
+}
