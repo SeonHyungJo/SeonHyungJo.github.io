@@ -4,55 +4,39 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 
 import { TagList, Utterences, PageMoveBtnContainer, NameCard } from '@components/index'
-import nameCard  from '@data/nameCard'
+import nameCard from '@data/nameCard'
 
 import { styled } from '@stitches.config'
-// import './prism.scss'
 import './prism-tomorrow.scss'
 
 const PostC = styled('section', {
   width: '100%',
   background: 'white',
 
-  marginTop: '40px',
+  margin: '12px 0',
+  padding: '4px',
+  boxShadow: '$shadow',
+
+  borderRadius: '$postBr',
 
   '@mobile': {
-
-    boxShadow: 'none',
-    marginTop: '20px',
-
-    fontSize: '20px',
+    margin: 0,
   },
 })
 
 const PostTitle = styled('h1', {
+  fontSize: '$9',
   fontWeight: 'bold',
-  fontSize: '30px',
-  textAlign: 'left',
-  margin: '8px 16px',
+  textAlign: 'center',
 
-  '@mobile': {
-    margin: 0,
-    fontSize: '20px',
-    textAlign: 'center',
-  },
-})
-
-const PostContents = styled('article', {
-  fontSize: '0.9rem',
-  fontWeight: 500,
-
-  lineHeight: 1.5,
-  letterSpacing: 'normal',
-  padding: '0.5rem 16px',
+  margin: '12px 0 0',
 })
 
 const PostDate = styled('p', {
-  color: '#aaaaaa',
-
-  fontSize: '12px',
-  textAlign: 'right',
+  fontSize: '$1',
   fontWeight: 'bold',
+  textAlign: 'right',
+  color: '$gray05',
 
   margin: '0 12px',
 
@@ -61,12 +45,22 @@ const PostDate = styled('p', {
   },
 })
 
+const PostTagListC = styled('section', {
+  padding: '0 12px',
+})
+
+
+const PostContents = styled('article', {
+  padding: '0 12px',
+})
+
 const PostFooter = styled('section', {
   display: 'flex',
+  flexDirection: 'column',
   justifyContent: 'space-around',
   alignItems: 'center',
 
-  margin: '1rem 0',
+  margin: '12px 0',
 })
 
 
@@ -84,12 +78,12 @@ export default function PostTemplate(context): JSX.Element {
       </Helmet>
 
       <PostC>
-        <section>
-          <PostTitle>{title}</PostTitle>
-          <PostDate>{date}</PostDate>
-        </section>
+        <PostTitle>{title}</PostTitle>
+        <PostDate>{date}</PostDate>
         <PostContents dangerouslySetInnerHTML={{ __html: html }} />
-        <TagList tags={tags} />
+        <PostTagListC>
+          <TagList tags={tags} />
+        </PostTagListC>
 
         <AdSense.Google
           client='ca-pub-8793464953717853'

@@ -8,11 +8,11 @@ const getAllPosts = () => {
           ) {
               edges {
                   node {
-                      excerpt(pruneLength: 200)
+                      excerpt(pruneLength: 180)
                       id
                       frontmatter {
                           title
-                          date(formatString: "YYYY/MM/DD")
+                          date(fromNow: true, locale: "ko")
                           path
                           tags
                           category

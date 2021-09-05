@@ -5,39 +5,27 @@ import { styled } from '@stitches.config'
 const SponsorButtonC = styled('a', {
   display: 'inline-block',
 
-  width: '133px',
-  height: '40px',
-
   textAlign: 'center',
-  backgroundColor: '#800080',
+  backgroundColor: '$cardColor02',
 
-  borderRadius: '20px',
+  borderRadius: '50px',
 
-  fontSize: '12px',
+  fontSize: '$1',
   lineHeight: '40px',
-  color: '#ffffff',
+  color: '$white',
 
-  margin: '0.3rem',
-
-  transition: 'background-color 0.3s ease',
-
-  '&:hover, &:active': {
-    backgroundColor: '#77af9c',
-    color: '#ffffff',
-  },
-
-  '@mobile': {
-    margin: '0.3rem',
-  },
+  padding: '0 8px',
 })
 
 const Img = styled('img', {
   width: '25px',
   marginBottom: '1px',
   verticalAlign: 'middle',
+
+  boxShadow: 'none',
 })
 
-const SponsorTxt = styled('img', {
+const SponsorTxt = styled('span', {
   marginLeft: '5px',
 })
 

@@ -12,26 +12,22 @@ const PREV_BUTTON_TXT = '← 이전'
 const PageButtonC = styled('section', {
   display: 'flex',
   justifyContent: 'space-between',
-  padding: '0 16px',
+
+  margin: '16px 0',
+
   '@mobile':{
-    margin: '1rem 0'
+    padding: '0 12px',
   }
 })
 
 const PageButton = styled('button', {
-  padding: '4px 16px',
   background: '$white',
   boxShadow: '$shadow',
-  transition: 'background-color 0.3s ease, color 0.3s ease',
 
-  fontWeight: 700,
-  borderRadius: '50px',
+  padding: '6px 16px',
 
-  '&:hover': {
-    color: '$white',
-    boxShadow: 'none',
-    backgroundColor: '$cardColor',
-  },
+  fontWeight: 'bold',
+  borderRadius: '$listBoxBr',
 })
 
 export default function PageBtnContainer(
@@ -40,7 +36,7 @@ export default function PageBtnContainer(
     pageContext: { prev, next, category, skip, limit },
   }): JSX.Element {
 
-  const prevPath = useMemo<string>(() => `/${category}/${prev}`, [category, prev])
+  const prevPath = useMemo<string>(() => `/${category}/${prev === 0 ? '' : prev}`, [category, prev])
   const nextPath = useMemo<string>(() => `/${category}/${next}`, [category, next])
 
   const postList = useFilterPosts({ posts: getAllPosts(), filterList, category })
@@ -57,7 +53,7 @@ export default function PageBtnContainer(
         </Link>
       }
       {nextWhether ?
-        < div /> :
+        <div /> :
         <Link to={nextPath}>
           <PageButton>
             {NEXT_BUTTON_TXT}

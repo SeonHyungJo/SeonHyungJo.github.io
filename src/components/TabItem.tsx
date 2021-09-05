@@ -10,8 +10,8 @@ export interface ITabItem {
 
 const tabItem = css({
   color: '$headerTitleColor',
-  padding: '0.2rem',
-  marginRight: '0.5rem',
+  padding: '4px',
+  marginRight: '6px',
 
   backgroundImage: 'linear-gradient(to right, $headerTitleColor, $headerTitleColor)',
   backgroundRepeat: 'no-repeat',

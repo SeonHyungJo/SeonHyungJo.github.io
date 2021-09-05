@@ -3,12 +3,12 @@ import Image, { FixedObject } from 'gatsby-image'
 
 import { css } from '@stitches.config'
 
-const ImgCircleC = css('img', {
+const imgCircleC = css('img', {
   width: '$avatarImg',
   height: '$avatarImg',
 
   borderRadius: '100%',
-  border: '5px solid #fff',
+  border: '5px solid $cardColor02',
 
   '@mobile': {
     width: '12px',
@@ -20,7 +20,7 @@ const ImgCircleC = css('img', {
 
 const ImgCircle = ({ fixed }: { fixed: FixedObject | FixedObject[] }): JSX.Element => {
   return (
-    <Image className={ImgCircleC} fixed={fixed} />
+    <Image className={imgCircleC} fixed={fixed} />
   )
 }
 

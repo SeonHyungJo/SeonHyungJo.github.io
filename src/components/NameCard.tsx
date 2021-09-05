@@ -12,33 +12,43 @@ const { nickName, text } = nameCard
 const CardItem = styled('section', {
   display: 'flex',
   flexDirection: 'row',
+  justifyContent: 'flex-start',
   alignItems: 'center',
-  justifyContent: 'center',
 
-  background: '$cardColor',
+  maxWidth: '480px',
 
-  padding: '12px 6px',
+  background: '$cardColor01',
 
-  borderRadius: '1rem',
+  margin: '12px auto',
+  padding: '16px 32px',
+
+  border: '3px solid $cardColor02',
+  borderRadius: '20px',
   boxShadow: '$shadow',
 
-  '@mobile': {
-    display: 'flex',
-    flexDirection: 'row',
+  '@mobile':{
+    flexDirection: 'column',
+    justifyContent: 'center',
     alignItems: 'center',
-    justifyContent: 'flex-start',
 
-    padding: '1rem 0.3rem',
-  },
+    width: 'calc(100% - 24px)'
+  }
 })
 
 const CardContents = styled('section', {
   display: 'flex',
   flexDirection: 'column',
   justifyContents: 'center',
-  alignItems: 'center',
+  alignItems: 'flex-start',
 
-  padding: '0 0.5rem',
+  padding: '0 32px',
+
+  '@mobile':{
+    justifyContent: 'center',
+    alignItems: 'center',
+
+    padding: '0',
+  }
 })
 
 const rotation = keyframes({
@@ -46,8 +56,8 @@ const rotation = keyframes({
   '100%': { transform: 'rotate(5deg)' },
 })
 
-const NickName = styled('section', {
-  color: '$cardColor',
+const NickName = styled('button', {
+  color: '$cardColor02',
   backgroundColor: '$headerBackground1',
   borderRadius: '8px',
 
@@ -60,13 +70,14 @@ const NickName = styled('section', {
   animation: `${rotation} 1s infinite alternate-reverse linear`,
 })
 
-const Presentation = styled('section', {
-  color: '#fff',
-  textAlign: 'center',
-  padding: '0.75rem',
-  margin: 0,
+const Presentation = styled('p', {
+  margin: '12px 0',
+  padding: 0,
 
   fontSize: '$2',
+  fontWeight: 'bold',
+  color: '$cardColor02',
+  textAlign: 'left',
 
   whiteSpace: 'pre-line',
   wordBreak: 'keep-all',
@@ -75,8 +86,7 @@ const Presentation = styled('section', {
 export default function NameCard(): JSX.Element {
   return (
     <StaticQuery
-      query={graphql`
-    query cardQuery {
+      query={graphql`query cardQuery {
         avatar: file(absolutePath: { regex: "/assets/cardAvatar.png/" }) {
             childImageSharp {
                 fixed(width: 100, height: 100) {
@@ -93,8 +103,8 @@ export default function NameCard(): JSX.Element {
               <ImgCircle fixed={data.avatar.childImageSharp.fixed} />
             </Link>
             <CardContents>
-              <Link to={'/aboutme'}>
-                <NickName>{`👋 ${nickName}`}</NickName>
+              <Link to={nickName.to}>
+                <NickName>{`👋 ${nickName.name}`}</NickName>
               </Link>
               <Presentation dangerouslySetInnerHTML={{ '__html': text }} />
               <SNS />

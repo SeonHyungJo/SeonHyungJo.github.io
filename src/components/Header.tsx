@@ -13,7 +13,6 @@ const HeaderTitle = styled('a', {
   fontWeight: 'bold',
 
   '@mobile': {
-    padding: '0.3rem',
     fontSize: '$7',
   },
 })

@@ -7,16 +7,25 @@ import { NameCard, SponsorButton } from '@components/index'
 import { styled } from '@stitches.config'
 
 const AboutMeC = styled('section', {
-  maxWidth: '720px',
-  background: 'white',
+  maxWidth: '$contentWidth',
+
   margin: '0 auto',
+  padding: '12px 32px',
+
+  background: 'white',
+  borderRadius: '$postBr',
+
+  '@mobile': {
+    padding: '12px',
+  },
 })
 
 const AboutMeContents = styled('article', {
-  fontSize: '20px',
+  fontSize: '$5',
   fontWeight: 400,
   lineHeight: 1.5,
-  padding: '0 1rem',
+
+  padding: 0,
 
   '@mobile': {
     margin: 0,
@@ -26,14 +35,14 @@ const AboutMeContents = styled('article', {
 
 const AboutMeFooter = styled('article', {
   display: 'flex',
-  justifyContent: 'space-around',
+  flexDirection: 'row',
+  justifyContent: 'space-between',
   alignItems: 'center',
 
-  padding: '2rem 0',
+  padding: '0',
 
   '@mobile': {
     flexDirection: 'column',
-    padding: '0.5rem',
   },
 })
 
@@ -46,12 +55,10 @@ export default function AboutMe({ data }: PageProps): JSX.Element {
 
       <AboutMeC>
         <AboutMeContents dangerouslySetInnerHTML={{ __html: html }} />
-        <section>
-          <AboutMeFooter>
-            <NameCard />
-            <SponsorButton sponsorId={'snyung'} />
-          </AboutMeFooter>
-        </section>
+        <AboutMeFooter>
+          <NameCard />
+          {/*<SponsorButton sponsorId={'snyung'} />*/}
+        </AboutMeFooter>
       </AboutMeC>
     </>
   )

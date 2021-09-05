@@ -8,10 +8,10 @@ import '@style/reset.scss'
 import { styled } from '@stitches.config'
 
 const LayoutC = styled('section', {
-  position: 'relative',
-  backgroundColor: '$gray01',
   minHeight: '100vh',
   maxHeight: '100vh',
+
+  backgroundColor: '$gray01',
 
   overflow: 'auto',
   '-ms-overflow-style': 'none',
@@ -22,8 +22,10 @@ const LayoutC = styled('section', {
 })
 
 const PostC = styled('section', {
+  maxWidth: '$contentWidth',
+
   margin: '0 auto',
-  maxWidth: '680px',
+  padding: '12px 16px',
 
   transition: 'all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)',
 
@@ -46,11 +48,9 @@ const PostC = styled('section', {
     opacity: 0,
   },
 
-  '@mobile': {
-    margin: '0 auto',
-    maxWidth: '600px',
+  '@mobile':{
     padding: '0',
-  },
+  }
 })
 
 const CustomHelmet = ({ title = 'Home | sNyung\'B ' }) => (
@@ -84,7 +84,7 @@ export default function Layout({ location, children }: { location: any, children
           {status => (
             <PostC className={status}>
               {React.cloneElement(children)}
-              {location.pathname !== '/' && <Footer />}
+              <Footer/>
             </PostC>
           )}
         </Transition>

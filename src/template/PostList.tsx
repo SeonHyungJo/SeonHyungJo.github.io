@@ -1,18 +1,21 @@
 import React, { useState } from 'react'
 
-import { PostItem, PageBtnContainer, TagSlider, NameCard } from '@components/index'
+import { PostItem, PageBtnContainer, NameCard } from '@components/index'
 
 import { getAllPosts } from '@query/index'
 import { useFilterPosts } from '@hooks/index'
 
 import { styled } from '@stitches.config'
 
-const BlogPost = styled('section', {
-  margin: '0.7rem auto',
-  maxWidth: '720px',
+const PostC = styled('section', {
+  display: 'grid',
+  gridTemplateColumns: '1fr 1fr',
+  gridTemplateRows: 'auto',
+  gridGap: '20px 25px',
 
   '@mobile': {
-    margin: '0.5rem auto',
+    gridTemplateColumns: '1fr',
+    padding: '12px'
   },
 })
 
@@ -27,21 +30,23 @@ export default function PostListTemplate(context): JSX.Element {
   const postList = useFilterPosts({ posts, filterList, category: pageContext.category })
 
   return (
-    <BlogPost>
+    <>
       <NameCard key={pathSplit[1]} />
-      <TagSlider setFilter={setFilter} />
+      {/*<TagSlider setFilter={setFilter} />*/}
 
-      {
-        postList
-          .slice(skip, skip + limit)
-          .map(({ node }) => <PostItem key={node.id} post={node} />)
-      }
+      <PostC>
+        {
+          postList
+            .slice(skip, skip + limit)
+            .map(({ node }) => <PostItem key={node.id} post={node} />)
+        }
+      </PostC>
 
       <PageBtnContainer
         filterList={filterList}
         pageContext={pageContext}
       />
-    </BlogPost>
+    </>
   )
 }
 

@@ -4,7 +4,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 const BlogTemplate = path.resolve(`src/template/Post.tsx`)
 const PagesComponent = path.resolve(`src/template/PostList.tsx`)
 
-const limit = 10
+const limit = 20
 
 const getPostsQuery = (graphql, categoryName) => graphql(`
     {

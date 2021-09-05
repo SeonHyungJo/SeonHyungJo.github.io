@@ -43,12 +43,13 @@ export const { styled, css, getCssText } = createStitches({
     fonts: {
       system: 'Apple SD Gothic Neo, Spoqa Han Sans, Noto Sans Korean, Apple Gothic, NanumBarunGothic, NanumGothic, Malgun Gothic, sans-serif',
     },
-    size: {
+    sizes: {
       avatarImg: '3rem',
-      contentWidth: '680px',
+      contentWidth: '760px',
     },
     colors: {
       white: '#ffffff',
+      black: '#222222',
 
       gray06: '#3d3d3d',
       gray05: '#7a7a7a',
@@ -57,17 +58,22 @@ export const { styled, css, getCssText } = createStitches({
       gray02: '#e8e8e8',
       gray01: '#f8f8f8',
 
-      cardColor: '#00498C',
+      cardColor01: '#fff',
+      cardColor02: '#D88F66',
 
       headerTitleColor: '#fff',
-      headerBackground1: '#EECDA3',
-      headerBackground2: '-webkit-linear-gradient(to right, #080808, #EECDA3)',
-      headerBackground3: 'linear-gradient(to right, #EF629F, #EECDA3)',
+      headerBackground1: '#E7DB5D',
+      headerBackground2: '-webkit-linear-gradient(336deg, #E7DB5D, #D88F66, #EA7A32)',
+      headerBackground3: 'linear-gradient(336deg, #E7DB5D, #D88F66, #EA7A32)',
       headerBackground4: '#EF629F',
+    },
+    radii: {
+      listBoxBr: '12px',
+      postBr: '22px',
     },
     shadows: {
       navShadow: 'rgb(63 70 125 / 20%) 0px 1px 3px 0px, rgb(101 94 115 / 10%) 2px 4px 8px 1px',
-      shadow: 'rgb(20 20 20 / 2%) 2px 8px 12px 0px, rgb(20 20 20 / 2%) 0px 1px 3px 0px',
+      shadow: 'rgb(20 20 20 / 2%) 2px 8px 12px 0px, rgb(20 20 20 / 2%) 0px 1px 3px 0px;',
     },
     fontSizes: {
       1: '12px',
@@ -80,9 +86,9 @@ export const { styled, css, getCssText } = createStitches({
       8: '26px',
       9: '28px',
     },
-    media: {
-      desktop: '(min-width: 641px)',
-      mobile: 'screen and (max-width: 640px)',
-    },
   },
+  media: {
+    desktop: '(min-width: 601px)',
+    mobile: 'screen and (max-width: 600px)',
+  }
 })

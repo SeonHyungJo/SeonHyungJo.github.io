@@ -125,7 +125,7 @@ testFn(function (arg) {
 
 **이유는 `SC`에 의해서 가능한 것이다.**
 
-이러한 특징으로 인해서 **함수 전달인자 문제(funarg problem)**가 발생하게 된다.
+이러한 특징으로 인해서 **함수 전달인자 문제(funarg problem)** 가 발생하게 된다.
 
 ## 함수 전달인자 문제(Funarg problem)
 

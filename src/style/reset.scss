@@ -54,7 +54,6 @@ a {
 a:active,
 a:hover {
   outline-width: 0;
-  color: #2c7fff;
 }
 
 abbr[title] {
@@ -110,7 +109,7 @@ figure {
   margin: 1em 40px;
 }
 hr {
-  box-sizing: content-box;
+  box-sizing: border-box;
   height: 0;
   overflow: visible;
 }
@@ -199,13 +198,13 @@ html {
   overflow-y: auto;
 }
 * {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 *:before {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 *:after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
@@ -363,6 +362,10 @@ p {
   line-height: 1.43;
   margin: 1rem 0;
   padding: 0;
+
+  line-height: 22px;
+  letter-spacing: 0.5px;
+  word-spacing: -0.1px;
 }
 
 figure {

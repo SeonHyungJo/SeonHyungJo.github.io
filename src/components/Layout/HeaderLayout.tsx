@@ -13,7 +13,7 @@ const HeaderLayout = styled('header', {
 
   backgroundImage: '$headerBackground3',
 
-  padding: '1rem 2rem',
+  padding: '20px 32px',
 
   fontSize: '$1',
   fontWeight: 500,
@@ -22,8 +22,7 @@ const HeaderLayout = styled('header', {
   zIndex: 100000,
 
   '@mobile': {
-    flexDirection: 'column',
-    padding: '0.5rem 1rem',
+    padding: '20px',
   },
 })
 

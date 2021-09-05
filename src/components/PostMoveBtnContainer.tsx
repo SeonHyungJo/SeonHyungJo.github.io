@@ -5,7 +5,12 @@ import { styled } from '@stitches.config'
 
 const PostMoveBtnC = styled('section', {
   display: 'flex',
+  flexDirection: 'row',
   justifyContent: 'space-between',
+  alignItems: 'center',
+
+  width: '100%',
+
   fontSize: '12px',
   fontWeight: 500,
   margin: '32px 0',
@@ -20,21 +25,13 @@ const PostMoveBtnC = styled('section', {
 })
 
 const PostMoveBtn = styled('button', {
-  padding: '4px 12px',
+  padding: '4px 16px',
 
   outline: 'none',
-  borderRadius: '50px',
-  backgroundColor: '#fff',
+  borderRadius: '$listBoxBr',
+  backgroundColor: '$white',
 
-  color: '$cardColor',
-  letterSpacing: '2px',
-
-  transition: 'background-color 0.3s ease, color 0.3s ease',
-
-  '&:hover': {
-    backgroundColor: '$cardColor',
-    color: '#fff',
-  },
+  color: '$black',
 
   '@mobile': {
     '&:last-child': {
@@ -44,11 +41,11 @@ const PostMoveBtn = styled('button', {
 })
 
 const PageBtn = ({ to, text }: { to: stringw, text: string }): JSX.Element =>
-  <PostMoveBtn>
-    <Link to={to} className={'page-btn'}>
+  <Link to={to} className={'page-btn'}>
+    <PostMoveBtn>
       {text}
-    </Link>
-  </PostMoveBtn>
+    </PostMoveBtn>
+  </Link>
 
 export default function PostMoveBtnContainer({ pageContext: { prev = '', next = '' } }): JSX.Element {
   return (
