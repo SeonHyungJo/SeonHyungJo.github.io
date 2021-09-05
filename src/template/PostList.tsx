@@ -15,13 +15,13 @@ const PostC = styled('section', {
 
   '@mobile': {
     gridTemplateColumns: '1fr',
-    padding: '12px'
+    padding: '12px',
   },
 })
 
 export default function PostListTemplate(context): JSX.Element {
+  const { pageContext, location } = context
   const pathSplit = location.pathname.split('/')
-  const { pageContext } = context
   const { skip, limit } = pageContext
 
   const [filterList, setFilter] = useState([])

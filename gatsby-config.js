@@ -6,11 +6,11 @@ const {
   NODE_ENV,
   URL: NETLIFY_SITE_URL = 'https://snyung.com/',
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
-  CONTEXT: NETLIFY_ENV = NODE_ENV
-} = process.env;
+  CONTEXT: NETLIFY_ENV = NODE_ENV,
+} = process.env
 
-const isNetlifyProduction = NETLIFY_ENV === 'production';
-const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
+const isNetlifyProduction = NETLIFY_ENV === 'production'
+const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL
 
 module.exports = {
   pathPrefix: process.env.CI ? `/${name}` : '/',
@@ -18,14 +18,14 @@ module.exports = {
     author: 'sNyung',
     title: `sNyung's Dev-Log`,
     description: `프론트엔드 개발자 sNyung의 개발 일기`,
-    siteUrl
+    siteUrl,
   },
   plugins: [
     {
       resolve: 'gatsby-plugin-layout',
       options: {
-        component: require.resolve('./src/layout/index.tsx')
-      }
+        component: require.resolve('./src/layout/index.tsx'),
+      },
     },
     {
       resolve: 'gatsby-plugin-manifest',
@@ -37,15 +37,15 @@ module.exports = {
         background_color: '#fff',
         theme_color: '#663399',
         display: 'standalone',
-        icon: 'contents/assets/cardAvatar.png'
-      }
+        icon: 'contents/assets/cardAvatar.png',
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/contents`,
-        name: 'post'
-      }
+        name: 'post',
+      },
     },
     {
       resolve: 'gatsby-plugin-sitemap',
@@ -60,14 +60,13 @@ module.exports = {
               }
             }
             allSitePage {
-              edges {
-                node {
-                  path
-                }
+              nodes {
+                path
               }
             }
-        }`
-      }
+          }
+        `,
+      },
     },
     {
       resolve: 'gatsby-plugin-root-import',
@@ -80,8 +79,8 @@ module.exports = {
         util: path.join(__dirname, 'src/util'),
         post: path.join(__dirname, 'post'),
         assets: path.join(__dirname, 'assets'),
-        data: path.join(__dirname, 'meta-data')
-      }
+        data: path.join(__dirname, 'meta-data'),
+      },
     },
     {
       resolve: 'gatsby-transformer-remark',
@@ -90,8 +89,8 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              linkImagesToOriginal: false
-            }
+              linkImagesToOriginal: false,
+            },
           },
           {
             resolve: 'gatsby-remark-prismjs',
@@ -100,13 +99,13 @@ module.exports = {
               inlineCodeMarker: null,
               aliases: {},
               showLineNumbers: true,
-              noInlineHighlight: false
-            }
+              noInlineHighlight: false,
+            },
           },
           'gatsby-remark-autolink-headers',
-          'gatsby-remark-emoji'
-        ]
-      }
+          'gatsby-remark-emoji',
+        ],
+      },
     },
     {
       resolve: 'gatsby-plugin-robots-txt',
@@ -116,7 +115,7 @@ module.exports = {
         resolveEnv: () => NETLIFY_ENV,
         env: {
           production: {
-            policy: [{ userAgent: '*' }]
+            policy: [{ userAgent: '*' }],
           },
           'branch-deploy': {
             policy: [{ userAgent: '*', disallow: ['/'] }],
@@ -126,10 +125,10 @@ module.exports = {
           'deploy-preview': {
             policy: [{ userAgent: '*', disallow: ['/'] }],
             sitemap: null,
-            host: null
-          }
-        }
-      }
+            host: null,
+          },
+        },
+      },
     },
     // 'gatsby-plugin-offline',
     {
@@ -156,7 +155,7 @@ module.exports = {
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
                   guid: site.siteMetadata.siteUrl + edge.node.frontmatter.path,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
                 })
               })
             },
@@ -180,19 +179,19 @@ module.exports = {
                 }
               }
             `,
-            output: "/rss.xml",
-            title: "sNyung Site's RSS Feed",
+            output: '/rss.xml',
+            title: 'sNyung Site\'s RSS Feed',
           },
         ],
       },
     },
     {
-      resolve: "gatsby-plugin-google-tagmanager",
+      resolve: 'gatsby-plugin-google-tagmanager',
       options: {
         // datalayer to be set before GTM is loaded
         // should be a stringified object or object
         // Defaults to null
-        defaultDataLayer: function () {
+        defaultDataLayer: function() {
           return {
             pageType: window.pageType,
           }
@@ -204,6 +203,6 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-sass',
-    'gatsby-plugin-catch-links'
-  ]
+    'gatsby-plugin-catch-links',
+  ],
 }

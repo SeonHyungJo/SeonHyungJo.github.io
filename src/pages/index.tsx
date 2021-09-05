@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { navigate } from 'gatsby-link'
 
 export default function IndexPage(): JSX.Element {
-  navigate('/post').then()
+  useEffect(() => {
+    navigate('/post').then()
+  }, [])
   return (<></>)
 }
