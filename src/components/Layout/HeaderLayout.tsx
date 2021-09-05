@@ -10,10 +10,11 @@ const HeaderLayout = styled('header', {
   alignItems: 'center',
 
   width: '100%',
+  height: '$headerHeight',
 
   backgroundImage: '$headerBackground3',
 
-  padding: '20px 32px',
+  padding: '0 32px',
 
   fontSize: '$1',
   fontWeight: 500,

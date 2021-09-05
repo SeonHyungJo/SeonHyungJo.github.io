@@ -42,7 +42,7 @@ const createPostPages = async (createPage, graphql, categoryName) => {
   const maxPageNum = Math.ceil(posts.length / limit)
 
   Array.from({ length: maxPageNum }).forEach((_, i) => {
-    const path = `/${categoryName}${i === 0 ? '' : i}`
+    const path = `/${categoryName}${i === 0 ? '' : '/' + i}`
     const next = i === maxPageNum - 1 ? '' : i + 1
     const prev = i === 0 ? '' : i === 1 ? 0 : i - 1
 

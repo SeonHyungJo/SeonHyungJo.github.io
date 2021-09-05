@@ -1,5 +1,6 @@
 const { name } = require('./package.json')
 const path = require('path')
+require('dotenv').config()
 
 // env setting for netlify preview
 const {
@@ -15,9 +16,9 @@ const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL
 module.exports = {
   pathPrefix: process.env.CI ? `/${name}` : '/',
   siteMetadata: {
-    author: 'sNyung',
-    title: `sNyung's Dev-Log`,
-    description: `프론트엔드 개발자 sNyung의 개발 일기`,
+    author: 'snyung',
+    title: `프론트엔드 개발자 일지`,
+    description: `개발하면서 느끼고 알게된 내용을 공유할 수 있는 공간, 나에게는 일기장 누군가에게 사전`,
     siteUrl,
   },
   plugins: [
@@ -196,6 +197,14 @@ module.exports = {
             pageType: window.pageType,
           }
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_ADMIN_KEY,
+        queries: require('./src/utils/algolia-queries'),
       },
     },
     'gatsby-plugin-typescript',

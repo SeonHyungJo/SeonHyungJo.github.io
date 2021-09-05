@@ -8,10 +8,13 @@ interface SEOProps {
   description: string
   lang?: string
   meta?: MetaProps[]
-  title: string
+  title: string,
+  keywords?: string[]
 }
 
-export default function SEO ({ description, lang = 'ko', meta = [], title }: SEOProps) {
+const initKeywords = ['snyung', 'blog', 'fe', 'frontend', 'javascript', 'react']
+
+export default function SEO ({ description, lang = 'ko', meta = [], title, keywords = [] }: SEOProps) {
   const { site } = useStaticQuery(
     graphql`
         query SiteMeta {
@@ -30,6 +33,10 @@ export default function SEO ({ description, lang = 'ko', meta = [], title }: SEO
   const metaDescription = description || siteMetadata.description!
 
   const constantMeta: MetaProps[] = [
+    {
+      name: 'keywords',
+      content: initKeywords.concat(keywords.join(', '))
+    },
     {
       name: 'description',
       content: metaDescription

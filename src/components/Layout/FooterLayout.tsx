@@ -1,7 +1,7 @@
 import { styled } from '@stitches.config'
 
 const FooterLayout = styled('footer', {
-  padding: '0.5rem 0 1rem',
+  padding: '10px 0 65px',
   textAlign: 'center',
   fontSize: '12px',
 

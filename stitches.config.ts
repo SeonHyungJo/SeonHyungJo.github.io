@@ -46,6 +46,7 @@ export const { styled, css, getCssText } = createStitches({
     sizes: {
       avatarImg: '3rem',
       contentWidth: '760px',
+      headerHeight: '48px',
     },
     colors: {
       white: '#ffffff',

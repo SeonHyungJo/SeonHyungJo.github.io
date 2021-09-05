@@ -1,10 +1,10 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import { graphql, PageProps } from 'gatsby'
 
-import { NameCard, SponsorButton } from '@components/index'
+import { NameCard } from '@components/index'
 
 import { styled } from '@stitches.config'
+import SEO from '@components/SEO'
 
 const AboutMeC = styled('section', {
   maxWidth: '$contentWidth',
@@ -51,7 +51,7 @@ export default function AboutMe({ data }: PageProps): JSX.Element {
 
   return (
     <>
-      <Helmet title={'About me - sNyung'} />
+      <SEO title={'개인 이력서'} description={'개인 업적, 개인 경력을 소개합니다'}/>
 
       <AboutMeC>
         <AboutMeContents dangerouslySetInnerHTML={{ __html: html }} />

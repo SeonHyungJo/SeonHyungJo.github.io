@@ -1,6 +1,5 @@
 import React from 'react'
 import { TransitionGroup, Transition } from 'react-transition-group'
-import Helmet from 'react-helmet'
 
 import { Header, Footer } from '@components/index'
 
@@ -53,27 +52,9 @@ const PostC = styled('section', {
   }
 })
 
-const CustomHelmet = ({ title = 'Home | sNyung\'B ' }) => (
-  <Helmet
-    title={title}
-    meta={[
-      { name: 'description', content: `sNyung's 슬기로운 기술 블로그` },
-      { name: 'keywords', content: 'snyung, blog, fe, front, js' },
-      {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1',
-      },
-    ]}
-  >
-    <html lang='ko' />
-  </Helmet>
-)
-
 export default function Layout({ location, children }: { location: any, children: Element }): JSX.Element {
   return (
     <LayoutC>
-      <CustomHelmet />
-
       <Header/>
 
       <TransitionGroup>

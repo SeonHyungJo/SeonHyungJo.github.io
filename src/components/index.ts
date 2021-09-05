@@ -8,6 +8,11 @@ export { default as PageBtnContainer } from './PageButtonContainer'
 export { default as PostItem } from './PostItem'
 export { default as PageMoveBtnContainer } from './PostMoveBtnContainer'
 export { default as SponsorButton } from './SponsorButton'
+
+export { default as Search } from './Search'
+export { default as SearchBox } from './SearchBox'
+export { default as SearchResult } from './SearchResult'
+
 export { default as TabContainer } from './TabContainer'
 export { default as TabItem } from './TabItem'
 export type { ITabItem } from './TabItem'

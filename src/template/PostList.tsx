@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 
-import { PostItem, PageBtnContainer, NameCard } from '@components/index'
+import { Search, PostItem, PageBtnContainer, NameCard } from '@components/index'
 
 import { getAllPosts } from '@query/index'
 import { useFilterPosts } from '@hooks/index'
 
 import { styled } from '@stitches.config'
+import SEO from '@components/SEO'
+
+const searchIndices = [{ name: `snyung.com`, title: `snyung.com` }]
 
 const PostC = styled('section', {
   display: 'grid',
@@ -31,8 +34,9 @@ export default function PostListTemplate(context): JSX.Element {
 
   return (
     <>
+      <SEO title={'개발 공부 & 공유 일지'} description={'개발하면서 느끼고 알게된 내용을 공유할 수 있는 공간, 나에게는 일기장 누군가에게 사전'}/>
       <NameCard key={pathSplit[1]} />
-      {/*<TagSlider setFilter={setFilter} />*/}
+      <Search indices={searchIndices} />
 
       <PostC>
         {

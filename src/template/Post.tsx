@@ -8,6 +8,7 @@ import nameCard from '@data/nameCard'
 
 import { styled } from '@stitches.config'
 import './prism-tomorrow.scss'
+import SEO from '@components/SEO'
 
 const PostC = styled('section', {
   width: '100%',
@@ -66,15 +67,18 @@ const PostFooter = styled('section', {
 
 export default function PostTemplate(context): JSX.Element {
   const { data, pageContext } = context
-  const { html, frontmatter } = data.markdownRemark
+  const { html, frontmatter, excerpt} = data.markdownRemark
   const { title, date, tags } = frontmatter
 
   return (
     <>
+      <SEO title={title} description={excerpt} keywords={tags}/>
       <Helmet>
-        <title>{title}</title>
-        <script async crossOrigin='anonymous'
-                src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8793464953717853' />
+        <script
+          async
+          crossOrigin='anonymous'
+          src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8793464953717853'
+        />
       </Helmet>
 
       <PostC>
@@ -109,7 +113,7 @@ export const query = graphql`
         markdownRemark(frontmatter: { path: { eq: $path } }) {
             html
             id
-            excerpt
+            excerpt(pruneLength: 180)
             frontmatter {
                 date(formatString: "MMMM DD, YYYY")
                 path
