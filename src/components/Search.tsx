@@ -18,7 +18,7 @@ const SearchOverLay = styled('div', {
 
 const ResultC = styled('section', {
   position: 'sticky',
-  top: '60px',
+  top: 0,
 
   display: 'flex',
   flexDirection: 'column',
