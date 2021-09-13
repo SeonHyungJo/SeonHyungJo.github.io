@@ -22,11 +22,19 @@ const LayoutC = styled('section', {
 
 const PostC = styled('section', {
   maxWidth: '$contentWidth',
+  maxHeight: '100vh',
 
   margin: '0 auto',
   padding: '12px 16px',
 
   transition: 'all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1)',
+
+  overflow: 'auto',
+  '-ms-overflow-style': 'none',
+
+  '&::-webkit-scrollbar': {
+    width: '0 !important',
+  },
 
   '&.entering': {
     position: 'absolute',
