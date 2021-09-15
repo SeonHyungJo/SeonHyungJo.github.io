@@ -5,7 +5,7 @@ import { styled } from '@stitches.config'
 
 const SearchForm = styled('form', {
   position: 'sticky',
-  top: 0,
+  top: '54px',
   width: '100%',
 
   display: 'flex',
