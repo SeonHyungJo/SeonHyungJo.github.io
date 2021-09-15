@@ -1,7 +1,17 @@
-const fs = require('fs');
 const { inputRequired } = require('./utils');
 
-const {tabList} = JSON.parse(fs.readFileSync('./meta-data/tabList.json'));
+const tabList = [
+  {
+    'type': 'post',
+    'path': '/post',
+    'name': 'Post',
+  },
+  {
+    'type': 'article',
+    'path': '/article',
+    'name': 'Article',
+  },
+]
 
 module.exports = plop => {
   plop.setGenerator('blog post', {
