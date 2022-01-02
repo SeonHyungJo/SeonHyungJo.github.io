@@ -15,7 +15,6 @@ export const globalStyles = globalCss({
   },
   'body': {
     lineHeight: 1,
-    maxHeight: '100vh'
   },
 
   'ol, ul': {

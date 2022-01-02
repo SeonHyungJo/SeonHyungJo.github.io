@@ -8,7 +8,6 @@ import { styled } from '@stitches.config'
 
 const LayoutC = styled('section', {
   minHeight: '100vh',
-  maxHeight: '100vh',
 
   backgroundColor: '$gray01',
 
@@ -22,7 +21,6 @@ const LayoutC = styled('section', {
 
 const PostC = styled('section', {
   maxWidth: '$contentWidth',
-  maxHeight: '100vh',
 
   margin: '0 auto',
   padding: '12px 16px',
