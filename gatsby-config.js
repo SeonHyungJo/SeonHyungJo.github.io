@@ -2,6 +2,8 @@ const { name } = require('./package.json')
 const path = require('path')
 require('dotenv').config()
 
+const siteAddress = new URL("https://snyung.com")
+
 // env setting for netlify preview
 const {
   NODE_ENV,
@@ -22,6 +24,14 @@ module.exports = {
     siteUrl,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: "snyung-blog-bucket",
+        protocol: siteAddress.protocol.slice(0, -1),
+        hostname: siteAddress.hostname,
+      },
+    },
     {
       resolve: 'gatsby-plugin-layout',
       options: {
